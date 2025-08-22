@@ -1,0 +1,171 @@
+%----------------------------------------------------------------------------------------------
+\chapter{Introducción a git \& github}
+%----------------------------------------------------------------------------------------------
+\minitoc% Creating an actual minitoc
+
+\begin{justify}
+	\begin{multicols}{2}		
+		{\bf ¿Qué es Git?}
+		
+		Git es una herramienta de código abierto que permite a los desarrolladores llevar
+		un registro de los cambios que hacen en su código a lo largo del tiempo. Es como
+		una máquina del tiempo para tu código, ya que puedes ver quién hizo qué, cuándo
+		lo hizo y porqué. Esto es crucial para la colaboración en equipo, ya que permite
+		a varias personas trabajar en el mismo proyecto sin sobrescribir los cambios de los
+		demás. Con Git, los desarrolladores trabajan en su propia copia local del proyecto
+		(repositorio), y luego sincronizan sus cambios con el repositorio central.\\
+		
+		{\bf ¿Qué es GitHub?}
+		
+		Github es una plataforma de hosting para repositorios de Git. Piénsalo como una red social
+		para desarrolladores. Permite a los equipos almacer su código en un sólo lugar centralzado
+		en la nube, lo que facilita la colaboración y el intercambio de código. GitHub también 
+		ofrece funciones adicionales como seguimiento de errores (Issues), gestión de proyectos
+		(Projects), y herramientas de integración continua/despliegue continuo (CI/CD) a través 
+		de GitHub Actions. 
+		Además, la naturaleza pública de muchos repositorios en GitHub promueve el desarrollo de 
+		software de código abierto.
+	\end{multicols}
+\end{justify}
+
+
+{\bf Tres ejemplos de uso}
+
+\begin{justify}
+	\begin{enumerate}
+		\item {\bf Desarrollo de una aplicación web en equipo}: Un equipo de 10 desarrolladores está creando un sitio
+		web. Uno trabaja en la página de inicio, otro en la base de datos, y un tercero en el diseño de la 
+		interface. Usando Git, cada desarrollador trabaja en su propia rama local de código. Luego, suben sus
+		cambios a un repositorio central de GitHub. GitHub gestiona los {\bf pull requests} (solicitud de extracción)
+		para revisar el código, lo que asegura que todos los cambios se integren sin conflictos, manteniendo
+		un historial claro de quién contribuyó con qué.
+		\item {\bf Manejo de versiones de un documento de investigación}: Un investigador está escribiendo una tesis
+		y quiere guardar un historial completo de cada cambio que hace. Usando Git localmente, puede crear {\bf commits}
+		(instantáneas) en diferentes puntos del proceso de e scritura, etiquetando las versiones importantes
+		(por ejemplo, Versión 1.0- borrador inicial, Versión 2.5 - revisada por el supervisor). Si comete un error, 
+		puede volver a una versión anterior sin perder trabajo. Si quisiera colaborar con otros investigadores, podría
+		subir el proyecto a GitHub para que ellos también puedan contribuir y revisar el documento.
+		\item {\bf Contribución a un proyecto de código abierto}: Un desarrollador encuentra un error en una biblioteca
+		de software popular y quiere solucionarlo. El código fuente de la biblioteca está alojado en GitHub. El
+		desarrollador {\bf forkea} (hace una copia) del repositorio a su propia cuentra de GitHub, realiza los 
+		cambios necesarios en su copia local usando Git, y luego envía un {\bf pull request} al repositorio original.
+		Los mantenedores del proyecto revisan su código y, si es aceptado, lo fisionan con la base de código principal,
+		beneficiando a todos los usuarios de la biblioteca.
+	\end{enumerate}
+\end{justify}
+
+
+\textcolor{red}{\bf Importante!}
+
+El contenido de este capítulo es una una copia ó adaptación de las siguientes fuentes:
+
+\begin{itemize}
+	\item[$\bullet$] \href{https://yenchiah.me/jupyter-book-template/docs/home.html}{Jupyter Book Tutorial}
+	\item[$\bullet$] \href{https://jupyterbook.org/en/stable/start/build.html}{Build your book}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------------
+\section{Instalar Git}
+%##############################################################################################
+\subsection{Arch Linux.}
+
+\commandbox*{sudo pacman -Syu}
+
+Instalar Git.
+
+\commandbox*{sudo pacman -S git}
+
+Verificar la instalación.
+
+\commandbox*{git --version}
+
+\subsection{Mac.}
+
+\subsection{Windows.}
+
+
+%----------------------------------------------------------------------------------------------
+\section{Configuración inicial}
+%----------------------------------------------------------------------------------------------
+\subsection{Configurar nombre de usuario}
+\commandbox*{git config --global user.name "Nombre de Usuario"}
+
+\subsection{Configurar correo electrónico}
+\commandbox*{git config --global user.email "tu.email@ejemplo.com"}
+
+\subsection{Configurar editor de texto}
+\commandbox*{git config --global user.editor "nvim"}
+
+\subsection{Verificar configuración}
+\commandbox*{git config --list}
+
+
+\begin{center}
+	\begin{tcolorbox}[space to upper,
+		enhanced, 
+		%colback=green!5!white,colframe=green!75!black,
+		%colback=purple!5!white,colframe=purple!75!black,
+		%colback=black!5!white,colframe=black!75,
+		colback=orange!5!white,colframe=orange!95,
+		%skin=bicolor,	
+		boxrule=0.15pt,
+		collower=white,
+		%title={01\_hello-rust.rs},
+		halign=center,
+		valign=center,
+		nobeforeafter,
+		halign lower=flush right,
+		top=1mm,left=1mm,right=1mm, bottom=0mm,
+		%lifted shadow={1mm}{-2mm}{3mm}{0.1mm}{black!50!white},
+		text width=6cm,
+		height=7cm
+		]
+	\begin{forest}
+		pic dir tree,
+		pic root,
+		for tree={% folder icons by default; override using file for file icons
+			directory,
+			fit=band,
+		},
+		[hello-rust
+		[target
+		[doc]
+		[debug
+		[hello-rust, file]
+		]
+		]
+		[src
+		[main.rs, file]
+		]
+		[Cargo.lock,file]
+		[Cargo.tolm,file]
+		]
+	\end{forest}
+	\end{tcolorbox}
+\end{center}
+
+Finalmente, la instrucción \commandbox*{./hola-mundo}, pone en marcha el ejecutable \commandexe{hola-mundo}
+
+Por ejemplo, el código \commandfilename{hola-mundo.rs}, es una aplicación básica que muestra un mensaje. 
+
+
+Para compilar el código que se encuentra en el archivo \commandfilename{hola-mundo.rs}, se ejecuta la instrucción \commandbox*{rustc hola-mundo.rs}, el cuál generá un archivo ejecutable \commandexe{hola-mundo}.
+
+\section{ssh-keygen}
+\commandfilename{ssh-keygen} es una utilidad que forma parte del paquete{\bf OpenSSH} en Linux. Su función
+principal es {\bf generar y administrar pares de claves} (públicas y privadas) para el protocolo {\bf SSH}
+(Secure Shell). Estas claves se utilizan para la autenticación sin contraseña entre clientes y servidores, 
+mejorando la seguridad y automatización.
+
+\section{Trabajar un mismo repositorio desde diferentes computadoras}
+%##############################################################################################
+
+\subsection{Clonar el repositorio en cada computadora}
+
+\commandbox*{git clone https:github.com/nombre_usuario/nombre_repositorio.git}
+
+Por ejemplo:
+
+\commandbox*{git clone https://github.com/vrrp/indicesBioclimaticos.git}
+
+Donde, nombre\_usuario: vrrp, y nombre\_repositorio: indicesBioclimaticos
