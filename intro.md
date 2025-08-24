@@ -28,12 +28,8 @@ Sometimes when reading it is helpful to foster a _tranquil_ environment. The ima
 
 A photograph of some beautiful mountains to look at whilst reading.
 :::
+Sometimes when reading it is helpful to foster a _tranquil_ environment. The image in [](#fig:logo) would be a perfect spot!
 
-{{youtube(yNYflGw6kJI)}}
-% video
-:::{video} https://youtu.be/yNYflGw6kJI?si=E_Lfnh1ns6oVGuQF
-:::
-% A figure of a photograph of some mountains, followed by a caption
 :::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/img/sacha_logo1.png?raw=true
 :label: fig:logo
 
