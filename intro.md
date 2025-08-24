@@ -1,7 +1,7 @@
 # Introduction
 
 +++ {"part": "abstract"}
-This is my abstract!
+This is my
 +++
 <figure align="center" class="image">
   <img src="https://sge.unac.edu.pe/assets2/Logo_UNAC.png">  
