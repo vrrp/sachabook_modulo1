@@ -33,3 +33,9 @@ A photograph of some beautiful mountains to look at whilst reading.
 % video
 :::{video} https://youtu.be/yNYflGw6kJI?si=E_Lfnh1ns6oVGuQF
 :::
+% A figure of a photograph of some mountains, followed by a caption
+:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/img/sacha_logo1.png
+:label: fig:logo
+
+Logo sacha
+:::
