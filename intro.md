@@ -30,3 +30,6 @@ A photograph of some beautiful mountains to look at whilst reading.
 :::
 
 {{youtube(yNYflGw6kJI)}}
+% video
+:::{video} https://youtu.be/yNYflGw6kJI?si=E_Lfnh1ns6oVGuQF
+:::
