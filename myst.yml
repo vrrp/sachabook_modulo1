@@ -10,7 +10,7 @@ project:
     - something-else
   authors:
     - name: Sacha Analytics Book
-  github: vrrp/sachabook_modulo1
+  github: vrrp
   
     # To autogenerate a table of contents, run "jupyter book init --write-toc"
   toc:
