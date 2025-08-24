@@ -3,7 +3,10 @@
 +++ {"part": "abstract"}
 This is my abstract!
 +++
-
+<figure align="center" class="image">
+  <img src="https://sge.unac.edu.pe/assets2/Logo_UNAC.png">  
+  <figcaption></figcaption>
+</figure>
 I am a book about ... something! Wikipedia has [information about books](wiki:book): hover over the link for more information.
 
 % A figure of a photograph of some mountains, followed by a caption
@@ -34,4 +37,10 @@ Sometimes when reading it is helpful to foster a _tranquil_ environment. The ima
 :label: fig:mountains
 
 A photograph of some beautiful mountains to look at whilst reading.
+:::
+
+para video
+:::{iframe} https://www.youtube.com/embed/F3st8X0L1Ys
+:width: 100%
+Get up and running with MyST in Jupyter!
 :::
