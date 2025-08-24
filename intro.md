@@ -6,6 +6,13 @@ This is my abstract!
 
 I am a book about ... something! Wikipedia has [information about books](wiki:book): hover over the link for more information.
 
+% A figure of a photograph of some mountains, followed by a caption
+:::{figure} https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true
+:label: fig:mountains2
+
+A photograph of some beautiful mountains to look at whilst reading.
+:::
+
 % An admonition containing a note
 :::{note}
 Books are usually written on paper ... But Jupyter Book can create _websites_!
@@ -27,11 +34,4 @@ Sometimes when reading it is helpful to foster a _tranquil_ environment. The ima
 :label: fig:mountains
 
 A photograph of some beautiful mountains to look at whilst reading.
-:::
-Sometimes when reading it is helpful to foster a _tranquil_ environment. The image in [](#fig:logo) would be a perfect spot!
-
-:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/img/sacha_logo1.png?raw=true
-:label: fig:logo
-
-Logo sacha
 :::
