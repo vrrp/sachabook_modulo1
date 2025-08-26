@@ -1,7 +1,26 @@
+<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Procesamiento de Datos con Inteligencia Artificial</b></span></h1>
+</div>
+<br><br>
+
 # Preámbulo
+
+# Evolución 
+<figure align="center" class="image">
+  <img src="https://github.com/vrrp/sachabook/blob/main/sacha_logo1.png">  
+  <figcaption></figcaption>
+</figure>
+
+# Top 10 lenguajes de programación
+El ídice de popularidad de lenguajes de programación PYPL
+
+# Ecosistema Python
+
 % A figure of a photograph of some mountains, followed by a caption
 :::{figure} https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true
 :label: fig:mountains
+:align: center
+:width: 200px
 
 A photograph of some beautiful mountains to look at whilst reading.
 :::
