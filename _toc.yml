@@ -4,4 +4,6 @@
 format: jb-book
 root: docs/home
 chapters:
+- file: docs/preambulo
+- file: docs/sesion1
 - file: docs/notebook

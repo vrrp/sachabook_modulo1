@@ -1,0 +1,1495 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introducción a la Programación Básica con Python &#8212; Estadística para Investigación Usando Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sesion1';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example Notebook" href="notebook.html" />
+    <link rel="prev" title="Preámbulo" href="preambulo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Estadística para Investigación Usando Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="home.html">
+                    Descripción del Curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Preámbulo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Introducción a la Programación Básica con Python</strong></a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="notebook.html">Example Notebook</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/docs/sesion1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/yenchiah/jupyter-book-template" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/sesion1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a la Programación Básica con Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Introducción a la Programación Básica con Python</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-conceptos-basicos-de-programacion"><strong>I. Conceptos básicos de programación</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-y-variables">1.1. Tipos de datos y variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-matematicos">1.2. Operadores matemáticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes-o-librerias-en-python">1.3. Importar paquetes o librerías en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-algebraicas">1.4. Funciones algebraicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">1.5. Operadores de comparación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condiciones">1.6. Condiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i">1.7. Funciones: Parte I</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-estructura-de-datos"><strong>II. Estructura de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas">2.1. Cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">2.2. Listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-1d">2.3. Array 1D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame">2.4. Data Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-flujo">2.5. Control de flujo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii">2.6. Funciones: Parte II</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-referencias"><strong>III. Referencias</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-programacion-basica-con-python">
+<h1><strong>Introducción a la Programación Básica con Python</strong><a class="headerlink" href="#introduccion-a-la-programacion-basica-con-python" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-conceptos-basicos-de-programacion">
+<h1><strong>I. Conceptos básicos de programación</strong><a class="headerlink" href="#i-conceptos-basicos-de-programacion" title="Link to this heading">#</a></h1>
+<section id="tipos-de-datos-y-variables">
+<h2>1.1. Tipos de datos y variables<a class="headerlink" href="#tipos-de-datos-y-variables" title="Link to this heading">#</a></h2>
+<p>Tipos fundamentales de datos definidos en Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data caracter</span>
+<span class="c1">#----------------------</span>
+<span class="n">var_1</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span>
+<span class="n">var_2</span> <span class="o">=</span> <span class="mi">2025</span>
+<span class="n">var_3</span> <span class="o">=</span> <span class="s2">&quot;15&quot;</span>
+<span class="n">var_4</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">var_5</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">va_6</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;esto es el contenido de la variable var_1 = &quot;</span><span class="p">,</span><span class="n">var_1</span><span class="p">,</span> <span class="s2">&quot;, que es tipo no numerico&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>esto es el contenido de la variable var_1 =  hola , que es tipo no numerico
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos y variables numericas</span>
+<span class="c1">#-----------------------------</span>
+<span class="n">num_int</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">num_float</span><span class="o">=</span> <span class="mf">20.000001</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num_int</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">num_float</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt; &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-matematicos">
+<h2>1.2. Operadores matemáticos<a class="headerlink" href="#operadores-matematicos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># suma</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">+</span> <span class="n">num_float</span>
+
+<span class="c1"># exponencial</span>
+<span class="n">exponente</span> <span class="o">=</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># division</span>
+<span class="n">cociente</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span>
+<span class="n">cociente_entero</span> <span class="o">=</span> <span class="mi">9</span><span class="o">//</span><span class="mi">5</span>
+<span class="n">residuo</span> <span class="o">=</span> <span class="mi">9</span><span class="o">%</span><span class="k">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;suma =&quot;</span><span class="p">,</span><span class="n">suma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;exponente = &quot;</span><span class="p">,</span><span class="n">exponente</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cociente =&quot;</span><span class="p">,</span> <span class="n">cociente</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cociente_entero =&quot;</span><span class="p">,</span> <span class="n">cociente_entero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;residuo =&quot;</span><span class="p">,</span><span class="n">residuo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;resto&quot;</span><span class="p">,</span><span class="n">resto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>suma = 45.000001
+&lt;class &#39;float&#39;&gt;
+exponente =  25
+cociente = 1.8
+cociente_entero = 1
+residuo = 4
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cociente_entero =&quot;</span><span class="p">,</span> <span class="n">cociente_entero</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;residuo =&quot;</span><span class="p">,</span><span class="n">residuo</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;resto&quot;</span><span class="p">,</span><span class="n">resto</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;resto&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importar-paquetes-o-librerias-en-python">
+<h2>1.3. Importar paquetes o librerías en Python<a class="headerlink" href="#importar-paquetes-o-librerias-en-python" title="Link to this heading">#</a></h2>
+<p>En Python, un paquete o librería (los términos a menudo se usan indistintamente, aunque “paquete” tiene una estructura más específica) es una colección organizada de módulos.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paquete</span><span class="p">:</span>
+        <span class="n">aplicacion_01</span>
+        <span class="n">aplicacion_02</span>
+        <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
+        <span class="n">aplicacion_n</span>
+</pre></div>
+</div>
+<p>Formas de importar un paquete y sus aplicaciones</p>
+<p><strong>Primera forma</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">paquete</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pp</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="n">paquete</span><span class="o">.</span><span class="n">aplicacion_01</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Segunda forma</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">paquete</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pp</span>
+
+<span class="n">var</span> <span class="o">=</span> <span class="n">pp</span><span class="o">.</span><span class="n">aplicacion_01</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Tercera forma</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">paquete</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">aplicacion_01</span><span class="p">,</span> <span class="n">aplicacion_04</span><span class="p">)</span>
+
+<span class="n">var_01</span> <span class="o">=</span> <span class="n">aplicacion_01</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<span class="n">var_02</span> <span class="o">=</span> <span class="n">aplicacion_04</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">pi_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">pi_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi_np</span><span class="p">)</span>
+
+<span class="n">n_euler_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>
+<span class="n">n_euler_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_euler_math</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_euler_np</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+3.141592653589793
+2.718281828459045
+2.718281828459045
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funciones-algebraicas">
+<h2>1.4. Funciones algebraicas<a class="headerlink" href="#funciones-algebraicas" title="Link to this heading">#</a></h2>
+<p><strong>Exponencial</strong></p>
+<p><span class="math notranslate nohighlight">\( y = b^{a}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">n_euler</span><span class="o">**</span><span class="n">n_euler</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Valor absoluto</strong></p>
+<p>si: <span class="math notranslate nohighlight">\(a&lt;0, y = |a| = (-1) \times a\)</span></p>
+<p>si: <span class="math notranslate nohighlight">\(a&gt;0, y = |a| = a\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># funcion valor absoluto</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">num_int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Raíz cuadrada</strong></p>
+<p><span class="math notranslate nohighlight">\(y = \sqrt{b} = b^{\frac{1}{2}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#funcion raiz cuadrada</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num_int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Raiz general</strong></p>
+<p><span class="math notranslate nohighlight">\(\sqrt[n]{b^m}= b\frac{m}{n}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="mi">125</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Logaritmo</strong></p>
+<p><span class="math notranslate nohighlight">\(y = log_{b}x \)</span></p>
+<p><span class="math notranslate nohighlight">\(x = b^y\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># funcion logaritmo de 10 en base 10</span>
+<span class="n">y5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y5</span><span class="p">)</span>
+
+<span class="c1"># funcion logaritmo de 2 en base 2</span>
+<span class="n">y6</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y6</span><span class="p">)</span>
+
+<span class="c1"># funcion logaritmo de e en base e</span>
+<span class="n">y7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n_euler</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+1.0
+1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-de-comparacion">
+<h2>1.5. Operadores de comparación<a class="headerlink" href="#operadores-de-comparacion" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># operadores relacionales</span>
+<span class="c1"># comparacion (==)</span>
+<span class="n">comp01</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">==</span> <span class="n">num_float</span>
+
+<span class="c1"># diferente (!=)</span>
+<span class="n">comp02</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">!=</span> <span class="n">num_float</span>
+
+<span class="c1"># mayor que  (&gt;)</span>
+<span class="n">comp03</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">&gt;</span> <span class="n">num_float</span>
+
+<span class="c1"># menor que  (&lt;)</span>
+<span class="n">comp04</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">&lt;</span> <span class="n">num_float</span>
+
+<span class="c1"># mayor o igual que  (&gt;=)</span>
+<span class="n">comp05</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">&gt;=</span> <span class="n">num_float</span>
+
+<span class="c1"># menor o igual que  (&lt;=)</span>
+<span class="n">comp06</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">&lt;=</span> <span class="n">num_float</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">comp01</span><span class="p">),</span> <span class="n">comp01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">comp02</span><span class="p">),</span> <span class="n">comp02</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">comp03</span><span class="p">),</span> <span class="n">comp03</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">comp04</span><span class="p">),</span> <span class="n">comp04</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">comp05</span><span class="p">),</span> <span class="n">comp05</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">comp06</span><span class="p">),</span> <span class="n">comp06</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt; False
+&lt;class &#39;bool&#39;&gt; True
+&lt;class &#39;bool&#39;&gt; True
+&lt;class &#39;bool&#39;&gt; False
+&lt;class &#39;bool&#39;&gt; True
+&lt;class &#39;bool&#39;&gt; False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="condiciones">
+<h2>1.6. Condiciones<a class="headerlink" href="#condiciones" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condicionales: if, elif, else</span>
+<span class="n">var</span> <span class="o">=</span> <span class="mi">23</span>
+
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span><span class="o">==</span><span class="nb">int</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var es valor entero&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;segunda accion de if&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var no es un numero entero&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>var es valor entero
+segunda accion de if
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condicionales: if, elif, else</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(1)&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span><span class="n">b</span> <span class="p">,</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(2)&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span><span class="n">b</span> <span class="p">,</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(3)&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="s2">&quot;==&quot;</span><span class="p">,</span><span class="n">b</span> <span class="p">,</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3) 7 == 7 True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funciones-parte-i">
+<h2>1.7. Funciones: Parte I<a class="headerlink" href="#funciones-parte-i" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
+  <span class="n">area</span> <span class="o">=</span> <span class="n">lado</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">return</span> <span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac1</span> <span class="o">=</span> <span class="n">area_cuadrado</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ac1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">convert_temp</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">tipo</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">tipo</span><span class="o">==</span><span class="s2">&quot;K&quot;</span><span class="p">:</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">tipo</span><span class="o">==</span><span class="s2">&quot;F&quot;</span><span class="p">:</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">convert_temp</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">convert_temp</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">convert_temp</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>212.0
+50.0
+373.15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-estructura-de-datos">
+<h1><strong>II. Estructura de datos</strong><a class="headerlink" href="#ii-estructura-de-datos" title="Link to this heading">#</a></h1>
+<section id="cadenas">
+<h2>2.1. Cadenas<a class="headerlink" href="#cadenas" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estructuras tipo cadena de caracteres</span>
+<span class="n">var_cadena</span> <span class="o">=</span> <span class="s2">&quot;las estaciones del año son: verano, otoño, invierno y primavera&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">14</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_cadena</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>las estaciones del año son: verano, otoño, invierno y primavera
+63
+ estaciones
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departamentos_peru</span> <span class="o">=</span> <span class="s2">&quot;algunos departamentos de Perú son: Lima, Ica, Arequipa y Tacna&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">departamentos_peru</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">departamentos_peru</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">departamentos_peru</span><span class="p">[</span><span class="mi">35</span><span class="p">:</span><span class="mi">39</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">departamentos_peru</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>algunos departamentos de Perú son: Lima, Ica, Arequipa y Tacna
+62
+Lima
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">separar_frase</span> <span class="o">=</span> <span class="n">departamentos_peru</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">separar_frase</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">separar_frase</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;algunos&#39;, &#39;departamentos&#39;, &#39;de&#39;, &#39;Perú&#39;, &#39;son:&#39;, &#39;Lima,&#39;, &#39;Ica,&#39;, &#39;Arequipa&#39;, &#39;y&#39;, &#39;Tacna&#39;]
+&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="listas">
+<h2>2.2. Listas<a class="headerlink" href="#listas" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># listas</span>
+<span class="n">var_lista01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">var_lista01</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="s2">&quot;Peru 2025&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hola&#39;, 2024, &#39;mundo&#39;, 2024.5]
+4
+hola
+[&#39;hola&#39;, 2024, &#39;mundo&#39;, &#39;Peru 2025&#39;]
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_02</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="n">lista_03</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">suma_lista23</span> <span class="o">=</span> <span class="n">lista_02</span> <span class="o">+</span> <span class="n">lista_03</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">suma_lista23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 3, 3, 2, 1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prod_lista23</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span> <span class="n">lista_03</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prod_lista23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="array-1d">
+<h2>2.3. Array 1D<a class="headerlink" href="#array-1d" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># array 1D: np.array()</span>
+<span class="n">array_meses_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_meses_num</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">array_meses_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array_meses_num</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1  2  3  4  5  6  7  8  9 10 11 12]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+12
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># array 1D: np.arange(val_i, num_vals, incremento)</span>
+<span class="n">array_arange01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_arange01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array_arange01</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-20.  -19.5 -19.  -18.5 -18.  -17.5 -17.  -16.5 -16.  -15.5 -15.  -14.5
+ -14.  -13.5 -13.  -12.5 -12.  -11.5 -11.  -10.5 -10.   -9.5  -9.   -8.5
+  -8.   -7.5  -7.   -6.5  -6.   -5.5  -5.   -4.5  -4.   -3.5  -3.   -2.5
+  -2.   -1.5  -1.   -0.5   0.    0.5   1.    1.5   2.    2.5   3.    3.5
+   4.    4.5   5.    5.5   6.    6.5   7.    7.5   8.    8.5   9.    9.5]
+60
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># array 1D: np.zeros()</span>
+<span class="n">array_zeros01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">array_zeros01</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="n">var_lista01</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0.]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+4
+1
+(4,)
+2024
+[   0.    0. 2024.    0.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Operaciones con arrays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prod_escalar</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">array_meses_num</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prod_escalar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2  4  6  8 10 12 14 16 18 20 22 24]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_linespace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_linespace</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.          1.81818182  2.63636364  3.45454545  4.27272727  5.09090909
+  5.90909091  6.72727273  7.54545455  8.36363636  9.18181818 10.        ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-frame">
+<h2>2.4. Data Frame<a class="headerlink" href="#data-frame" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data frame</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># crear data frame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Empty DataFrame
+Columns: []
+Index: []
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_aire</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.         28.58013454 35.11901729 35.11901729 28.58013454 18.
+  7.41986546  0.88098271  0.88098271  7.41986546 18.         28.58013454
+ 35.11901729 35.11901729 28.58013454 18.          7.41986546  0.88098271
+  0.88098271  7.41986546]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fechas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;today&#39;</span><span class="p">),</span> <span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).sttftime(&#39;%Y-%m-%d&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fechas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2025-08-08 21:39:42.582551&#39;, &#39;2025-08-09 21:39:42.582551&#39;,
+               &#39;2025-08-10 21:39:42.582551&#39;, &#39;2025-08-11 21:39:42.582551&#39;,
+               &#39;2025-08-12 21:39:42.582551&#39;, &#39;2025-08-13 21:39:42.582551&#39;,
+               &#39;2025-08-14 21:39:42.582551&#39;, &#39;2025-08-15 21:39:42.582551&#39;,
+               &#39;2025-08-16 21:39:42.582551&#39;, &#39;2025-08-17 21:39:42.582551&#39;,
+               &#39;2025-08-18 21:39:42.582551&#39;, &#39;2025-08-19 21:39:42.582551&#39;,
+               &#39;2025-08-20 21:39:42.582551&#39;, &#39;2025-08-21 21:39:42.582551&#39;,
+               &#39;2025-08-22 21:39:42.582551&#39;, &#39;2025-08-23 21:39:42.582551&#39;,
+               &#39;2025-08-24 21:39:42.582551&#39;, &#39;2025-08-25 21:39:42.582551&#39;,
+               &#39;2025-08-26 21:39:42.582551&#39;, &#39;2025-08-27 21:39:42.582551&#39;],
+              dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;temperatura&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">temp_aire</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura                      fecha
+0     18.000000 2025-08-08 21:36:59.977562
+1     28.580135 2025-08-09 21:36:59.977562
+2     35.119017 2025-08-10 21:36:59.977562
+3     35.119017 2025-08-11 21:36:59.977562
+4     28.580135 2025-08-12 21:36:59.977562
+5     18.000000 2025-08-13 21:36:59.977562
+6      7.419865 2025-08-14 21:36:59.977562
+7      0.880983 2025-08-15 21:36:59.977562
+8      0.880983 2025-08-16 21:36:59.977562
+9      7.419865 2025-08-17 21:36:59.977562
+10    18.000000 2025-08-18 21:36:59.977562
+11    28.580135 2025-08-19 21:36:59.977562
+12    35.119017 2025-08-20 21:36:59.977562
+13    35.119017 2025-08-21 21:36:59.977562
+14    28.580135 2025-08-22 21:36:59.977562
+15    18.000000 2025-08-23 21:36:59.977562
+16     7.419865 2025-08-24 21:36:59.977562
+17     0.880983 2025-08-25 21:36:59.977562
+18     0.880983 2025-08-26 21:36:59.977562
+19     7.419865 2025-08-27 21:36:59.977562
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;fecha&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">fechas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura                      fecha
+0     18.000000 2025-08-08 21:39:42.582551
+1     28.580135 2025-08-09 21:39:42.582551
+2     35.119017 2025-08-10 21:39:42.582551
+3     35.119017 2025-08-11 21:39:42.582551
+4     28.580135 2025-08-12 21:39:42.582551
+5     18.000000 2025-08-13 21:39:42.582551
+6      7.419865 2025-08-14 21:39:42.582551
+7      0.880983 2025-08-15 21:39:42.582551
+8      0.880983 2025-08-16 21:39:42.582551
+9      7.419865 2025-08-17 21:39:42.582551
+10    18.000000 2025-08-18 21:39:42.582551
+11    28.580135 2025-08-19 21:39:42.582551
+12    35.119017 2025-08-20 21:39:42.582551
+13    35.119017 2025-08-21 21:39:42.582551
+14    28.580135 2025-08-22 21:39:42.582551
+15    18.000000 2025-08-23 21:39:42.582551
+16     7.419865 2025-08-24 21:39:42.582551
+17     0.880983 2025-08-25 21:39:42.582551
+18     0.880983 2025-08-26 21:39:42.582551
+19     7.419865 2025-08-27 21:39:42.582551
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hr</span> <span class="o">=</span> <span class="mf">2.5</span><span class="o">*</span><span class="n">temp_aire</span> <span class="o">+</span><span class="mf">5.6</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;humedad_relativa&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hr</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura  datos_decimales  humedad_relativa
+0     18.000000              0.0         50.600000
+1     28.580135              0.1         77.050336
+2     35.119017              0.2         93.397543
+3     35.119017              0.3         93.397543
+4     28.580135              0.4         77.050336
+5     18.000000              0.5         50.600000
+6      7.419865              0.6         24.149664
+7      0.880983              0.7          7.802457
+8      0.880983              0.8          7.802457
+9      7.419865              0.9         24.149664
+10    18.000000              1.0         50.600000
+11    28.580135              1.1         77.050336
+12    35.119017              1.2         93.397543
+13    35.119017              1.3         93.397543
+14    28.580135              1.4         77.050336
+15    18.000000              1.5         50.600000
+16     7.419865              1.6         24.149664
+17     0.880983              1.7          7.802457
+18     0.880983              1.8          7.802457
+19     7.419865              1.9         24.149664
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numero total de elementos o medidas del data frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="c1"># dimensiones del data frame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># nombres de las columnas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
+(20, 2)
+Index([&#39;temperatura&#39;, &#39;fecha&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="control-de-flujo">
+<h2>2.5. Control de flujo<a class="headerlink" href="#control-de-flujo" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var_lista01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
+                  <span class="mi">0</span>      <span class="mi">1</span>      <span class="mi">2</span>       <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Hello!&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
+2024
+</pre></div>
+</div>
+</div>
+</div>
+<p>Control de flujo: <strong>for</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">arg01</span> <span class="ow">in</span> <span class="n">arg02</span><span class="p">:</span>
+  <span class="n">aplicacion_01</span>
+  <span class="n">aplicacion_02</span>
+    <span class="o">........</span>
+  <span class="n">aplicacion_n</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Control de flujo <strong>for</strong> sobre  <strong>listas</strong></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n_elem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_elem</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
+2024
+mundo
+Peru 2025
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Control de flujo <strong>for</strong> a  <strong>data frame</strong></p>
+</div></blockquote>
+</section>
+<section id="funciones-parte-ii">
+<h2>2.6. Funciones: Parte II<a class="headerlink" href="#funciones-parte-ii" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-referencias">
+<h1><strong>III. Referencias</strong><a class="headerlink" href="#iii-referencias" title="Link to this heading">#</a></h1>
+<p><strong>Libros y manuales</strong></p>
+<ul>
+<li><p>Libro de estadisitica con python</p>
+<p><a class="reference external" href="https://www.editorial-sciela.org/index.php/sciela/article/view/16/49">https://www.editorial-sciela.org/index.php/sciela/article/view/16/49</a></p>
+</li>
+<li><p>Introducción a la teoria de probabilidades</p>
+<p><a class="reference external" href="https://ciladi.org/wp-content/uploads/Version_final_Introduccion-Probabilidad-Python-vf_Bayas-3.pdf">https://ciladi.org/wp-content/uploads/Version_final_Introduccion-Probabilidad-Python-vf_Bayas-3.pdf</a></p>
+</li>
+<li><p>Guía practica de análsis exploratorio de python</p>
+<p><a class="reference external" href="https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf">https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf</a></p>
+</li>
+</ul>
+<p><strong>Cursos en linea</strong></p>
+<ul>
+<li><p>Estadística W3School:</p>
+<p><a class="reference external" href="https://www.w3schools.com/statistics/index.php">https://www.w3schools.com/statistics/index.php</a></p>
+</li>
+<li><p>Estadística con python:</p>
+<p><a class="reference external" href="https://docs.python.org/es/3/library/statistics.html">https://docs.python.org/es/3/library/statistics.html</a></p>
+</li>
+<li><p>Kaggle:</p>
+<p><a class="reference external" href="https://www.kaggle.com/code/saurav9786/statistics-for-data-scientists">https://www.kaggle.com/code/saurav9786/statistics-for-data-scientists</a></p>
+</li>
+</ul>
+<p><strong>Aplicaciones IA</strong></p>
+<ul>
+<li><p>Gemini iA</p>
+<p><a class="reference external" href="https://gemini.google.com">https://gemini.google.com</a></p>
+</li>
+<li><p>DeepSeek</p>
+<p><a class="reference external" href="https://www.deepseek.com/">https://www.deepseek.com/</a></p>
+</li>
+<li><p>Chat GPT</p>
+<p><a class="reference external" href="https://chatgpt.com/">https://chatgpt.com/</a></p>
+</li>
+<li><p>Claude IA</p>
+<p><a class="reference external" href="https://claude.ai/">https://claude.ai/</a></p>
+</li>
+<li><p>Julius IA:</p>
+<p><a class="reference external" href="https://julius.ai">https://julius.ai</a></p>
+</li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="preambulo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preámbulo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebook.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Example Notebook</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Introducción a la Programación Básica con Python</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-conceptos-basicos-de-programacion"><strong>I. Conceptos básicos de programación</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-y-variables">1.1. Tipos de datos y variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-matematicos">1.2. Operadores matemáticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes-o-librerias-en-python">1.3. Importar paquetes o librerías en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-algebraicas">1.4. Funciones algebraicas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">1.5. Operadores de comparación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condiciones">1.6. Condiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i">1.7. Funciones: Parte I</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-estructura-de-datos"><strong>II. Estructura de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cadenas">2.1. Cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">2.2. Listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-1d">2.3. Array 1D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame">2.4. Data Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-flujo">2.5. Control de flujo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii">2.6. Funciones: Parte II</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-referencias"><strong>III. Referencias</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VR Rojas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
