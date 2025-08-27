@@ -4,17 +4,75 @@
 <br><br>
 
 # Preámbulo
+%---------------------------------------------------------------------------------------------------
 
 # Evolución 
-<figure align="center" class="image">
-  <img src="https://github.com/vrrp/sachabook/blob/main/sacha_logo1.png">  
-  <figcaption></figcaption>
-</figure>
+%---------------------------------------------------------------------------------------------------
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide"><img src="https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true" alt="Imagen 1"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Imagen 2"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1497436072909-60f69c88b3e1" alt="Imagen 3"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Imagen 4"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Imagen 5"></div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<style>
+.slider-container {
+  position: relative;
+  max-width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+button.prev { left: 10px; }
+button.next { right: 10px; }
+button:hover { background-color: rgba(0, 0, 0, 0.8); }
+</style>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+function moveSlide(n) {
+  slideIndex += n;
+  if (slideIndex >= slides.length) slideIndex = 0;
+  if (slideIndex < 0) slideIndex = slides.length - 1;
+  document.querySelector('.slider').style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+</script>
 
 # Top 10 lenguajes de programación
+%---------------------------------------------------------------------------------------------------
 El ídice de popularidad de lenguajes de programación PYPL
 
 # Ecosistema Python
+%---------------------------------------------------------------------------------------------------
 
 % A figure of a photograph of some mountains, followed by a caption
 :::{figure} https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true
@@ -32,6 +90,10 @@ Sometimes when reading it is helpful to foster a _tranquil_ environment. The ima
 
 A photograph of some beautiful mountains to look at whilst reading.
 :::
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/EaETjKmXOTo?si=uAeOYk-SXi9tKXkV" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+</div>
 
 In this tutorial, we will teach you how to create a Jupyter book and deploy it online.
 This page is written in markdown, which also serves as an example.
