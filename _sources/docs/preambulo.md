@@ -70,11 +70,11 @@ function moveSlide(n) {
 # Top 10 lenguajes de programación
 %---------------------------------------------------------------------------------------------------
 <div class="slideshow-container">
-  <img class="slides active" src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Paisaje 1">
-  <img class="slides" src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Paisaje 2">
-  <img class="slides" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Paisaje 3">
-  <img class="slides" src="https://images.unsplash.com/photo-1444080748397-f442aa95eb45" alt="Paisaje 4">
-  <img class="slides" src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7" alt="Paisaje 5">
+  <img class="slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Paisaje 1">
+  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Paisaje 2">
+  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Paisaje 3">
+  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Paisaje 3">
+  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Paisaje 3">
   <div class="controls">
     <button onclick="changeSlide(-1)">Anterior</button>
     <button onclick="toggleAutoPlay()">Play/Pause</button>
