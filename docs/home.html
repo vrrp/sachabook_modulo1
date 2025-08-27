@@ -233,6 +233,53 @@
 
 
 
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/yenchiah/jupyter-book-template" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/home.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -390,15 +437,15 @@ Finalmente, el cuarto módulo aborda los principios teóricos y prácticos del a
 <section class="tex2jax_ignore mathjax_ignore" id="plagio-e-integridad-academica">
 <h1>Plagio e Integridad Académica<a class="headerlink" href="#plagio-e-integridad-academica" title="Link to this heading">#</a></h1>
 <p>El plagio es la práctica de copiar palabras, oraciones, imágenes o ideas para su uso en evaluaciones escritas u orales sin dar el crédito correspondiente a la fuente. Hacer trampa se define como dar o recibir ayuda ilegal en cualquier cosa que el profesor haya determinado como un esfuerzo individual. Ambas se consideran infracciones graves y afectarán significativamente la calificación del curso.</p>
-<p>:::{admonition} Evaluación
-:class: warning %attention, caution, danger, error, important, hint, note, seealso, tip, warning
-Se desarrollaran laboratorios por cada sesión, con los cuáles se determinará el promedio final (PF), Ecuación 1. La nota mínima
+<div class="warning attention caution danger error important hint note seealso tip admonition">
+<p class="admonition-title">Evaluación</p>
+<p>Se desarrollaran laboratorios por cada sesión, con los cuáles se determinará el promedio final (PF), Ecuación 1. La nota mínima
 aprobatoria es 11.</p>
-<p>:::{math}
-:name: eq:pfinal
-PF = \sum_{i=1}^n  \frac{lab_{(i)} }{n}
-:::
-:::</p>
+<div class="math notranslate nohighlight" id="eq-pfinal">
+<span id="equation-eq-pfinal"></span><span class="eqno">(1)<a class="headerlink" href="#eq-pfinal" title="Link to this equation">#</a></span>\[ PF = \sum_{i=1}^n  \frac{lab_{(i)} }{n}\]</div>
+</div>
+<div class="docutils">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -507,10 +554,11 @@ By VR Rojas
 <div class="extra_footer">
   <style>
   .slideshow-container { max-width: 800px; margin: auto; position: relative; }
-  .slides { display: none; width: 100%; }
+  .slides { display: none; width: 100%; height: auto; }
   .slides.active { display: block; }
   .controls { text-align: center; margin-top: 10px; }
-  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; }
+  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  .controls button:hover { background: #0056b3; }
 </style>
 
 </div>

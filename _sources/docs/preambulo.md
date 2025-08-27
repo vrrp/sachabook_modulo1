@@ -69,12 +69,16 @@ function moveSlide(n) {
 
 # Top 10 lenguajes de programación
 %---------------------------------------------------------------------------------------------------
+
+Este es un slider con 5 imágenes de evolución (usando imágenes de internet para ejemplo).
+
+:::raw} html
 <div class="slideshow-container">
-  <img class="slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Paisaje 1">
-  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Paisaje 2">
-  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Paisaje 3">
-  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Paisaje 3">
-  <img class="slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Paisaje 3">
+  <img class="slides active" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Imagen 0: Evolución 1">
+  <img class="slides" src="https://images.unsplash.com/photo-1578631613860-985879a3f5c5?w=800" alt="Imagen 1: Evolución 2">
+  <img class="slides" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Imagen 2: Evolución 3">
+  <img class="slides" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800" alt="Imagen 3: Evolución 4">
+  <img class="slides" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800" alt="Imagen 4: Evolución 5">
   <div class="controls">
     <button onclick="changeSlide(-1)">Anterior</button>
     <button onclick="toggleAutoPlay()">Play/Pause</button>
@@ -115,6 +119,7 @@ function toggleAutoPlay() {
 
 showSlide(slideIndex);
 </script>
+:::
 
 # Ecosistema Python
 %---------------------------------------------------------------------------------------------------
