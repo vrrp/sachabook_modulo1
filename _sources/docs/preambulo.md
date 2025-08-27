@@ -69,7 +69,98 @@ function moveSlide(n) {
 
 # Top 10 lenguajes de programación
 %---------------------------------------------------------------------------------------------------
-El ídice de popularidad de lenguajes de programación PYPL
+ <div class="category-container">
+        <button class="category-button" data-category="categoria1">GPMprcp</button>
+        <button class="category-button" data-category="categoria2">CTT</button>
+        <button class="category-button" data-category="categoria3">NO2</button>
+        <button class="category-button" data-category="categoria4">FLH</button>
+</div>
+
+<div class="slider-container">
+      <div class="slider">
+        <img id="slider-image" src="{{ "docs/images/preambulo/rev0.png" | relative_url }}" alt="Image Slider">
+      </div>
+
+      <div class="controls">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+        <button id="stopButton">Stop</button>
+        <button id="playButton">Play</button>
+      </div>
+</div>
+
+<script>
+    const images = {
+    categoria1: [
+        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
+    ],
+    categoria2: [
+        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
+    ],
+    categoria3: [
+        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
+    ],
+    categoria4: [
+        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
+        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
+    ]
+};
+
+let currentCategory = 'categoria1';
+let currentIndex = 0;
+let intervalId = null;
+
+function updateImage() {
+    document.getElementById('slider-image').src = images[currentCategory][currentIndex];
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images[currentCategory].length;
+    updateImage();
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images[currentCategory].length) % images[currentCategory].length;
+    updateImage();
+}
+
+function playSlideshow() {
+    if (!intervalId) {
+        intervalId = setInterval(nextImage, 500);
+    }
+}
+
+function stopSlideshow() {
+    clearInterval(intervalId);
+    intervalId = null;
+}
+
+function changeCategory(category) {
+    currentCategory = category;
+    currentIndex = 0;
+    updateImage();
+    stopSlideshow();
+}
+
+document.getElementById('nextButton').addEventListener('click', nextImage);
+document.getElementById('prevButton').addEventListener('click', prevImage);
+document.getElementById('playButton').addEventListener('click', playSlideshow);
+document.getElementById('stopButton').addEventListener('click', stopSlideshow);
+
+document.querySelectorAll('.category-button').forEach(button => {
+    button.addEventListener('click', () => {
+        changeCategory(button.dataset.category);
+    });
+});
+</script>
+
 
 # Ecosistema Python
 %---------------------------------------------------------------------------------------------------
