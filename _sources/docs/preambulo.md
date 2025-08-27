@@ -69,98 +69,52 @@ function moveSlide(n) {
 
 # Top 10 lenguajes de programación
 %---------------------------------------------------------------------------------------------------
- <div class="category-container">
-        <button class="category-button" data-category="categoria1">GPMprcp</button>
-        <button class="category-button" data-category="categoria2">CTT</button>
-        <button class="category-button" data-category="categoria3">NO2</button>
-        <button class="category-button" data-category="categoria4">FLH</button>
-</div>
-
-<div class="slider-container">
-      <div class="slider">
-        <img id="slider-image" src="{{ "docs/images/preambulo/rev0.png" | relative_url }}" alt="Image Slider">
-      </div>
-
-      <div class="controls">
-        <button id="prevButton">Previous</button>
-        <button id="nextButton">Next</button>
-        <button id="stopButton">Stop</button>
-        <button id="playButton">Play</button>
-      </div>
+<div class="slideshow-container">
+  <img class="slides active" src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="Paisaje 1">
+  <img class="slides" src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Paisaje 2">
+  <img class="slides" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Paisaje 3">
+  <img class="slides" src="https://images.unsplash.com/photo-1444080748397-f442aa95eb45" alt="Paisaje 4">
+  <img class="slides" src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7" alt="Paisaje 5">
+  <div class="controls">
+    <button onclick="changeSlide(-1)">Anterior</button>
+    <button onclick="toggleAutoPlay()">Play/Pause</button>
+    <button onclick="changeSlide(1)">Siguiente</button>
+  </div>
 </div>
 
 <script>
-    const images = {
-    categoria1: [
-        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
-    ],
-    categoria2: [
-        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
-    ],
-    categoria3: [
-        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
-    ],
-    categoria4: [
-        '{{ "docs/images/preambulo/rev0.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev2.png" | relative_url }}',
-        '{{ "docs/images/preambulo/rev3.png" | relative_url }}',
-    ]
-};
+let slideIndex = 0;
+let autoPlayInterval = null;
+const slides = document.getElementsByClassName("slides");
 
-let currentCategory = 'categoria1';
-let currentIndex = 0;
-let intervalId = null;
-
-function updateImage() {
-    document.getElementById('slider-image').src = images[currentCategory][currentIndex];
+function showSlide(index) {
+  if (index >= slides.length) slideIndex = 0;
+  if (index < 0) slideIndex = slides.length - 1;
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slides[slideIndex].classList.add("active");
 }
 
-function nextImage() {
-    currentIndex = (currentIndex + 1) % images[currentCategory].length;
-    updateImage();
+function changeSlide(n) {
+  slideIndex += n;
+  showSlide(slideIndex);
 }
 
-function prevImage() {
-    currentIndex = (currentIndex - 1 + images[currentCategory].length) % images[currentCategory].length;
-    updateImage();
+function toggleAutoPlay() {
+  if (autoPlayInterval) {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = null;
+  } else {
+    autoPlayInterval = setInterval(() => {
+      slideIndex++;
+      showSlide(slideIndex);
+    }, 3000); // Cambia cada 3 segundos
+  }
 }
 
-function playSlideshow() {
-    if (!intervalId) {
-        intervalId = setInterval(nextImage, 500);
-    }
-}
-
-function stopSlideshow() {
-    clearInterval(intervalId);
-    intervalId = null;
-}
-
-function changeCategory(category) {
-    currentCategory = category;
-    currentIndex = 0;
-    updateImage();
-    stopSlideshow();
-}
-
-document.getElementById('nextButton').addEventListener('click', nextImage);
-document.getElementById('prevButton').addEventListener('click', prevImage);
-document.getElementById('playButton').addEventListener('click', playSlideshow);
-document.getElementById('stopButton').addEventListener('click', stopSlideshow);
-
-document.querySelectorAll('.category-button').forEach(button => {
-    button.addEventListener('click', () => {
-        changeCategory(button.dataset.category);
-    });
-});
+showSlide(slideIndex);
 </script>
-
 
 # Ecosistema Python
 %---------------------------------------------------------------------------------------------------
