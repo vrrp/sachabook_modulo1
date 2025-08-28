@@ -5,22 +5,15 @@
 
 # Preámbulo
 %---------------------------------------------------------------------------------------------------
-
-# Evolución 
-%---------------------------------------------------------------------------------------------------
-
-
-# Top 10 lenguajes de programación
-%---------------------------------------------------------------------------------------------------
-
 Este es un slider con 5 imágenes de evolución (usando imágenes de internet para ejemplo).
 
 <div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 1">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 1: Evolución 2">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 2: Evolución 3">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 3: Evolución 4">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 4: Evolución 5">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 0">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 1: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 2: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 3: Evolución 3">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 4: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 5: Evolución 5">
   <div class="languages-controls">
     <button onclick="languagesChangeSlide(-1)">Anterior</button>
     <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
@@ -107,6 +100,16 @@ Este es un slider con 5 imágenes de evolución (usando imágenes de internet pa
 })();
 </script>
 
+# Evolución 
+%---------------------------------------------------------------------------------------------------
+Sometimes when reading it is helpful to foster a _tranquil_ environment. The image in [](#fig:logo) would be a perfect spot!
+% A figure of a photograph of some mountains, followed by a caption
+:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/lenguajes_pro.webp?raw=true
+:name: fig:historia lenguajes pro
+
+# Top 10 lenguajes de programación
+%---------------------------------------------------------------------------------------------------
+
 # Ecosistema Python
 %---------------------------------------------------------------------------------------------------
 
@@ -119,10 +122,7 @@ Este es un slider con 5 imágenes de evolución (usando imágenes de internet pa
 A photograph of some beautiful mountains to look at whilst reading.
 :::
 
-Sometimes when reading it is helpful to foster a _tranquil_ environment. The image in [](#fig:logo) would be a perfect spot!
-% A figure of a photograph of some mountains, followed by a caption
-:::{figure} https://github.com/vrrp/sachabook/blob/main/sacha_logo1.png?raw=true
-:name: fig:logo
+
 
 A photograph of some beautiful mountains to look at whilst reading.
 :::
