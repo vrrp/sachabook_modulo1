@@ -426,83 +426,16 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="evolucion">
 <h1>Evolución<a class="headerlink" href="#evolucion" title="Link to this heading">#</a></h1>
-<div class="evolution-slider-container">
-  <div class="evolution-slider">
-    <div class="evolution-slide"><img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0"></div>
-    <div class="evolution-slide"><img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1"></div>
-    <div class="evolution-slide"><img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2"></div>
-    <div class="evolution-slide"><img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3"></div>
-    <div class="evolution-slide"><img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4"></div>
-  </div>
-  <button class="evolution-prev" onclick="evolutionMoveSlide(-1)">&#10094;</button>
-  <button class="evolution-next" onclick="evolutionMoveSlide(1)">&#10095;</button>
-</div>
-<style>
-.evolution-slider-container {
-  position: relative;
-  max-width: 80%;
-  margin: auto;
-  overflow: hidden;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.evolution-slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.evolution-slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-.evolution-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.evolution-prev, .evolution-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  padding: 15px 12px;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 4px;
-  z-index: 10;
-}
-.evolution-prev { left: 15px; }
-.evolution-next { right: 15px; }
-.evolution-prev:hover, .evolution-next:hover { 
-  background-color: rgba(0, 0, 0, 0.9); 
-  transform: translateY(-50%) scale(1.1);
-}
-</style>
-<script>
-(function() {
-  let evolutionSlideIndex = 0;
-  const evolutionSlides = document.querySelectorAll('.evolution-slide');
-  
-  window.evolutionMoveSlide = function(n) {
-    evolutionSlideIndex += n;
-    if (evolutionSlideIndex >= evolutionSlides.length) evolutionSlideIndex = 0;
-    if (evolutionSlideIndex < 0) evolutionSlideIndex = evolutionSlides.length - 1;
-    document.querySelector('.evolution-slider').style.transform = `translateX(-${evolutionSlideIndex * 100}%)`;
-  };
-})();
-</script>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="top-10-lenguajes-de-programacion">
 <h1>Top 10 lenguajes de programación<a class="headerlink" href="#top-10-lenguajes-de-programacion" title="Link to this heading">#</a></h1>
 <p>Este es un slider con 5 imágenes de evolución (usando imágenes de internet para ejemplo).</p>
 <div class="languages-slideshow-container">
-  <img class="languages-slides active" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800" alt="Imagen 0: Evolución 1">
-  <img class="languages-slides" src="https://images.unsplash.com/photo-1578631613860-985879a3f5c5?w=800" alt="Imagen 1: Evolución 2">
-  <img class="languages-slides" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Imagen 2: Evolución 3">
-  <img class="languages-slides" src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800" alt="Imagen 3: Evolución 4">
-  <img class="languages-slides" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800" alt="Imagen 4: Evolución 5">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 1: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 2: Evolución 3">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 3: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 4: Evolución 5">
   <div class="languages-controls">
     <button onclick="languagesChangeSlide(-1)">Anterior</button>
     <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
