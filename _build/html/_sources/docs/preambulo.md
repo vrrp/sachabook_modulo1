@@ -17,11 +17,10 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
 
 <div class="languages-slideshow-container">
   <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 0">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 1: Evolución 1">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 2: Evolución 2">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 3: Evolución 3">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 4: Evolución 4">
-  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 5: Evolución 5">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 1: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4: Evolución 4">
   <div class="languages-controls">
     <button onclick="languagesChangeSlide(-1)">Anterior</button>
     <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
@@ -143,19 +142,18 @@ El ecosistema Python es el conjunto de herramientas, bibliotecas, marcos de trab
 :::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/ecosistema.png?raw=true
 :name: fig:mountains
 :align: center
-:width: 200px
+
 :::
 
 # Aplicaciones con Python
 <a name="s4"></a>
 %---------------------------------------------------------------------------------------------------
-El ecosistema Python es el conjunto de herramientas, bibliotecas, marcos de trabajo (frameworks) y la comunidad de desarrolladores que rodean al lenguaje de programación Python. Este ecosistema se caracteriza por su vastedad y la gran cantidad de recursos de código abierto, lo que permite a Python ser utilizado en una amplia variedad de campos, como el desarrollo web, la ciencia de datos, el aprendizaje automático y la informática científica. 
-
+Python se utiliza para una gran variedad de aplicaciones debido a su versatilidad y a su extenso ecosistema. A continuación, se detallan algunas de las más importantes.
 % A figure of a photograph of some mountains, followed by a caption
-:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/ecosistema.png?raw=true
+:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/python_app.png?raw=true
 :name: fig:mountains
 :align: center
-:width: 200px
+
 :::
 
 
