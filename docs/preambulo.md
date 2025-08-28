@@ -9,7 +9,7 @@
 - [Top 10 lenguajes de programación](#s2)
 - [Ecosistema de Python](#s2)
 - [Aplicaciones con Python](#s4)
-
+<br><br>
 # Preámbulo
 <a name="pre"></a>
 %---------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
 </script>
 
 
-
+<br><br>
 # Origenes: informatica y programación
 <a name="s1"></a>
 %---------------------------------------------------------------------------------------------------
@@ -118,9 +118,8 @@ Los origenes de la informática y la programación, y cómo evolucionaron para d
 :::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/lenguajes_pro.webp?raw=true
 :name: fig:historiaLenguajes
 
-xx
 :::
-
+<br><br>
 # Top 10 lenguajes de programación
 <a name="s2"></a>
 %---------------------------------------------------------------------------------------------------
@@ -132,7 +131,7 @@ a tomar decisiones informadas sobre qué lenguajes aprender, enseñar o utilizar
 :name: fig:historiaLenguajes
 
 :::
-
+<br><br>
 # Ecosistema Python
 <a name="s3"></a>
 %---------------------------------------------------------------------------------------------------
@@ -144,7 +143,7 @@ El ecosistema Python es el conjunto de herramientas, bibliotecas, marcos de trab
 :align: center
 
 :::
-
+<br><br>
 # Aplicaciones con Python
 <a name="s4"></a>
 %---------------------------------------------------------------------------------------------------
@@ -155,8 +154,3 @@ Python se utiliza para una gran variedad de aplicaciones debido a su versatilida
 :align: center
 
 :::
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/EaETjKmXOTo?si=uAeOYk-SXi9tKXkV" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
-</div>
