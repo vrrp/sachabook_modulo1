@@ -8,75 +8,111 @@
 
 # Evolución 
 %---------------------------------------------------------------------------------------------------
-<div class="slider-container">
-  <div class="slider">
-    <div class="slide"><img src="https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true" alt="Imagen 1"></div>
-    <div class="slide"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Imagen 2"></div>
-    <div class="slide"><img src="https://images.unsplash.com/photo-1497436072909-60f69c88b3e1" alt="Imagen 3"></div>
-    <div class="slide"><img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e" alt="Imagen 4"></div>
-    <div class="slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Imagen 5"></div>
-  </div>
-  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-  <button class="next" onclick="moveSlide(1)">&#10095;</button>
-</div>
 
-<style>
-.slider-container {
-  position: relative;
-  max-width: 80%;
-  margin: auto;
-  overflow: hidden;
-}
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-button.prev, button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px;
-}
-button.prev { left: 10px; }
-button.next { right: 10px; }
-button:hover { background-color: rgba(0, 0, 0, 0.8); }
-</style>
-
-<script>
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-function moveSlide(n) {
-  slideIndex += n;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  document.querySelector('.slider').style.transform = `translateX(-${slideIndex * 100}%)`;
-}
-</script>
 
 # Top 10 lenguajes de programación
 %---------------------------------------------------------------------------------------------------
-El ídice de popularidad de lenguajes de programación PYPL
+
+Este es un slider con 5 imágenes de evolución (usando imágenes de internet para ejemplo).
+
+<div class="languages-slideshow-container">
+  <img class="languages-slides active" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 0: Evolución 1">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev0.png?raw=true" alt="Imagen 1: Evolución 2">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev1.png?raw=true" alt="Imagen 2: Evolución 3">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 3: Evolución 4">
+  <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 4: Evolución 5">
+  <div class="languages-controls">
+    <button onclick="languagesChangeSlide(-1)">Anterior</button>
+    <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
+    <button onclick="languagesChangeSlide(1)">Siguiente</button>
+  </div>
+</div>
+
+<style>
+.languages-slideshow-container {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.languages-slides {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+.languages-slides.active {
+  display: block;
+}
+.languages-controls {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+}
+.languages-controls button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+.languages-controls button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+</style>
+
+<script>
+(function() {
+  let languagesSlideIndex = 0;
+  let languagesAutoPlayInterval = null;
+  const languagesSlides = document.getElementsByClassName("languages-slides");
+  const languagesPlayBtn = document.getElementById("languages-play-btn");
+
+  function languagesShowSlide(index) {
+    if (index >= languagesSlides.length) languagesSlideIndex = 0;
+    if (index < 0) languagesSlideIndex = languagesSlides.length - 1;
+    for (let i = 0; i < languagesSlides.length; i++) {
+      languagesSlides[i].classList.remove("active");
+    }
+    languagesSlides[languagesSlideIndex].classList.add("active");
+  }
+
+  window.languagesChangeSlide = function(n) {
+    languagesSlideIndex += n;
+    languagesShowSlide(languagesSlideIndex);
+  };
+
+  window.languagesToggleAutoPlay = function() {
+    if (languagesAutoPlayInterval) {
+      clearInterval(languagesAutoPlayInterval);
+      languagesAutoPlayInterval = null;
+      languagesPlayBtn.textContent = "Play";
+    } else {
+      languagesAutoPlayInterval = setInterval(() => {
+        languagesSlideIndex++;
+        languagesShowSlide(languagesSlideIndex);
+      }, 3000); // Cambia cada 3 segundos
+      languagesPlayBtn.textContent = "Pause";
+    }
+  };
+
+  languagesShowSlide(languagesSlideIndex);
+})();
+</script>
 
 # Ecosistema Python
 %---------------------------------------------------------------------------------------------------
 
 % A figure of a photograph of some mountains, followed by a caption
 :::{figure} https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true
-:label: fig:mountains
+:name: fig:mountains
 :align: center
 :width: 200px
 
@@ -86,7 +122,7 @@ A photograph of some beautiful mountains to look at whilst reading.
 Sometimes when reading it is helpful to foster a _tranquil_ environment. The image in [](#fig:logo) would be a perfect spot!
 % A figure of a photograph of some mountains, followed by a caption
 :::{figure} https://github.com/vrrp/sachabook/blob/main/sacha_logo1.png?raw=true
-:label: fig:logo
+:name: fig:logo
 
 A photograph of some beautiful mountains to look at whilst reading.
 :::

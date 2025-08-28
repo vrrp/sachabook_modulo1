@@ -1,20 +1,24 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
+#------------------------------------------------------------------------
 
 title: Estadística para Investigación Usando Python # Change this to your book title.
 author: VR Rojas # Change this to your name (or your team/organization name).
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
+#------------------------------------------------------------------------
 execute:
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
+#------------------------------------------------------------------------
 latex:
   latex_documents:
     targetname: book.tex
 
 # Information about where the book exists on the web
+#------------------------------------------------------------------------
 repository:
   url: https://github.com/yenchiah/jupyter-book-template  # Online location of your book (change this to your GitHub repository link)
   path_to_book: docs  # Optional path to your book, relative to the repository root
@@ -22,11 +26,9 @@ repository:
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-html:
-  use_issues_button: true
-  use_repository_button: true
 
 # Add launch buttons
+#------------------------------------------------------------------------
 launch_buttons:
   binderhub_url: ""
   colab_url: "https://colab.research.google.com"
@@ -40,3 +42,44 @@ sphinx:
     html_js_files:
       # This is for plotly to work
       - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+    nb_mime_priority_overrides:
+      # Allow Plotly outputs
+      - ["application/vnd.plotly.v1+json", "10", false]
+      
+#------------------------------------------------------------------------      
+# Configuración de MyST Markdown
+parse:
+  myst_enable_extensions:
+    - html_image
+    - html_admonition
+    - dollarmath
+    - linkify
+    - colon_fence
+    - deflist
+    - substitution
+  myst_number_code_blocks: true
+
+# Configuración de MyST-NB
+mystnb:
+  render_unknown_mime_types: false
+  render_priority:
+    "application/vnd.plotly.v1+json": 1
+
+# Configuración de HTML
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_html5: true
+  extra_head: |
+    <script>
+      // Permite scripts inline si hay CSP issues
+    </script>
+  extra_footer: |
+    <style>
+      .slideshow-container { max-width: 800px; margin: auto; position: relative; }
+      .slides { display: none; width: 100%; height: auto; }
+      .slides.active { display: block; }
+      .controls { text-align: center; margin-top: 10px; }
+      .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+      .controls button:hover { background: #0056b3; }
+    </style>
