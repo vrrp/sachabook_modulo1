@@ -3,13 +3,14 @@
 </div>
 <br><br>
 
-## Contenido
-- [Preámbulo](#pre)
-- [Origenes: informática y programación](#s1)
-- [Top 10 lenguajes de programación](#s2)
-- [Ecosistema de Python](#s2)
-- [Aplicaciones con Python](#s4)
+%## Contenido
+%- [Preámbulo](#pre)
+%- [Origenes: informática y programación](#s1)
+%- [Top 10 lenguajes de programación](#s2)
+%- [Ecosistema de Python](#s2)
+%- [Aplicaciones con Python](#s4)
 <br><br>
+
 # Preámbulo
 <a name="pre"></a>
 %---------------------------------------------------------------------------------------------------
@@ -154,3 +155,14 @@ Python se utiliza para una gran variedad de aplicaciones debido a su versatilida
 :align: center
 
 :::
+
+
+
+# Automatización de procesos
+%<a name="s4"></a>
+%---------------------------------------------------------------------------------------------------
+%fabrica automatizada de tesla
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WYnOGAvQEgk?si=Ii5Hib0Wqff3t_15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+% Data center automatizado
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YkctZlQgU0g?si=RgrtJYMFfJqO0s2K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
