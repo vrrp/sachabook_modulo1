@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Example Notebook" href="notebook.html" />
-    <link rel="prev" title="Contenido" href="preambulo.html" />
+    <link rel="prev" title="Preámbulo" href="preambulo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,13 +177,14 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Contenido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Preámbulo</a></li>
 
 
 
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Programación Básica con Python</strong></a></li>
+
 
 
 
@@ -416,12 +417,16 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Programación Básica con Python</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-conceptos-basicos-de-programacion"><strong>I. Conceptos básicos de programación</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-y-variables">1.1. Tipos de datos y variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos">1.1. Tipos de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nueva-seccion">Nueva sección</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">1.2. Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-matematicos">1.2. Operadores matemáticos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes-o-librerias-en-python">1.3. Importar paquetes o librerías en Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-algebraicas">1.4. Funciones algebraicas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">1.5. Operadores de comparación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condiciones">1.6. Condiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrucuturas-de-control-i-if-else-y-elif">1.6. Estrucuturas de Control I: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> y <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i">1.7. Funciones: Parte I</a></li>
 </ul>
 </li>
@@ -430,11 +435,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">2.2. Listas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-1d">2.3. Array 1D</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame">2.4. Data Frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-flujo">2.5. Control de flujo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrucuturas-de-control-ii-for-y-while">2.5. Estrucuturas de Control II: <code class="docutils literal notranslate"><span class="pre">for</span></code>, y <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii">2.6. Funciones: Parte II</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-referencias"><strong>III. Referencias</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-referencias"><strong>III. Referencias</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-dato-none-en-python">Tipo de dato <code class="docutils literal notranslate"><span class="pre">None</span></code> en Python</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -452,49 +460,103 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-conceptos-basicos-de-programacion">
 <h1><strong>I. Conceptos básicos de programación</strong><a class="headerlink" href="#i-conceptos-basicos-de-programacion" title="Link to this heading">#</a></h1>
-<section id="tipos-de-datos-y-variables">
-<h2>1.1. Tipos de datos y variables<a class="headerlink" href="#tipos-de-datos-y-variables" title="Link to this heading">#</a></h2>
-<p>Tipos fundamentales de datos definidos en Python.</p>
+<p>Los conceptos básicos de programación son los fundamentos esenciales que permiten entender y escribir código en cualquier lenguaje de programación. Estos conceptos son la base para desarrollar software y resolver problemas mediante la creación de instrucciones que una computadora puede ejecutar. A continuación, se definen y describen los principales conceptos básicos de programación:</p>
+<section id="tipos-de-datos">
+<h2>1.1. Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Definición</strong>: Los tipos de datos especifican qué tipo de valor puede almacenar una variable, como números enteros, decimales, cadenas de texto o valores booleanos (verdadero/falso).</p></li>
+<li><p><strong>Descripción</strong>: Los tipos de datos determinan las operaciones que se pueden realizar con una variable. Por ejemplo, no puedes sumar directamente un número y una palabra.</p></li>
+<li><p><strong>Ejemplo</strong>:</p></li>
+<li><p>Entero (<code class="docutils literal notranslate"><span class="pre">int</span></code>): <code class="docutils literal notranslate"><span class="pre">42</span></code></p></li>
+<li><p>Flotante (<code class="docutils literal notranslate"><span class="pre">float</span></code>): <code class="docutils literal notranslate"><span class="pre">3.14</span></code></p></li>
+<li><p>Cadena (<code class="docutils literal notranslate"><span class="pre">string</span></code>): <code class="docutils literal notranslate"><span class="pre">&quot;Hola&quot;</span></code></p></li>
+<li><p>Booleano (<code class="docutils literal notranslate"><span class="pre">bool</span></code>): <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>Especial (<code class="docutils literal notranslate"><span class="pre">NoneType</span></code>): <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data caracter</span>
-<span class="c1">#----------------------</span>
-<span class="n">var_1</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span>
-<span class="n">var_2</span> <span class="o">=</span> <span class="mi">2025</span>
-<span class="n">var_3</span> <span class="o">=</span> <span class="s2">&quot;15&quot;</span>
-<span class="n">var_4</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">var_5</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">va_6</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dato_int</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">dato_float</span><span class="o">=</span> <span class="mf">20.000001</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;esto es el contenido de la variable var_1 = &quot;</span><span class="p">,</span><span class="n">var_1</span><span class="p">,</span> <span class="s2">&quot;, que es tipo no numerico&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dato_int</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dato_int</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>esto es el contenido de la variable var_1 =  hola , que es tipo no numerico
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;int&#39;&gt;
-&lt;class &#39;str&#39;&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+25
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dato_str1</span> <span class="o">=</span> <span class="s2">&quot;hola&quot;</span>
+<span class="n">dato_str2</span> <span class="o">=</span> <span class="s2">&quot;mundo&quot;</span>
+<span class="n">dato_str3</span> <span class="o">=</span> <span class="s2">&quot;2024&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dato_str1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dato_str1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+hola
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dato_bool1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">dato_bool2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dato_bool1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dato_bool1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>En Python, <code class="docutils literal notranslate"><span class="pre">None</span></code> es un tipo de dato especial que representa la ausencia de un valor o un valor nulo. No es lo mismo que 0, una cadena vacía (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>), o <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nueva-seccion">
+<h1>Nueva sección<a class="headerlink" href="#nueva-seccion" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_none</span><span class="o">=</span> <span class="kc">None</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data_none</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data_none</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+&lt;class &#39;NoneType&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="variables">
+<h2>1.2. Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Definición</strong>: Una variable es un espacio en la memoria de la computadora que almacena un valor, el cual puede cambiar durante la ejecución de un programa.</p></li>
+<li><p><strong>Descripción</strong>: Las variables tienen un nombre y un tipo de dato (como números, texto o booleanos). Actúan como contenedores para guardar información que el programa usará o modificará.</p></li>
+<li><p><strong>Ejemplo</strong>: En Python, <code class="docutils literal notranslate"><span class="pre">edad</span> <span class="pre">=</span> <span class="pre">25</span></code> define una variable llamada <code class="docutils literal notranslate"><span class="pre">edad</span></code> con el valor 25.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos y variables numericas</span>
 <span class="c1">#-----------------------------</span>
-<span class="n">num_int</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="n">num_float</span><span class="o">=</span> <span class="mf">20.000001</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num_int</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">num_float</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt; &lt;class &#39;float&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -505,7 +567,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># suma</span>
-<span class="n">suma</span> <span class="o">=</span> <span class="n">num_int</span> <span class="o">+</span> <span class="n">num_float</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="n">dato_int</span> <span class="o">+</span> <span class="n">dato_float</span>
 
 <span class="c1"># exponencial</span>
 <span class="n">exponente</span> <span class="o">=</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span>
@@ -573,8 +635,9 @@ residuo = 4
 
 <span class="n">pi_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">pi_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pi_math</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pi_np</span><span class="p">)</span>
+
 <span class="n">n_euler_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>
 <span class="n">n_euler_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">n_euler_math</span><span class="p">)</span>
@@ -583,10 +646,16 @@ residuo = 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
-3.141592653589793
-2.718281828459045
-2.718281828459045
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pi_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">pi_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">pi_np</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">n_euler_math</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span>
+
+<span class="ne">NameError</span>: name &#39;pi&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -598,13 +667,8 @@ residuo = 4
 <p><span class="math notranslate nohighlight">\( y = b^{a}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">n_euler_math</span><span class="o">**</span><span class="n">n_euler_math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y1</span> <span class="o">=</span> <span class="n">n_euler</span><span class="o">**</span><span class="n">n_euler</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.154262241479259
 </pre></div>
 </div>
 </div>
@@ -620,11 +684,6 @@ residuo = 4
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Raíz cuadrada</strong></p>
 <p><span class="math notranslate nohighlight">\(y = \sqrt{b} = b^{\frac{1}{2}}\)</span></p>
@@ -636,11 +695,6 @@ residuo = 4
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Raiz general</strong></p>
 <p><span class="math notranslate nohighlight">\(\sqrt[n]{b^m}= b\frac{m}{n}\)</span></p>
@@ -648,11 +702,6 @@ residuo = 4
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="mi">125</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.999999999999999
 </pre></div>
 </div>
 </div>
@@ -671,7 +720,7 @@ residuo = 4
 <span class="nb">print</span><span class="p">(</span><span class="n">y6</span><span class="p">)</span>
 
 <span class="c1"># funcion logaritmo de e en base e</span>
-<span class="n">y7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n_euler_math</span><span class="p">)</span>
+<span class="n">y7</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n_euler</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y7</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -729,8 +778,16 @@ residuo = 4
 </div>
 </div>
 </section>
-<section id="condiciones">
-<h2>1.6. Condiciones<a class="headerlink" href="#condiciones" title="Link to this heading">#</a></h2>
+<section id="estrucuturas-de-control-i-if-else-y-elif">
+<h2>1.6. Estrucuturas de Control I: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> y <code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#estrucuturas-de-control-i-if-else-y-elif" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Definición</strong>: Son instrucciones que controlan el flujo de ejecución de un programa, permitiendo tomar decisiones o repetir acciones.</p></li>
+<li><p><strong>Descripción</strong>: Se dividen en:</p>
+<ul>
+<li><p><strong>Condicionales</strong>: Permiten ejecutar código solo si se cumple una condición (por ejemplo, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>).</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># condicionales: if, elif, else</span>
@@ -1083,17 +1140,16 @@ Index: []
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-<span class="n">temp_aire</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_aire</span> <span class="o">=</span> <span class="mi">18</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">data</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.         29.05582883 35.44920479 34.48391988 26.56705307 15.03729737
-  4.75696961  0.06147913  2.93100339 12.15540955 23.84459045 33.06899661
- 35.93852087 31.24303039 20.96270263  9.43294693  1.51608012  0.55079521
-  6.94417117 18.        ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[18.         28.58013454 35.11901729 35.11901729 28.58013454 18.
+  7.41986546  0.88098271  0.88098271  7.41986546 18.         28.58013454
+ 35.11901729 35.11901729 28.58013454 18.          7.41986546  0.88098271
+  0.88098271  7.41986546]
 </pre></div>
 </div>
 </div>
@@ -1107,16 +1163,16 @@ Index: []
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2025-08-28 14:49:55.876758&#39;, &#39;2025-08-29 14:49:55.876758&#39;,
-               &#39;2025-08-30 14:49:55.876758&#39;, &#39;2025-08-31 14:49:55.876758&#39;,
-               &#39;2025-09-01 14:49:55.876758&#39;, &#39;2025-09-02 14:49:55.876758&#39;,
-               &#39;2025-09-03 14:49:55.876758&#39;, &#39;2025-09-04 14:49:55.876758&#39;,
-               &#39;2025-09-05 14:49:55.876758&#39;, &#39;2025-09-06 14:49:55.876758&#39;,
-               &#39;2025-09-07 14:49:55.876758&#39;, &#39;2025-09-08 14:49:55.876758&#39;,
-               &#39;2025-09-09 14:49:55.876758&#39;, &#39;2025-09-10 14:49:55.876758&#39;,
-               &#39;2025-09-11 14:49:55.876758&#39;, &#39;2025-09-12 14:49:55.876758&#39;,
-               &#39;2025-09-13 14:49:55.876758&#39;, &#39;2025-09-14 14:49:55.876758&#39;,
-               &#39;2025-09-15 14:49:55.876758&#39;, &#39;2025-09-16 14:49:55.876758&#39;],
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;2025-08-08 21:39:42.582551&#39;, &#39;2025-08-09 21:39:42.582551&#39;,
+               &#39;2025-08-10 21:39:42.582551&#39;, &#39;2025-08-11 21:39:42.582551&#39;,
+               &#39;2025-08-12 21:39:42.582551&#39;, &#39;2025-08-13 21:39:42.582551&#39;,
+               &#39;2025-08-14 21:39:42.582551&#39;, &#39;2025-08-15 21:39:42.582551&#39;,
+               &#39;2025-08-16 21:39:42.582551&#39;, &#39;2025-08-17 21:39:42.582551&#39;,
+               &#39;2025-08-18 21:39:42.582551&#39;, &#39;2025-08-19 21:39:42.582551&#39;,
+               &#39;2025-08-20 21:39:42.582551&#39;, &#39;2025-08-21 21:39:42.582551&#39;,
+               &#39;2025-08-22 21:39:42.582551&#39;, &#39;2025-08-23 21:39:42.582551&#39;,
+               &#39;2025-08-24 21:39:42.582551&#39;, &#39;2025-08-25 21:39:42.582551&#39;,
+               &#39;2025-08-26 21:39:42.582551&#39;, &#39;2025-08-27 21:39:42.582551&#39;],
               dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
 </pre></div>
 </div>
@@ -1130,27 +1186,27 @@ Index: []
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura
-0     18.000000
-1     29.055829
-2     35.449205
-3     34.483920
-4     26.567053
-5     15.037297
-6      4.756970
-7      0.061479
-8      2.931003
-9     12.155410
-10    23.844590
-11    33.068997
-12    35.938521
-13    31.243030
-14    20.962703
-15     9.432947
-16     1.516080
-17     0.550795
-18     6.944171
-19    18.000000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura                      fecha
+0     18.000000 2025-08-08 21:36:59.977562
+1     28.580135 2025-08-09 21:36:59.977562
+2     35.119017 2025-08-10 21:36:59.977562
+3     35.119017 2025-08-11 21:36:59.977562
+4     28.580135 2025-08-12 21:36:59.977562
+5     18.000000 2025-08-13 21:36:59.977562
+6      7.419865 2025-08-14 21:36:59.977562
+7      0.880983 2025-08-15 21:36:59.977562
+8      0.880983 2025-08-16 21:36:59.977562
+9      7.419865 2025-08-17 21:36:59.977562
+10    18.000000 2025-08-18 21:36:59.977562
+11    28.580135 2025-08-19 21:36:59.977562
+12    35.119017 2025-08-20 21:36:59.977562
+13    35.119017 2025-08-21 21:36:59.977562
+14    28.580135 2025-08-22 21:36:59.977562
+15    18.000000 2025-08-23 21:36:59.977562
+16     7.419865 2025-08-24 21:36:59.977562
+17     0.880983 2025-08-25 21:36:59.977562
+18     0.880983 2025-08-26 21:36:59.977562
+19     7.419865 2025-08-27 21:36:59.977562
 </pre></div>
 </div>
 </div>
@@ -1164,26 +1220,26 @@ Index: []
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura                      fecha
-0     18.000000 2025-08-28 14:49:55.876758
-1     29.055829 2025-08-29 14:49:55.876758
-2     35.449205 2025-08-30 14:49:55.876758
-3     34.483920 2025-08-31 14:49:55.876758
-4     26.567053 2025-09-01 14:49:55.876758
-5     15.037297 2025-09-02 14:49:55.876758
-6      4.756970 2025-09-03 14:49:55.876758
-7      0.061479 2025-09-04 14:49:55.876758
-8      2.931003 2025-09-05 14:49:55.876758
-9     12.155410 2025-09-06 14:49:55.876758
-10    23.844590 2025-09-07 14:49:55.876758
-11    33.068997 2025-09-08 14:49:55.876758
-12    35.938521 2025-09-09 14:49:55.876758
-13    31.243030 2025-09-10 14:49:55.876758
-14    20.962703 2025-09-11 14:49:55.876758
-15     9.432947 2025-09-12 14:49:55.876758
-16     1.516080 2025-09-13 14:49:55.876758
-17     0.550795 2025-09-14 14:49:55.876758
-18     6.944171 2025-09-15 14:49:55.876758
-19    18.000000 2025-09-16 14:49:55.876758
+0     18.000000 2025-08-08 21:39:42.582551
+1     28.580135 2025-08-09 21:39:42.582551
+2     35.119017 2025-08-10 21:39:42.582551
+3     35.119017 2025-08-11 21:39:42.582551
+4     28.580135 2025-08-12 21:39:42.582551
+5     18.000000 2025-08-13 21:39:42.582551
+6      7.419865 2025-08-14 21:39:42.582551
+7      0.880983 2025-08-15 21:39:42.582551
+8      0.880983 2025-08-16 21:39:42.582551
+9      7.419865 2025-08-17 21:39:42.582551
+10    18.000000 2025-08-18 21:39:42.582551
+11    28.580135 2025-08-19 21:39:42.582551
+12    35.119017 2025-08-20 21:39:42.582551
+13    35.119017 2025-08-21 21:39:42.582551
+14    28.580135 2025-08-22 21:39:42.582551
+15    18.000000 2025-08-23 21:39:42.582551
+16     7.419865 2025-08-24 21:39:42.582551
+17     0.880983 2025-08-25 21:39:42.582551
+18     0.880983 2025-08-26 21:39:42.582551
+19     7.419865 2025-08-27 21:39:42.582551
 </pre></div>
 </div>
 </div>
@@ -1198,27 +1254,27 @@ Index: []
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura                      fecha  humedad_relativa
-0     18.000000 2025-08-28 14:49:55.876758         50.600000
-1     29.055829 2025-08-29 14:49:55.876758         78.239572
-2     35.449205 2025-08-30 14:49:55.876758         94.223012
-3     34.483920 2025-08-31 14:49:55.876758         91.809800
-4     26.567053 2025-09-01 14:49:55.876758         72.017633
-5     15.037297 2025-09-02 14:49:55.876758         43.193243
-6      4.756970 2025-09-03 14:49:55.876758         17.492424
-7      0.061479 2025-09-04 14:49:55.876758          5.753698
-8      2.931003 2025-09-05 14:49:55.876758         12.927508
-9     12.155410 2025-09-06 14:49:55.876758         35.988524
-10    23.844590 2025-09-07 14:49:55.876758         65.211476
-11    33.068997 2025-09-08 14:49:55.876758         88.272492
-12    35.938521 2025-09-09 14:49:55.876758         95.446302
-13    31.243030 2025-09-10 14:49:55.876758         83.707576
-14    20.962703 2025-09-11 14:49:55.876758         58.006757
-15     9.432947 2025-09-12 14:49:55.876758         29.182367
-16     1.516080 2025-09-13 14:49:55.876758          9.390200
-17     0.550795 2025-09-14 14:49:55.876758          6.976988
-18     6.944171 2025-09-15 14:49:55.876758         22.960428
-19    18.000000 2025-09-16 14:49:55.876758         50.600000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    temperatura  datos_decimales  humedad_relativa
+0     18.000000              0.0         50.600000
+1     28.580135              0.1         77.050336
+2     35.119017              0.2         93.397543
+3     35.119017              0.3         93.397543
+4     28.580135              0.4         77.050336
+5     18.000000              0.5         50.600000
+6      7.419865              0.6         24.149664
+7      0.880983              0.7          7.802457
+8      0.880983              0.8          7.802457
+9      7.419865              0.9         24.149664
+10    18.000000              1.0         50.600000
+11    28.580135              1.1         77.050336
+12    35.119017              1.2         93.397543
+13    35.119017              1.3         93.397543
+14    28.580135              1.4         77.050336
+15    18.000000              1.5         50.600000
+16     7.419865              1.6         24.149664
+17     0.880983              1.7          7.802457
+18     0.880983              1.8          7.802457
+19     7.419865              1.9         24.149664
 </pre></div>
 </div>
 </div>
@@ -1237,16 +1293,23 @@ Index: []
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
-(20, 3)
-Index([&#39;temperatura&#39;, &#39;fecha&#39;, &#39;humedad_relativa&#39;], dtype=&#39;object&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
+(20, 2)
+Index([&#39;temperatura&#39;, &#39;fecha&#39;], dtype=&#39;object&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="control-de-flujo">
-<h2>2.5. Control de flujo<a class="headerlink" href="#control-de-flujo" title="Link to this heading">#</a></h2>
+<section id="estrucuturas-de-control-ii-for-y-while">
+<h2>2.5. Estrucuturas de Control II: <code class="docutils literal notranslate"><span class="pre">for</span></code>, y <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#estrucuturas-de-control-ii-for-y-while" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Descripción</strong>: Se dividen en:</p>
+<ul>
+<li><p><strong>Bucles</strong>: Repiten un bloque de código mientras una condición sea verdadera (por ejemplo, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>).</p></li>
+</ul>
+</li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var_lista01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
                   <span class="mi">0</span>      <span class="mi">1</span>      <span class="mi">2</span>       <span class="mi">3</span>
 </pre></div>
@@ -1364,6 +1427,39 @@ Peru 2025
 <p><a class="reference external" href="https://julius.ai">https://julius.ai</a></p>
 </li>
 </ul>
+<section id="tipo-de-dato-none-en-python">
+<h2>Tipo de dato <code class="docutils literal notranslate"><span class="pre">None</span></code> en Python<a class="headerlink" href="#tipo-de-dato-none-en-python" title="Link to this heading">#</a></h2>
+<p>En Python, <code class="docutils literal notranslate"><span class="pre">None</span></code> es un tipo de dato especial que representa la ausencia de un valor o un valor nulo. No es lo mismo que 0, una cadena vacía (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>), o <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p><strong>Características principales:</strong></p>
+<ul class="simple">
+<li><p><strong>Representa la ausencia de valor:</strong> Se utiliza comúnmente para indicar que una variable no tiene asignado un valor significativo, o que una función no devuelve explícitamente ningún valor (en cuyo caso, implícitamente devuelve <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p></li>
+<li><p><strong>Es un objeto singleton:</strong> Solo hay una instancia de <code class="docutils literal notranslate"><span class="pre">None</span></code> en el sistema. Esto significa que si tienes varias variables a las que se les asigna <code class="docutils literal notranslate"><span class="pre">None</span></code>, todas apuntan al mismo objeto en memoria. Puedes comprobar esto usando el operador <code class="docutils literal notranslate"><span class="pre">is</span></code>.</p></li>
+<li><p><strong>Su tipo es <code class="docutils literal notranslate"><span class="pre">NoneType</span></code>:</strong> El tipo de <code class="docutils literal notranslate"><span class="pre">None</span></code> es <code class="docutils literal notranslate"><span class="pre">NoneType</span></code>.</p></li>
+<li><p><strong>Es falsy en contextos booleanos:</strong> Aunque no es <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> se evalúa como falso en contextos booleanos (por ejemplo, en una sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code>).</p></li>
+</ul>
+<p><strong>Usos comunes:</strong></p>
+<ul class="simple">
+<li><p><strong>Inicialización de variables:</strong> Para inicializar una variable cuando aún no se le ha asignado un valor real.</p></li>
+<li><p><strong>Valor de retorno de funciones:</strong> Las funciones que no tienen una sentencia <code class="docutils literal notranslate"><span class="pre">return</span></code> explícitamente (o que tienen <code class="docutils literal notranslate"><span class="pre">return</span></code> sin un valor) devuelven <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>Indicador de valor opcional o faltante:</strong> En la firma de funciones, para indicar que un argumento es opcional y que, si no se proporciona, tendrá un valor nulo.</p></li>
+<li><p><strong>Comparación:</strong> Para comprobar si una variable o el resultado de una operación es nulo utilizando el operador <code class="docutils literal notranslate"><span class="pre">is</span></code> (<code class="docutils literal notranslate"><span class="pre">mi_variable</span> <span class="pre">is</span> <span class="pre">None</span></code>). Es preferible usar <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">None</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">==</span> <span class="pre">None</span></code> debido a la naturaleza singleton de <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+
+<span class="n">var_none</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="n">var_none</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La variable var_none es None&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">var_none</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La variable var_none es evaluada como False en un contexto booleano&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1402,7 +1498,7 @@ Peru 2025
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Contenido</p>
+        <p class="prev-next-title">Preámbulo</p>
       </div>
     </a>
     <a class="right-next"
@@ -1432,12 +1528,16 @@ Peru 2025
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Programación Básica con Python</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-conceptos-basicos-de-programacion"><strong>I. Conceptos básicos de programación</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos-y-variables">1.1. Tipos de datos y variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos">1.1. Tipos de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#nueva-seccion">Nueva sección</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">1.2. Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-matematicos">1.2. Operadores matemáticos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-paquetes-o-librerias-en-python">1.3. Importar paquetes o librerías en Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-algebraicas">1.4. Funciones algebraicas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacion">1.5. Operadores de comparación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condiciones">1.6. Condiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrucuturas-de-control-i-if-else-y-elif">1.6. Estrucuturas de Control I: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> y <code class="docutils literal notranslate"><span class="pre">elif</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-i">1.7. Funciones: Parte I</a></li>
 </ul>
 </li>
@@ -1446,11 +1546,14 @@ Peru 2025
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas">2.2. Listas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-1d">2.3. Array 1D</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-frame">2.4. Data Frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-flujo">2.5. Control de flujo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrucuturas-de-control-ii-for-y-while">2.5. Estrucuturas de Control II: <code class="docutils literal notranslate"><span class="pre">for</span></code>, y <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-parte-ii">2.6. Funciones: Parte II</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-referencias"><strong>III. Referencias</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-referencias"><strong>III. Referencias</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipo-de-dato-none-en-python">Tipo de dato <code class="docutils literal notranslate"><span class="pre">None</span></code> en Python</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
