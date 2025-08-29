@@ -538,8 +538,75 @@ a tomar decisiones informadas sobre qué lenguajes aprender, enseñar o utilizar
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="automatizacion-de-procesos">
 <h1>Automatización de procesos<a class="headerlink" href="#automatizacion-de-procesos" title="Link to this heading">#</a></h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WYnOGAvQEgk?si=Ii5Hib0Wqff3t_15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YkctZlQgU0g?si=RgrtJYMFfJqO0s2K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube.com/embed/WYnOGAvQEgk?si=Ii5Hib0Wqff3t_15" title="YouTube video player - Fábrica automatizada de Tesla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div class="responsive-video-container">
+    <iframe src="https://www.youtube.com/embed/YkctZlQgU0g?si=RgrtJYMFfJqO0s2K" title="YouTube video player - Data center automatizado" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<style>
+/* CSS para videos responsivos */
+.responsive-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.responsive-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Media queries para diferentes dispositivos */
+/* Celulares pequeños */
+@media screen and (max-width: 480px) {
+    .responsive-video-container {
+        margin: 15px 0;
+        border-radius: 6px;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .responsive-video-container {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+}
+
+/* Laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .responsive-video-container {
+        max-width: 80%;
+        margin: 25px auto;
+    }
+}
+
+/* PCs y pantallas grandes */
+@media screen and (min-width: 1025px) {
+    .responsive-video-container {
+        max-width: 70%;
+        margin: 30px auto;
+    }
+}
+
+/* Pantallas ultra grandes */
+@media screen and (min-width: 1440px) {
+    .responsive-video-container {
+        max-width: 60%;
+        margin: 35px auto;
+    }
+}
+</style>
 </section>
 
     <script type="text/x-thebe-config">
