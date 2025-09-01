@@ -124,7 +124,7 @@ Los origenes de la informática y la programación, y cómo evolucionaron para d
 # Top 10 lenguajes de programación
 <a name="s2"></a>
 %---------------------------------------------------------------------------------------------------
-Existen índices ([TIOBE](https://www.tiobe.com/tiobe-index/), [PYPL](https://pypl.github.io/ODE.html)) que miden la popularidad de los lenguajes de programación. Su princiupal utilidad es funcionar como 
+Existen índices ([TIOBE](https://www.tiobe.com/tiobe-index/), [PYPL](https://pypl.github.io/ODE.html)) que miden la popularidad de los lenguajes de programación. Su principal utilidad es funcionar como 
 un indicador de las tendencias actuales en el mundo de la programación, ayudando a desarrolladores y empresas
 a tomar decisiones informadas sobre qué lenguajes aprender, enseñar o utilizar en nuevos proyectos.
 
