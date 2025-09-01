@@ -41,7 +41,7 @@ aprobatoria es 11.
 :::
 
 # Herramientas
-Para desarrollar este curso se recomienda usar la computación en la nube (Google Drive y Google Colaboratory). La siguiente secuancia de imágenes muestra cómo funciona la computación en la nube y como instalar
+Para desarrollar este curso se recomienda usar la computación en la nube (Google Drive y Google Colaboratory). La siguiente secuencia de imágenes muestra cómo funciona la computación en la nube y como instalar
 Google Colaboratory.
 
 <div class="languages-slideshow-container">
