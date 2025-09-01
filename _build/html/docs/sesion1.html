@@ -991,28 +991,23 @@ Lima
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># listas</span>
 <span class="n">lista_01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_01</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="n">var_lista01</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="s2">&quot;Peru 2025&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">)</span>
+<span class="n">lista_01</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="s2">&quot;Peru 2025&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lista_01</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># listas</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">lista_01</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="s2">&quot;mundo&quot;</span><span class="p">,</span> <span class="mf">2024.5</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">var_lista01</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;var_lista01&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;hola&#39;, 2024, &#39;mundo&#39;, 2024.5]
+4
+hola
+[&#39;hola&#39;, 2024, &#39;mundo&#39;, &#39;Peru 2025&#39;]
+&lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1195,7 +1190,16 @@ Lima
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024
-[  nan   nan 2024.   nan]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">lista_01</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">array_zeros01</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="n">var_lista01</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">array_zeros01</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;var_lista01&#39; is not defined
 </pre></div>
 </div>
 </div>
