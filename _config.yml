@@ -57,6 +57,7 @@ parse:
     - colon_fence
     - deflist
     - substitution
+    - amsmath
   myst_number_code_blocks: true
 
 # Configuración de MyST-NB

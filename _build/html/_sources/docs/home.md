@@ -31,14 +31,12 @@ El plagio es la práctica de copiar palabras, oraciones, imágenes o ideas para 
 
 :::{admonition} Evaluación
 :class: warning %attention, caution, danger, error, important, hint, note, seealso, tip, warning
-Se desarrollaran laboratorios por cada sesión, con los cuáles se determinará el promedio final (PF), Ecuación 1. La nota mínima
+Se desarrollaran laboratorios por cada sesión, con los cuáles se determinará el promedio final (PF), Ecuación  {eq}`eq:promedioFinal`. La nota mínima
 aprobatoria es 11.
 
-:::{math}
-:name: eq:pfinal
+$$
  PF = \sum_{i=1}^n  \frac{lab_{(i)} }{n}
-:::
-:::
+$$(eq:promedioFinal)
 
 # Herramientas
 Para desarrollar este curso se recomienda usar la computación en la nube (Google Drive y Google Colaboratory). La siguiente secuencia de imágenes muestra cómo funciona la computación en la nube y como instalar
