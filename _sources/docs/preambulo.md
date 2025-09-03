@@ -129,7 +129,7 @@ un indicador de las tendencias actuales en el mundo de la programación, ayudand
 a tomar decisiones informadas sobre qué lenguajes aprender, enseñar o utilizar en nuevos proyectos.
 
 :::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/pypl.jpg?raw=true
-:name: fig:historiaLenguajes
+:name: fig:pyplRanking
 
 :::
 <br><br>
@@ -151,7 +151,7 @@ El ecosistema Python es el conjunto de herramientas, bibliotecas, marcos de trab
 Python se utiliza para una gran variedad de aplicaciones debido a su versatilidad y a su extenso ecosistema. A continuación, se detallan algunas de las más importantes.
 % A figure of a photograph of some mountains, followed by a caption
 :::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/python_app.png?raw=true
-:name: fig:mountains
+:name: fig:pythonEcosistema
 :align: center
 
 :::
