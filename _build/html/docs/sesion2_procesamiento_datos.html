@@ -388,7 +388,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -404,6 +406,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.4.2. Procesamiento de datos</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -431,7 +445,36 @@ document.write(`
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span> <span class="k">as</span> <span class="n">_</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span> <span class="k">as</span> <span class="n">_</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_import_hooks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_installation_commands</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_shell_customizations</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language govestylerning permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Colab import customizations to the IPython runtime.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_altair</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cv2</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span><span class="w"> </span><span class="nf">_register_hooks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="n">_altair</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc. All rights reserved.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Import hook for ensuring that Altair&#39;s Colab renderer is registered.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">imp</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imp&#39;
 </pre></div>
 </div>
 </div>
@@ -1176,9 +1219,13 @@ None
 </div>
 </div>
 </div>
-<p>###<strong>3.4. Control de calidad de datos biomédicos</strong></p>
-<p>####<strong>3.4.1. Preprocesamiento de datos</strong></p>
-<p>####<strong>3.4.2. Procesamiento de datos</strong></p>
+<section id="control-de-calidad-de-datos-biomedicos">
+<h2><strong>3.4. Control de calidad de datos biomédicos</strong><a class="headerlink" href="#control-de-calidad-de-datos-biomedicos" title="Link to this heading">#</a></h2>
+<section id="preprocesamiento-de-datos">
+<h3><strong>3.4.1. Preprocesamiento de datos</strong><a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h3>
+</section>
+<section id="procesamiento-de-datos">
+<h3><strong>3.4.2. Procesamiento de datos</strong><a class="headerlink" href="#procesamiento-de-datos" title="Link to this heading">#</a></h3>
 <p>#<strong>IV. Referencias</strong></p>
 <p><strong>Libros y manuales</strong></p>
 <ul>
@@ -1222,6 +1269,8 @@ None
 <p><a class="reference external" href="https://julius.ai">https://julius.ai</a></p>
 </li>
 </ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1269,6 +1318,25 @@ None
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.4.2. Procesamiento de datos</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
