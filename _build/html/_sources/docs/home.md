@@ -4,7 +4,7 @@
 <br><br>
 
 # Descripción del Curso
-
+%-----------------------------------------------------------------------------------------------------
 (Última actualización: 26 Agosto, 2025)
 
   Este curso está dividido en cuatro módulos interrelacionados. El primer módulo está diseñado para consolidar y profundizar en los fundamentos de programación, una habilidad indispensable para abordar los desafíos de la ciencia de datos de manera eficiente. Los módulos dos y tres se centran en el preprocesamiento y análisis avanzado de datos, proporcionando herramientas y técnicas esenciales para extraer valor de grandes volúmenes de información.
@@ -12,6 +12,7 @@ Finalmente, el cuarto módulo aborda los principios teóricos y prácticos del a
 
 
 # Objetivos
+%-----------------------------------------------------------------------------------------------------
 ## General
 Desarrollar aplicaciones para analizar y modelar datos utilizando el lenguaje de programación Python, con el fin de evaluar patrones, tendencias y realizar predicciones.
 
@@ -24,9 +25,11 @@ Desarrollar aplicaciones para analizar y modelar datos utilizando el lenguaje de
 - Implementar modelos de regresión lineal simple. 
 
 # Metodología
+%-----------------------------------------------------------------------------------------------------
 En este curso se utilizará una combinación de clases magistrales, debates en clase, presentaciones, videos, aprendizaje cooperativo y aprendizaje basado en problemas. Las calificaciones se determinarán según la entrega satisfactoria y puntual de las tareas. La calificación de cada tarea se basa en los prerrequisitos establecidos para cada una. A continuación, se presenta un resumen de los temas por cada sesión. Tenga en cuenta que las fechas y los plazos están sujetos a cambios.
 
 # Plagio e Integridad Académica
+%-----------------------------------------------------------------------------------------------------
 El plagio es la práctica de copiar palabras, oraciones, imágenes o ideas para su uso en evaluaciones escritas u orales sin dar el crédito correspondiente a la fuente. Hacer trampa se define como dar o recibir ayuda ilegal en cualquier cosa que el profesor haya determinado como un esfuerzo individual. Ambas se consideran infracciones graves y afectarán significativamente la calificación del curso. 
 
 :::{admonition} Evaluación
@@ -37,8 +40,10 @@ aprobatoria es 11.
 $$
  PF = \sum_{i=1}^n  \frac{lab_{(i)} }{n}
 $$(eq:promedioFinal)
+:::
 
 # Herramientas
+%-----------------------------------------------------------------------------------------------------
 Para desarrollar este curso se recomienda usar la computación en la nube (Google Drive y Google Colaboratory). La siguiente secuencia de imágenes muestra cómo funciona la computación en la nube y como instalar
 Google Colaboratory.
 
