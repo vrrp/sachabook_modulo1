@@ -36,14 +36,20 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print(os.listdir("sample_data"))
+import os
+
+ruta_drive ="/content/drive/MyDrive/"
+
+print(os.listdir(ruta_drive))
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
 [31mFileNotFoundError[39m                         Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m [38;5;28mprint[39m([43mos[49m[43m.[49m[43mlistdir[49m[43m([49m[33;43m"[39;49m[33;43msample_data[39;49m[33;43m"[39;49m[43m)[49m)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 5[39m
+[32m      1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mos[39;00m
+[32m      3[39m ruta_drive =[33m"[39m[33m/content/drive/MyDrive/[39m[33m"[39m
+[32m----> [39m[32m5[39m [38;5;28mprint[39m([43mos[49m[43m.[49m[43mlistdir[49m[43m([49m[43mruta_drive[49m[43m)[49m)
 
-[31mFileNotFoundError[39m: [Errno 2] No such file or directory: 'sample_data'
+[31mFileNotFoundError[39m: [Errno 2] No such file or directory: '/content/drive/MyDrive/'
 
