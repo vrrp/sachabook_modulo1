@@ -186,6 +186,9 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
 
+
+
+
 </ul>
 
     </div>
@@ -415,13 +418,30 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-gestion-de-directorios-y-archivos-en-la-nube"><strong>I. Gestión de directorios y archivos en la nube</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive-a-colaboratory"><strong>1.1. Montar Google drive a Colaboratory</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-contenido-de-google-drive"><strong>1.2. Explorar contenido de Google Drive</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-importar-base-de-datos"><strong>II. Importar base de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-archivos-en-formato-excel"><strong>2.1. Importar archivos en formato EXCEL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-archivos-en-formato-csv"><strong>2.2. Importar archivos en formato CSV</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-procesamiento-basico-de-datos"><strong>III. Procesamiento básico de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-ambientales"><strong>3.1. Análisis exploratorio de datos ambientales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-ambientales"><strong>3.2. Control de calidad de datos ambientales</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.2.1. Preprocesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.2.2. Procesamiento de datos</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-biomedicos"><strong>3.3. Análisis exploratorio de datos biomédicos</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.4.2. Procesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>3.4.2. Procesamiento de datos</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
 </ul>
 
             </nav>
@@ -445,55 +465,33 @@ document.write(`
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>###<strong>1.2. Explorar contenido de Google Drive</strong></p>
+</section>
+<section id="explorar-contenido-de-google-drive">
+<h2><strong>1.2. Explorar contenido de Google Drive</strong><a class="headerlink" href="#explorar-contenido-de-google-drive" title="Link to this heading">#</a></h2>
 <p>El paquete <code class="docutils literal notranslate"><span class="pre">os</span></code> (del inglés “operating system”) en Python proporciona una forma de interactuar con el sistema operativo subyacente. Permite realizar tareas dependientes del sistema operativo, como la gestión de archivos y directorios, la manipulación de rutas, la ejecución de comandos del sistema, entre otras.</p>
 <ul class="simple">
-<li><p><strong>Navegación por el sistema de archivos:</strong> Puedes obtener el directorio de trabajo actual (<code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code>), cambiar de directorio (<code class="docutils literal notranslate"><span class="pre">os.chdir()</span></code>), listar el contenido de un directorio (<code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code>).</p></li>
+<li><p><strong>Navegación por el sistema de archivos:</strong> Listar el contenido de un directorio (<code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code>).</p></li>
 <li><p><strong>Gestión de directorios y archivos:</strong> Puedes crear, eliminar, renombrar directorios y archivos. Por ejemplo, os.<code class="docutils literal notranslate"><span class="pre">mkdir()</span></code> para crear un directorio, <code class="docutils literal notranslate"><span class="pre">os.remove()</span></code> para eliminar un archivo, <code class="docutils literal notranslate"><span class="pre">os.rename()</span></code> para renombrar.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/projects/sacha/jupyterBook_v1/sachabook_modulo1/docs
-[&#39;images&#39;, &#39;sesion2_procesamiento_datos.ipynb&#39;, &#39;sesion1.ipynb&#39;, &#39;preambulo.md&#39;, &#39;iris_data.csv&#39;, &#39;home.md&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;sample_data&quot;</span><span class="p">))</span>
+<span class="n">ruta_drive</span> <span class="o">=</span><span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;sample_data&quot;</span><span class="p">))</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ruta_drive</span> <span class="o">=</span><span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span><span class="p">))</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;sample_data&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Crear la variable <code class="docutils literal notranslate"><span class="pre">ruta_drive</span></code> y asignarle la ruta de Google Drive</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ruta_drive</span> <span class="o">=</span><span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;apuntespdf&#39;, &#39;Osystemgoes&#39;, &#39;dhn&#39;, &#39;latex&#39;, &#39;maestria_met&#39;, &#39;models&#39;, &#39;igp&#39;, &#39;grupo_unmsm&#39;, &#39;make_books_latex&#39;, &#39;make_paper&#39;, &#39;proyectos&#39;, &#39;tools&#39;, &#39;varios&#39;, &#39;documentos&#39;, &#39;cursos_talleres&#39;, &#39;datasample&#39;, &#39;utec&#39;, &#39;fiware&#39;, &#39;Classroom&#39;, &#39;ingles&#39;, &#39;work_job&#39;, &#39;Postulaciones&#39;, &#39;serie de tiempo&#39;, &#39;Google Earth&#39;, &#39;contaminantes_atmosfericos&#39;, &#39;inventario_csv&#39;, &#39;informes&#39;, &#39;Shapes&#39;, &#39;actividades_TDR&#39;, &#39;book_cluster&#39;, &#39;resultados&#39;, &#39;oefa_control_calidad&#39;, &#39;wrfchem_app&#39;, &#39;sacha&#39;, &#39;Colab Notebooks&#39;, &#39;consultorias_pagos&#39;, &#39;EstadisticaIA2025&#39;, &#39;Google AI Studio&#39;, &#39;Estadistica2025_estudiantes&#39;, &#39;Estadistica2025_Tareas_estudiantes&#39;, &#39;Técnicas de Datos: Anemia y Biomedicina\n.gdoc&#39;, &#39;Metodología bioestadística para análisis anemia\n.gdoc&#39;, &#39;Análisis bioestadístico anemia con Python.\n.gdoc&#39;, &#39;SKMBT_36325020412510.pdf&#39;, &#39;Estadistica4Finanzas&#39;, &#39;Documento sin título.gdoc&#39;, &#39;agroexportacion_peru&#39;, &#39;Bruce-Gedeck-Estadistica-Practica-para-Ciencia-de-Datos-con-R-y-Python.pdf&#39;, &#39;Bioestadistica&#39;, &#39;Base_datos&#39;, &#39;Ciencia_datos_pythonAI&#39;]
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/drive/MyDrive/&#39;
 </pre></div>
 </div>
 </div>
@@ -511,7 +509,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numero de elementos: 51
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numero de elementos: 55
 (0) apuntespdf
 (1) Osystemgoes
 (2) dhn
@@ -566,6 +564,10 @@ document.write(`
 (48) Bioestadistica
 (49) Base_datos
 (50) Ciencia_datos_pythonAI
+(51) Introduccion-Colab(actualizado).rtf.gdoc
+(52) clase_jose.ipynb
+(53) Untitled0.ipynb
+(54) estadistica_python_ai_modulo1
 </pre></div>
 </div>
 </div>
@@ -622,7 +624,10 @@ Numero de elementos: 3
 </div>
 </div>
 </div>
-<p>#<strong>II. Importar base de datos</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-importar-base-de-datos">
+<h1><strong>II. Importar base de datos</strong><a class="headerlink" href="#ii-importar-base-de-datos" title="Link to this heading">#</a></h1>
 <p><strong>¿Qué es una base de datos?</strong></p>
 <p>Una base de datos es una colección organizada de información o datos estructurados, que normalmente se almacena electrónicamente en un sistema de computadora. Esencialmente, es un sistema diseñado para almacenar, gestionar y recuperar grandes cantidades de información de manera eficiente.</p>
 <p>pregunta para gemini: efinir, describir, detallar y comparar tipos de datos cuantitativos y cualitativos. Finalmente dar tres ejemplos de cada uno de ellos.</p>
@@ -676,7 +681,8 @@ Numero de elementos: 3
 </tbody>
 </table>
 </div>
-<p>###<strong>2.1. Importar archivos en formato EXCEL</strong></p>
+<section id="importar-archivos-en-formato-excel">
+<h2><strong>2.1. Importar archivos en formato EXCEL</strong><a class="headerlink" href="#importar-archivos-en-formato-excel" title="Link to this heading">#</a></h2>
 <p>Las mediciones de temperatura del aire, humedad relativa y radiación solar (variables ambientales), realizadas por una estación meteorológica en un punto geográfico específico son datos <strong>cuantitativos contínuos</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +720,9 @@ Numero de elementos: 3
 </div>
 </div>
 </div>
-<p>###<strong>2.2. Importar archivos en formato CSV</strong></p>
+</section>
+<section id="importar-archivos-en-formato-csv">
+<h2><strong>2.2. Importar archivos en formato CSV</strong><a class="headerlink" href="#importar-archivos-en-formato-csv" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a href="https://www.datosabiertos.gob.pe">Plataforma Nacional de Datos Abiertos</a>.</p></li>
 <li><p>Datos para caso estudio: <a href="https://www.datosabiertos.gob.pe/dataset/anemia">Anemia</a>.</p></li>
@@ -760,8 +768,12 @@ Numero de elementos: 3
 </div>
 </div>
 </div>
-<p>#<strong>III. Procesamiento básico de datos</strong></p>
-<p>###<strong>3.1. Análisis exploratorio de datos ambientales</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-procesamiento-basico-de-datos">
+<h1><strong>III. Procesamiento básico de datos</strong><a class="headerlink" href="#iii-procesamiento-basico-de-datos" title="Link to this heading">#</a></h1>
+<section id="analisis-exploratorio-de-datos-ambientales">
+<h2><strong>3.1. Análisis exploratorio de datos ambientales</strong><a class="headerlink" href="#analisis-exploratorio-de-datos-ambientales" title="Link to this heading">#</a></h2>
 <p>El Análisis Exploratorio de Datos (EDA) es una metodología para analizar conjuntos de datos y resumir sus características principales, a menudo usando medidas estadísticas y métodos visuales. El objetivo del EDA es comprender los datos, descubrir patrones, detectar anomalías y probar hipótesis antes de realizar un modelado formal. No es un enfoque formal de modelado estadístico, sino más bien una filosofía para ver y comprender los datos.</p>
 <p><strong>¿En qué consiste el EDA?</strong></p>
 <ul class="simple">
@@ -974,36 +986,6 @@ Name: hr, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Unnamed: 0                          fecha  temp_aire         hr  \
-count   17.000000                             17  17.000000  17.000000   
-mean    65.470588  2021-03-07 11:17:38.823529472   1.879657  75.227941   
-min      0.000000            2021-01-01 00:00:00  -0.708333  57.791667   
-25%      4.000000            2021-01-05 00:00:00   0.462500  69.000000   
-50%     14.000000            2021-01-15 00:00:00   1.379167  76.166667   
-75%     18.000000            2021-01-19 00:00:00   3.433333  83.750000   
-max    331.000000            2021-11-28 00:00:00   4.783333  95.625000   
-std    125.429322                            NaN   1.729129  10.683368   
-
-        rxn_solar  
-count   17.000000  
-mean    94.549020  
-min     14.583333  
-25%     78.750000  
-50%    106.625000  
-75%    117.791667  
-max    127.958333  
-std     34.705896  
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;hr&quot;</span><span class="p">])</span>
@@ -1032,15 +1014,43 @@ std     34.705896
 </div>
 </div>
 </div>
-<p>###<strong>3.2. Control de calidad de datos ambientales</strong></p>
-<p>####<strong>3.2.1. Preprocesamiento de datos</strong></p>
-<p>####<strong>3.2.2. Procesamiento de datos</strong></p>
+</section>
+<section id="control-de-calidad-de-datos-ambientales">
+<h2><strong>3.2. Control de calidad de datos ambientales</strong><a class="headerlink" href="#control-de-calidad-de-datos-ambientales" title="Link to this heading">#</a></h2>
+<section id="preprocesamiento-de-datos">
+<h3><strong>3.2.1. Preprocesamiento de datos</strong><a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h3>
+</section>
+<section id="procesamiento-de-datos">
+<h3><strong>3.2.2. Procesamiento de datos</strong><a class="headerlink" href="#procesamiento-de-datos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fil_temp_aire</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">&gt;=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
+0             0 2021-01-01   3.625000  73.583333   99.833333
+1             1 2021-01-02   1.329167  60.625000   74.333333
+2             2 2021-01-03   1.920833  63.958333  101.500000
+3             3 2021-01-04   3.433333  57.791667  101.958333
+4             4 2021-01-05   0.445833  69.541667  106.666667
+5             5 2021-01-06  -0.045833  69.000000  106.625000
+6             6 2021-01-07  -0.708333  82.416667   14.583333
+9             9 2021-01-10   0.829167  84.916667  117.791667
+14           14 2021-01-15   0.466667  79.791667  116.208333
+15           15 2021-01-16   0.425000  78.541667  124.291667
+16           16 2021-01-17   0.462500  72.041667  127.958333
+17           17 2021-01-18   2.366667  76.166667  122.291667
+18           18 2021-01-19   1.379167  83.750000  123.083333
+19           19 2021-01-20   2.333333  95.625000   35.166667
+326         326 2021-11-23   4.512500  85.791667   38.541667
+327         327 2021-11-24   4.395833  85.041667   78.750000
+331         331 2021-11-28   4.783333  60.291667  117.750000
+(17, 5)
 </pre></div>
 </div>
 </div>
@@ -1122,6 +1132,27 @@ Total de valores NaN en el DataFrame: 3
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame original:
+
+Valores NaN por columna:
+Sexo                 0
+id_persona           0
+Edad                 0
+Tipo_edad            0
+id_ubigeo         5783
+Fecha_atencion       0
+Etapa                0
+Diagnostico          0
+Tipo_Dx              0
+Lab                  0
+id_eess              0
+dtype: int64
+
+Total de valores NaN en el DataFrame: 5783
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1151,7 +1182,10 @@ Total de valores NaN en el DataFrame: 3
 </div>
 </div>
 </div>
-<p>###<strong>3.3. Análisis exploratorio de datos biomédicos</strong></p>
+</section>
+</section>
+<section id="analisis-exploratorio-de-datos-biomedicos">
+<h2><strong>3.3. Análisis exploratorio de datos biomédicos</strong><a class="headerlink" href="#analisis-exploratorio-de-datos-biomedicos" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_anemia</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
@@ -1189,16 +1223,51 @@ None
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo  id_persona  Edad Tipo_edad  id_ubigeo  Fecha_atencion    Etapa  \
+188769    M    13815163     6         M      636.0        20210101  00a-11a   
+239800    F    33892383     3         A      604.0        20210101  00a-11a   
+207352    F    29311370     6         M      959.0        20210101  00a-11a   
+206101    F    30962033     5         M      893.0        20210101  00a-11a   
+194656    F    23040846     6         M     1247.0        20210101  00a-11a   
+...     ...         ...   ...       ...        ...             ...      ...   
+177519    M    40636027     6         M     1496.0        20230731  00a-11a   
+198759    M    24004832     3         A     1018.0        20230731  00a-11a   
+140464    M    40293673    11         M     1317.0        20230731  00a-11a   
+156284    M    40307755    10         M      919.0        20230731  00a-11a   
+178689    F    35619327     2         A     1492.0        20230731  00a-11a   
+
+        Diagnostico Tipo_Dx  Lab  id_eess  
+188769     99199.17       D   TA    23157  
+239800     99199.17       D  SF1     7064  
+207352     99199.17       D  SF1      975  
+206101     99199.17       D   TA     4082  
+194656     99199.17       D  SF1     4767  
+...             ...     ...  ...      ...  
+177519     99199.17       D   TA     7374  
+198759     99199.17       D  SF1     3441  
+140464     99199.17       D  SF2     5738  
+156284     99199.17       D  SF5      755  
+178689     99199.17       D  SF2      175  
+
+[248893 rows x 11 columns]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="control-de-calidad-de-datos-biomedicos">
 <h2><strong>3.4. Control de calidad de datos biomédicos</strong><a class="headerlink" href="#control-de-calidad-de-datos-biomedicos" title="Link to this heading">#</a></h2>
-<section id="preprocesamiento-de-datos">
-<h3><strong>3.4.1. Preprocesamiento de datos</strong><a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3><strong>3.4.1. Preprocesamiento de datos</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 </section>
-<section id="procesamiento-de-datos">
-<h3><strong>3.4.2. Procesamiento de datos</strong><a class="headerlink" href="#procesamiento-de-datos" title="Link to this heading">#</a></h3>
-<p>#<strong>IV. Referencias</strong></p>
+<section id="id2">
+<h3><strong>3.4.2. Procesamiento de datos</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-referencias">
+<h1><strong>IV. Referencias</strong><a class="headerlink" href="#iv-referencias" title="Link to this heading">#</a></h1>
 <p><strong>Libros y manuales</strong></p>
 <ul>
 <li><p>Libro de estadisitica con python</p>
@@ -1241,8 +1310,6 @@ None
 <p><a class="reference external" href="https://julius.ai">https://julius.ai</a></p>
 </li>
 </ul>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1303,13 +1370,30 @@ None
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-gestion-de-directorios-y-archivos-en-la-nube"><strong>I. Gestión de directorios y archivos en la nube</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive-a-colaboratory"><strong>1.1. Montar Google drive a Colaboratory</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-contenido-de-google-drive"><strong>1.2. Explorar contenido de Google Drive</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-importar-base-de-datos"><strong>II. Importar base de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-archivos-en-formato-excel"><strong>2.1. Importar archivos en formato EXCEL</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-archivos-en-formato-csv"><strong>2.2. Importar archivos en formato CSV</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-procesamiento-basico-de-datos"><strong>III. Procesamiento básico de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-ambientales"><strong>3.1. Análisis exploratorio de datos ambientales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-ambientales"><strong>3.2. Control de calidad de datos ambientales</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.2.1. Preprocesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.2.2. Procesamiento de datos</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-biomedicos"><strong>3.3. Análisis exploratorio de datos biomédicos</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.4.2. Procesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>3.4.2. Procesamiento de datos</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
 </ul>
 
   </nav></div>
