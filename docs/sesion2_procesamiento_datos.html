@@ -185,6 +185,7 @@
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
+
 </ul>
 
     </div>
@@ -411,12 +412,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-gestion-de-directorios-y-archivos-en-la-nube"><strong>I. Gestión de directorios y archivos en la nube</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive-a-colaboratory"><strong>1.1. Montar Google drive a Colaboratory</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.4.2. Procesamiento de datos</strong></a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -429,55 +436,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manejo-preprocesamiento-y-procesamiento-de-datos">
 <h1><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong><a class="headerlink" href="#manejo-preprocesamiento-y-procesamiento-de-datos" title="Link to this heading">#</a></h1>
-<p>#<strong>I. Gestión de directorios y archivos en la nube</strong></p>
-<p>###<strong>1.1. Montar Google drive a Colaboratory</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-gestion-de-directorios-y-archivos-en-la-nube">
+<h1><strong>I. Gestión de directorios y archivos en la nube</strong><a class="headerlink" href="#i-gestion-de-directorios-y-archivos-en-la-nube" title="Link to this heading">#</a></h1>
+<section id="montar-google-drive-a-colaboratory">
+<h2><strong>1.1. Montar Google drive a Colaboratory</strong><a class="headerlink" href="#montar-google-drive-a-colaboratory" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span> <span class="k">as</span> <span class="n">_</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span> <span class="k">as</span> <span class="n">_</span>
-<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_import_hooks</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_installation_commands</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_shell_customizations</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc.</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language govestylerning permissions and</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Colab import customizations to the IPython runtime.&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_altair</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cv2</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span><span class="w"> </span><span class="nf">_register_hooks</span><span class="p">():</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="n">_altair</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc. All rights reserved.</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language governing permissions and</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Import hook for ensuring that Altair&#39;s Colab renderer is registered.&quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">imp</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;imp&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>###<strong>1.2. Explorar contenido de Google Drive</strong></p>
 <p>El paquete <code class="docutils literal notranslate"><span class="pre">os</span></code> (del inglés “operating system”) en Python proporciona una forma de interactuar con el sistema operativo subyacente. Permite realizar tareas dependientes del sistema operativo, como la gestión de archivos y directorios, la manipulación de rutas, la ejecución de comandos del sistema, entre otras.</p>
@@ -495,8 +461,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content
-[&#39;.config&#39;, &#39;drive&#39;, &#39;sample_data&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/projects/sacha/jupyterBook_v1/sachabook_modulo1/docs
+[&#39;images&#39;, &#39;sesion2_procesamiento_datos.ipynb&#39;, &#39;sesion1.ipynb&#39;, &#39;preambulo.md&#39;, &#39;iris_data.csv&#39;, &#39;home.md&#39;]
 </pre></div>
 </div>
 </div>
@@ -508,7 +474,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;anscombe.json&#39;, &#39;README.md&#39;, &#39;mnist_train_small.csv&#39;, &#39;mnist_test.csv&#39;, &#39;california_housing_test.csv&#39;, &#39;california_housing_train.csv&#39;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;sample_data&quot;</span><span class="p">))</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;sample_data&#39;
 </pre></div>
 </div>
 </div>
@@ -1219,6 +1190,7 @@ None
 </div>
 </div>
 </div>
+</section>
 <section id="control-de-calidad-de-datos-biomedicos">
 <h2><strong>3.4. Control de calidad de datos biomédicos</strong><a class="headerlink" href="#control-de-calidad-de-datos-biomedicos" title="Link to this heading">#</a></h2>
 <section id="preprocesamiento-de-datos">
@@ -1328,12 +1300,18 @@ None
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-gestion-de-directorios-y-archivos-en-la-nube"><strong>I. Gestión de directorios y archivos en la nube</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive-a-colaboratory"><strong>1.1. Montar Google drive a Colaboratory</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.4.2. Procesamiento de datos</strong></a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
