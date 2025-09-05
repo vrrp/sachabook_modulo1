@@ -426,17 +426,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-archivos-en-formato-csv"><strong>2.2. Importar archivos en formato CSV</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-procesamiento-basico-de-datos"><strong>III. Procesamiento básico de datos</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-ambientales"><strong>3.1. Análisis exploratorio de datos ambientales</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-ambientales"><strong>3.2. Control de calidad de datos ambientales</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.2.1. Preprocesamiento de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.2.2. Procesamiento de datos</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-preprocesamiento-de-datos"><strong>III. Preprocesamiento de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos"><strong>3.1. Análisis exploratorio de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ambientales"><strong>3.1.1. Ambientales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biomedicos"><strong>3.1.2. Biomedicos</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-biomedicos"><strong>3.3. Análisis exploratorio de datos biomédicos</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>3.4.2. Procesamiento de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos"><strong>3.2. Control de calidad de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>3.2.1. Ambientales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>3.2.2. Biomédicos</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -470,7 +468,7 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p><strong>Preprocesamiento</strong></p></td>
 <td><p>Preparar datos para el análisis</p></td>
-<td><p>Limpieza, normalización, codificación</p></td>
+<td><p>Analisis exploratorio, control de calidad, normalización, codificación</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Procesamiento</strong></p></td>
 <td><p>Extraer conocimiento de los datos</p></td>
@@ -818,19 +816,17 @@ Numero de elementos: 3
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="iii-procesamiento-basico-de-datos">
-<h1><strong>III. Procesamiento básico de datos</strong><a class="headerlink" href="#iii-procesamiento-basico-de-datos" title="Link to this heading">#</a></h1>
-<section id="analisis-exploratorio-de-datos-ambientales">
-<h2><strong>3.1. Análisis exploratorio de datos ambientales</strong><a class="headerlink" href="#analisis-exploratorio-de-datos-ambientales" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-preprocesamiento-de-datos">
+<h1><strong>III. Preprocesamiento de datos</strong><a class="headerlink" href="#iii-preprocesamiento-de-datos" title="Link to this heading">#</a></h1>
+<p>Dado que los datos suelen estar incompletos, inconsistentes o con errores, el preprocesamiento busca mejorar su calidad y estructuración. Es un paso fundamental para garantizar resultados confiables en análisis estadístico, machine learning o inteligencia artificial.</p>
+<section id="analisis-exploratorio-de-datos">
+<h2><strong>3.1. Análisis exploratorio de datos</strong><a class="headerlink" href="#analisis-exploratorio-de-datos" title="Link to this heading">#</a></h2>
 <p>El Análisis Exploratorio de Datos (EDA) es una metodología para analizar conjuntos de datos y resumir sus características principales, a menudo usando medidas estadísticas y métodos visuales. El objetivo del EDA es comprender los datos, descubrir patrones, detectar anomalías y probar hipótesis antes de realizar un modelado formal. No es un enfoque formal de modelado estadístico, sino más bien una filosofía para ver y comprender los datos.</p>
 <p><strong>¿En qué consiste el EDA?</strong></p>
 <ul class="simple">
 <li><p><strong>Resumen de datos:</strong> Calcular estadísticas descriptivas (media, mediana, desviación estándar, cuartiles, etc.) para comprender la distribución y las características centrales de las variables.</p></li>
-<li><p><strong>Visualización de datos:</strong> Crear gráficos y parcelas (histogramas, diagramas de caja, diagramas de dispersión, etc.) para identificar patrones, relaciones, valores atípicos y la forma de las distribuciones.</p></li>
 <li><p><strong>Identificación de valores faltantes:</strong> Detectar y cuantificar la presencia de valores nulos o faltantes en el conjunto de datos.</p></li>
 <li><p><strong>Detección de valores atípicos:</strong> Identificar observaciones que se desvían significativamente de otras observaciones y que podrían indicar un error de medición o una característica inusual del fenómeno que se está estudiando.</p></li>
-<li><p><strong>Análisis de relaciones entre variables:</strong> Explorar cómo se relacionan las diferentes variables entre sí (correlaciones, tablas de contingencia).</p></li>
-<li><p><strong>Limpieza de datos:</strong> Aunque el EDA se centra en la exploración, a menudo revela problemas de calidad de datos que deben abordarse, como valores incorrectos o formatos inconsistentes.</p></li>
 </ul>
 <p><strong>Métodos en Python y Pandas para EDA:</strong></p>
 <p>Pandas es la biblioteca fundamental en Python para la manipulación y análisis de datos, y ofrece numerosos métodos para realizar EDA:</p>
@@ -848,6 +844,8 @@ Numero de elementos: 3
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>:</strong> Permite agrupar datos por una o más columnas para realizar análisis agregados.</p></li>
 </ul>
 <p>Además de pandas, bibliotecas como <strong>Matplotlib</strong> y <strong>Seaborn</strong> son esenciales para la visualización de datos en el EDA.</p>
+<section id="ambientales">
+<h3><strong>3.1.1. Ambientales</strong><a class="headerlink" href="#ambientales" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
@@ -889,8 +887,6 @@ temp_aire     1
 hr            2
 rxn_solar     0
 dtype: int64
-
-Total de valores nulos en el DataFrame: 3
 </pre></div>
 </div>
 </div>
@@ -1073,177 +1069,8 @@ Name: hr, dtype: float64
 </div>
 </div>
 </section>
-<section id="control-de-calidad-de-datos-ambientales">
-<h2><strong>3.2. Control de calidad de datos ambientales</strong><a class="headerlink" href="#control-de-calidad-de-datos-ambientales" title="Link to this heading">#</a></h2>
-<section id="preprocesamiento-de-datos">
-<h3><strong>3.2.1. Preprocesamiento de datos</strong><a class="headerlink" href="#preprocesamiento-de-datos" title="Link to this heading">#</a></h3>
-</section>
-<section id="procesamiento-de-datos">
-<h3><strong>3.2.2. Procesamiento de datos</strong><a class="headerlink" href="#procesamiento-de-datos" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fil_temp_aire</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">&gt;=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
-0             0 2021-01-01   3.625000  73.583333   99.833333
-1             1 2021-01-02   1.329167  60.625000   74.333333
-2             2 2021-01-03   1.920833  63.958333  101.500000
-3             3 2021-01-04   3.433333  57.791667  101.958333
-4             4 2021-01-05   0.445833  69.541667  106.666667
-5             5 2021-01-06  -0.045833  69.000000  106.625000
-6             6 2021-01-07  -0.708333  82.416667   14.583333
-9             9 2021-01-10   0.829167  84.916667  117.791667
-14           14 2021-01-15   0.466667  79.791667  116.208333
-15           15 2021-01-16   0.425000  78.541667  124.291667
-16           16 2021-01-17   0.462500  72.041667  127.958333
-17           17 2021-01-18   2.366667  76.166667  122.291667
-18           18 2021-01-19   1.379167  83.750000  123.083333
-19           19 2021-01-20   2.333333  95.625000   35.166667
-326         326 2021-11-23   4.512500  85.791667   38.541667
-327         327 2021-11-24   4.395833  85.041667   78.750000
-331         331 2021-11-28   4.783333  60.291667  117.750000
-(17, 5)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="n">df_met</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;hr&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">df_met</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-<span class="n">df_met</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
-0             0 2021-01-01   3.625000  73.583333   99.833333
-1             1 2021-01-02        NaN        NaN   74.333333
-2             2 2021-01-03   1.920833  63.958333  101.500000
-3             3 2021-01-04   3.433333  57.791667  101.958333
-4             4 2021-01-05   0.445833        NaN  106.666667
-..          ...        ...        ...        ...         ...
-329         329 2021-11-26   5.562500  69.875000   87.833333
-330         330 2021-11-27   5.500000  61.500000   93.041667
-331         331 2021-11-28   4.783333  60.291667  117.750000
-332         332 2021-11-29  10.112500  61.541667  108.750000
-333         333 2021-11-30   6.691667  74.000000  102.958333
-
-[334 rows x 5 columns]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">encontrar_nan</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1"># Verificar valores NaN en cada columna</span>
-    <span class="n">nan_por_columna</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-    <span class="c1"># Verificar valores NaN en todo el DataFrame</span>
-    <span class="n">total_nan</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-
-    <span class="c1"># Mostrar resultados</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame original:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Valores NaN por columna:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nan_por_columna</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total de valores NaN en el DataFrame: </span><span class="si">{</span><span class="n">total_nan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encontrar_nan</span><span class="p">(</span><span class="n">df_met</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame original:
-
-Valores NaN por columna:
-Unnamed: 0    0
-fecha         0
-temp_aire     1
-hr            2
-rxn_solar     0
-dtype: int64
-
-Total de valores NaN en el DataFrame: 3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encontrar_nan</span><span class="p">(</span><span class="n">df_anemia</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame original:
-
-Valores NaN por columna:
-Sexo                 0
-id_persona           0
-Edad                 0
-Tipo_edad            0
-id_ubigeo         5783
-Fecha_atencion       0
-Etapa                0
-Diagnostico          0
-Tipo_Dx              0
-Lab                  0
-id_eess              0
-dtype: int64
-
-Total de valores NaN en el DataFrame: 5783
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_interpolado</span> <span class="o">=</span> <span class="n">df_met</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span> <span class="c1"># method: linear</span>
-<span class="c1">#df_interpolado = df.interpolate(method=&quot;spline&quot;, order=2) # method: polynomial, spline</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df_interpolado</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
-0             0 2021-01-01   3.625000  73.583333   99.833333
-1             1 2021-01-02   2.772917  68.770833   74.333333
-2             2 2021-01-03   1.920833  63.958333  101.500000
-3             3 2021-01-04   3.433333  57.791667  101.958333
-4             4 2021-01-05   0.445833  63.395833  106.666667
-..          ...        ...        ...        ...         ...
-329         329 2021-11-26   5.562500  69.875000   87.833333
-330         330 2021-11-27   5.500000  61.500000   93.041667
-331         331 2021-11-28   4.783333  60.291667  117.750000
-332         332 2021-11-29  10.112500  61.541667  108.750000
-333         333 2021-11-30   6.691667  74.000000  102.958333
-
-[334 rows x 5 columns]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="analisis-exploratorio-de-datos-biomedicos">
-<h2><strong>3.3. Análisis exploratorio de datos biomédicos</strong><a class="headerlink" href="#analisis-exploratorio-de-datos-biomedicos" title="Link to this heading">#</a></h2>
+<section id="biomedicos">
+<h3><strong>3.1.2. Biomedicos</strong><a class="headerlink" href="#biomedicos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_anemia</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
@@ -1314,13 +1141,174 @@ None
 </div>
 </div>
 </section>
-<section id="control-de-calidad-de-datos-biomedicos">
-<h2><strong>3.4. Control de calidad de datos biomédicos</strong><a class="headerlink" href="#control-de-calidad-de-datos-biomedicos" title="Link to this heading">#</a></h2>
+</section>
+<section id="control-de-calidad-de-datos">
+<h2><strong>3.2. Control de calidad de datos</strong><a class="headerlink" href="#control-de-calidad-de-datos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">encontrar_nan</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># Verificar valores NaN en cada columna</span>
+    <span class="n">nan_por_columna</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Verificar valores NaN en todo el DataFrame</span>
+    <span class="n">total_nan</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Mostrar resultados</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame original:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Valores NaN por columna:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nan_por_columna</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total de valores NaN en el DataFrame: </span><span class="si">{</span><span class="n">total_nan</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encontrar_nan</span><span class="p">(</span><span class="n">df_met</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame original:
+
+Valores NaN por columna:
+Unnamed: 0    0
+fecha         0
+temp_aire     1
+hr            2
+rxn_solar     0
+dtype: int64
+
+Total de valores NaN en el DataFrame: 3
+</pre></div>
+</div>
+</div>
+</div>
 <section id="id1">
-<h3><strong>3.4.1. Preprocesamiento de datos</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3><strong>3.2.1. Ambientales</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fil_temp_aire</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">&gt;=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fil_temp_aire</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
+0             0 2021-01-01   3.625000  73.583333   99.833333
+1             1 2021-01-02   1.329167  60.625000   74.333333
+2             2 2021-01-03   1.920833  63.958333  101.500000
+3             3 2021-01-04   3.433333  57.791667  101.958333
+4             4 2021-01-05   0.445833  69.541667  106.666667
+5             5 2021-01-06  -0.045833  69.000000  106.625000
+6             6 2021-01-07  -0.708333  82.416667   14.583333
+9             9 2021-01-10   0.829167  84.916667  117.791667
+14           14 2021-01-15   0.466667  79.791667  116.208333
+15           15 2021-01-16   0.425000  78.541667  124.291667
+16           16 2021-01-17   0.462500  72.041667  127.958333
+17           17 2021-01-18   2.366667  76.166667  122.291667
+18           18 2021-01-19   1.379167  83.750000  123.083333
+19           19 2021-01-20   2.333333  95.625000   35.166667
+326         326 2021-11-23   4.512500  85.791667   38.541667
+327         327 2021-11-24   4.395833  85.041667   78.750000
+331         331 2021-11-28   4.783333  60.291667  117.750000
+(17, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">df_met</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;hr&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df_met</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">df_met</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
+0             0 2021-01-01   3.625000  73.583333   99.833333
+1             1 2021-01-02        NaN        NaN   74.333333
+2             2 2021-01-03   1.920833  63.958333  101.500000
+3             3 2021-01-04   3.433333  57.791667  101.958333
+4             4 2021-01-05   0.445833        NaN  106.666667
+..          ...        ...        ...        ...         ...
+329         329 2021-11-26   5.562500  69.875000   87.833333
+330         330 2021-11-27   5.500000  61.500000   93.041667
+331         331 2021-11-28   4.783333  60.291667  117.750000
+332         332 2021-11-29  10.112500  61.541667  108.750000
+333         333 2021-11-30   6.691667  74.000000  102.958333
+
+[334 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id2">
-<h3><strong>3.4.2. Procesamiento de datos</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h3><strong>3.2.2. Biomédicos</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encontrar_nan</span><span class="p">(</span><span class="n">df_anemia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame original:
+
+Valores NaN por columna:
+Sexo                 0
+id_persona           0
+Edad                 0
+Tipo_edad            0
+id_ubigeo         5783
+Fecha_atencion       0
+Etapa                0
+Diagnostico          0
+Tipo_Dx              0
+Lab                  0
+id_eess              0
+dtype: int64
+
+Total de valores NaN en el DataFrame: 5783
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_interpolado</span> <span class="o">=</span> <span class="n">df_met</span><span class="o">.</span><span class="n">interpolate</span><span class="p">()</span> <span class="c1"># method: linear</span>
+<span class="c1">#df_interpolado = df.interpolate(method=&quot;spline&quot;, order=2) # method: polynomial, spline</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_interpolado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
+0             0 2021-01-01   3.625000  73.583333   99.833333
+1             1 2021-01-02   2.772917  68.770833   74.333333
+2             2 2021-01-03   1.920833  63.958333  101.500000
+3             3 2021-01-04   3.433333  57.791667  101.958333
+4             4 2021-01-05   0.445833  63.395833  106.666667
+..          ...        ...        ...        ...         ...
+329         329 2021-11-26   5.562500  69.875000   87.833333
+330         330 2021-11-27   5.500000  61.500000   93.041667
+331         331 2021-11-28   4.783333  60.291667  117.750000
+332         332 2021-11-29  10.112500  61.541667  108.750000
+333         333 2021-11-30   6.691667  74.000000  102.958333
+
+[334 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -1436,17 +1424,15 @@ None
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importar-archivos-en-formato-csv"><strong>2.2. Importar archivos en formato CSV</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-procesamiento-basico-de-datos"><strong>III. Procesamiento básico de datos</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-ambientales"><strong>3.1. Análisis exploratorio de datos ambientales</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-ambientales"><strong>3.2. Control de calidad de datos ambientales</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento-de-datos"><strong>3.2.1. Preprocesamiento de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos"><strong>3.2.2. Procesamiento de datos</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-preprocesamiento-de-datos"><strong>III. Preprocesamiento de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos"><strong>3.1. Análisis exploratorio de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ambientales"><strong>3.1.1. Ambientales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biomedicos"><strong>3.1.2. Biomedicos</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-exploratorio-de-datos-biomedicos"><strong>3.3. Análisis exploratorio de datos biomédicos</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos-biomedicos"><strong>3.4. Control de calidad de datos biomédicos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>3.4.1. Preprocesamiento de datos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>3.4.2. Procesamiento de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-calidad-de-datos"><strong>3.2. Control de calidad de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>3.2.1. Ambientales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>3.2.2. Biomédicos</strong></a></li>
 </ul>
 </li>
 </ul>
