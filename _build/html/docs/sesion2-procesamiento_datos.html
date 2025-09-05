@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sesion2_procesamiento_datos';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sesion2-procesamiento_datos';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Programación Básica con Python" href="sesion1.html" />
+    <link rel="prev" title="Programación Básica con Python" href="sesion1-programacion_basica_python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,7 +180,7 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="sesion1.html"><strong>Programación Básica con Python</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="sesion1-programacion_basica_python.html"><strong>Programación Básica con Python</strong></a></li>
 
 
 
@@ -243,7 +243,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/docs/sesion2_procesamiento_datos.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/docs/sesion2-procesamiento_datos.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +291,7 @@
       
       
       
-      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion2_procesamiento_datos.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion2-procesamiento_datos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="../_sources/docs/sesion2_procesamiento_datos.ipynb" target="_blank"
+      <li><a href="../_sources/docs/sesion2-procesamiento_datos.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -456,15 +456,37 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="manejo-preprocesamiento-y-procesamiento-de-datos">
 <h1><strong>Manejo, Preprocesamiento y Procesamiento de datos</strong><a class="headerlink" href="#manejo-preprocesamiento-y-procesamiento-de-datos" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Etapa</p></th>
+<th class="head"><p>Objetivo principal</p></th>
+<th class="head"><p>Ejemplos</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Manejo</strong></p></td>
+<td><p>Administración y control de datos</p></td>
+<td><p>Almacenamiento, seguridad, bases de datos</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Preprocesamiento</strong></p></td>
+<td><p>Preparar datos para el análisis</p></td>
+<td><p>Limpieza, normalización, codificación</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Procesamiento</strong></p></td>
+<td><p>Extraer conocimiento de los datos</p></td>
+<td><p>Estadística, machine learning, visualización</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Estos tres procesos son interdependientes y forman parte del flujo de trabajo en cualquier proyecto de análisis de datos o ciencia de datos.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-gestion-de-directorios-y-archivos-en-la-nube">
 <h1><strong>I. Gestión de directorios y archivos en la nube</strong><a class="headerlink" href="#i-gestion-de-directorios-y-archivos-en-la-nube" title="Link to this heading">#</a></h1>
+<p>La gestión de archivos y directorios en Google Drive es el proceso de organizar, proteger y compartir información digital en la nube, aprovechando sus funciones de colaboración en tiempo real, control de versiones, permisos de acceso y sincronización multiplataforma, lo que facilita el trabajo individual y grupal de manera eficiente.</p>
 <section id="montar-google-drive-a-colaboratory">
 <h2><strong>1.1. Montar Google drive a Colaboratory</strong><a class="headerlink" href="#montar-google-drive-a-colaboratory" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>Montar Google Drive en Colab es el proceso mediante el cual el entorno de ejecución de Colab obtiene acceso autorizado a los archivos de Google Drive, de forma que se pueden leer, escribir y modificar archivos durante la sesión.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
@@ -516,11 +538,7 @@ document.write(`
 </section>
 <section id="explorar-contenido-de-google-drive">
 <h2><strong>1.2. Explorar contenido de Google Drive</strong><a class="headerlink" href="#explorar-contenido-de-google-drive" title="Link to this heading">#</a></h2>
-<p>El paquete <code class="docutils literal notranslate"><span class="pre">os</span></code> (del inglés “operating system”) en Python proporciona una forma de interactuar con el sistema operativo subyacente. Permite realizar tareas dependientes del sistema operativo, como la gestión de archivos y directorios, la manipulación de rutas, la ejecución de comandos del sistema, entre otras.</p>
-<ul class="simple">
-<li><p><strong>Navegación por el sistema de archivos:</strong> Listar el contenido de un directorio (<code class="docutils literal notranslate"><span class="pre">os.listdir()</span></code>).</p></li>
-<li><p><strong>Gestión de directorios y archivos:</strong> Puedes crear, eliminar, renombrar directorios y archivos. Por ejemplo, os.<code class="docutils literal notranslate"><span class="pre">mkdir()</span></code> para crear un directorio, <code class="docutils literal notranslate"><span class="pre">os.remove()</span></code> para eliminar un archivo, <code class="docutils literal notranslate"><span class="pre">os.rename()</span></code> para renombrar.</p></li>
-</ul>
+<p>Explorar contenido de Google Drive se refiere a la acción de navegar, buscar, visualizar y gestionar los archivos y carpetas almacenados en Google Drive, la plataforma de almacenamiento en la nube de Google.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -752,6 +770,7 @@ Numero de elementos: 3
 </section>
 <section id="importar-archivos-en-formato-csv">
 <h2><strong>2.2. Importar archivos en formato CSV</strong><a class="headerlink" href="#importar-archivos-en-formato-csv" title="Link to this heading">#</a></h2>
+<p>Importar archivos en formato CSV (Comma-Separated Values, o Valores Separados por Comas) consiste en el proceso de cargar o transferir datos almacenados en un archivo CSV a un programa, aplicación o base de datos para su procesamiento, análisis o almacenamiento. Un archivo CSV es un formato de texto plano que organiza datos en filas y columnas, donde los valores están separados por comas (u otros delimitadores, como punto y coma o tabulaciones) y cada fila representa un registro.</p>
 <ul class="simple">
 <li><p><a href="https://www.datosabiertos.gob.pe">Plataforma Nacional de Datos Abiertos</a>.</p></li>
 <li><p>Datos para caso estudio: <a href="https://www.datosabiertos.gob.pe/dataset/anemia">Anemia</a>.</p></li>
@@ -843,8 +862,8 @@ Data columns (total 5 columns):
 ---  ------      --------------  -----         
  0   Unnamed: 0  334 non-null    int64         
  1   fecha       334 non-null    datetime64[ns]
- 2   temp_aire   334 non-null    float64       
- 3   hr          334 non-null    float64       
+ 2   temp_aire   333 non-null    float64       
+ 3   hr          332 non-null    float64       
  4   rxn_solar   334 non-null    float64       
 dtypes: datetime64[ns](1), float64(3), int64(1)
 memory usage: 13.2 KB
@@ -859,10 +878,6 @@ None
 <span class="n">valores_nulos_por_columna</span> <span class="o">=</span> <span class="n">df_met</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores nulos por columna:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">valores_nulos_por_columna</span><span class="p">)</span>
-
-<span class="c1"># Contar el total de valores nulos en todo el DataFrame</span>
-<span class="n">total_valores_nulos</span> <span class="o">=</span> <span class="n">df_met</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total de valores nulos en el DataFrame: </span><span class="si">{</span><span class="n">total_valores_nulos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -870,12 +885,26 @@ None
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores nulos por columna:
 Unnamed: 0    0
 fecha         0
-temp_aire     0
-hr            0
+temp_aire     1
+hr            2
 rxn_solar     0
 dtype: int64
 
-Total de valores nulos en el DataFrame: 0
+Total de valores nulos en el DataFrame: 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contar el total de valores nulos en todo el DataFrame</span>
+<span class="n">total_valores_nulos</span> <span class="o">=</span> <span class="n">df_met</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Total de valores nulos en el DataFrame: </span><span class="si">{</span><span class="n">total_valores_nulos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total de valores nulos en el DataFrame: 3
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1401,7 @@ None
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="sesion1.html"
+       href="sesion1-programacion_basica_python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
