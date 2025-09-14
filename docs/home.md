@@ -1,6 +1,21 @@
-<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #D0F5D2">
 <h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Usando Python</b></span></h1>
 </div>
+<br>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+
+
+<table align="left" style="background-color: #D0F5D2">
+<tr>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">AUTOR :</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">VR ROJAS</span></th>
+</tr>
+</table>
+
 <br><br>
 
 # Descripción del Curso
