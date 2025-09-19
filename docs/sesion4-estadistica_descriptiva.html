@@ -1,0 +1,1429 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Estadística Descriptiva &#8212; Estadística para Investigación Usando Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sesion4-estadistica_descriptiva';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3. Visualización de gráficos" href="sesion3-visualizacion_graficas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Estadística para Investigación Usando Python</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="home.html">
+                    Descripción del Curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="preambulo.html">Preámbulo</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion1-programacion_basica_python.html"><strong>1. Programación Básica con Python</strong></a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion2-procesamiento_datos.html"><strong>2. Manejo, Preprocesamiento y Procesamiento de datos</strong></a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="sesion3-visualizacion_graficas.html"><strong>3. Visualización de gráficos</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>4. Estadística Descriptiva</strong></a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/docs/sesion4-estadistica_descriptiva.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/yenchiah/jupyter-book-template" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion4-estadistica_descriptiva.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/sesion4-estadistica_descriptiva.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4. Estadística Descriptiva</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>4. Estadística Descriptiva</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-gestion-de-directorios-y-archivos-en-la-nube"><strong>I. Gestión de directorios y archivos en la nube</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive-a-colaboratory">1.1. Montar Google drive a Colaboratory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-contenido-de-google-drive">1.2. Explorar contenido de Google Drive</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-importar-base-de-datos"><strong>II. Importar base de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno">2.1. Preparar entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-en-formato-excel">2.2. Archivos en formato EXCEL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-en-formato-csv">2.3. Archivos en formato CSV</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-estadistica-descriptiva"><strong>III. Estadística Descriptiva</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizar-datos">3.1. Organizar Datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-de-frecuencia">3.1.1. Tablas de frecuencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuciones-de-frecuencia">3.1.2. Distribuciones de frecuencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percentiles-y-cuartiles">3.1.3. Percentiles y cuartiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Percentiles y cuartiles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-tendencia-central">3.2. Medidas de Tendencia Central</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-aritmetica">3.2.1. Media aritmética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mediana-y-moda">3.2.2. Mediana y moda</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-dispesion">3.3. Medidas de Dispesión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">3.3.1. Varianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desviacion-estandar">3.3.2. Desviación estándar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rango-intercuartil">3.3.3. Rango intercuartil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-asociacion">3.4. Medidas de Asociación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">3.4.1. Covarianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficiente-de-correlacion-de-pearson">3.4.1 Coeficiente de correlación de Pearson</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="estadistica-descriptiva">
+<h1><strong>4. Estadística Descriptiva</strong><a class="headerlink" href="#estadistica-descriptiva" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="i-gestion-de-directorios-y-archivos-en-la-nube">
+<h1><strong>I. Gestión de directorios y archivos en la nube</strong><a class="headerlink" href="#i-gestion-de-directorios-y-archivos-en-la-nube" title="Link to this heading">#</a></h1>
+<p>La gestión de archivos y directorios en Google Drive es el proceso de organizar, proteger y compartir información digital en la nube, aprovechando sus funciones de colaboración en tiempo real, control de versiones, permisos de acceso y sincronización multiplataforma, lo que facilita el trabajo individual y grupal de manera eficiente.</p>
+<section id="montar-google-drive-a-colaboratory">
+<h2>1.1. Montar Google drive a Colaboratory<a class="headerlink" href="#montar-google-drive-a-colaboratory" title="Link to this heading">#</a></h2>
+<p>Montar Google Drive en Colab es el proceso mediante el cual el entorno de ejecución de Colab obtiene acceso autorizado a los archivos de Google Drive, de forma que se pueden leer, escribir y modificar archivos durante la sesión.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span> <span class="k">as</span> <span class="n">_</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span> <span class="k">as</span> <span class="n">_</span>
+<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_import_hooks</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_installation_commands</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">_shell_customizations</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language govestylerning permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Colab import customizations to the IPython runtime.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_altair</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span><span class="w"> </span><span class="nn">google.colab._import_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">_cv2</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span><span class="w"> </span><span class="nf">_register_hooks</span><span class="p">():</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jupyterbook</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.13</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">colab</span><span class="o">/</span><span class="n">_import_hooks</span><span class="o">/</span><span class="n">_altair</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">16</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Copyright 2018 Google Inc. All rights reserved.</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">12</span> <span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># limitations under the License.</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Import hook for ensuring that Altair&#39;s Colab renderer is registered.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">import</span><span class="w"> </span><span class="nn">imp</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;imp&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="explorar-contenido-de-google-drive">
+<h2>1.2. Explorar contenido de Google Drive<a class="headerlink" href="#explorar-contenido-de-google-drive" title="Link to this heading">#</a></h2>
+<p>Explorar contenido de Google Drive se refiere a la acción de navegar, buscar, visualizar y gestionar los archivos y carpetas almacenados en Google Drive, la plataforma de almacenamiento en la nube de Google.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">listar_carpeta</span><span class="p">(</span><span class="n">ruta_carpeta</span><span class="p">):</span>
+  <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+  <span class="n">ruta_drive</span> <span class="o">=</span><span class="s2">&quot;/content/drive/MyDrive/&quot;</span>
+  <span class="n">contenido_carpeta</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">ruta_drive</span> <span class="o">+</span> <span class="n">ruta_carpeta</span><span class="p">)</span>
+  <span class="n">n_elem</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">contenido_carpeta</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ruta: </span><span class="si">{</span><span class="n">ruta_drive</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ruta_carpeta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Numero de elementos: </span><span class="si">{</span><span class="n">n_elem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_elem</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">) </span><span class="si">{</span><span class="n">contenido_carpeta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La siguiente celda de código, genera una lista de archivos y directorios contenidos en el directorio ó carpeta <strong><code class="docutils literal notranslate"><span class="pre">Base_datos</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listar_carpeta</span><span class="p">(</span><span class="s2">&quot;Base_datos&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta: /content/drive/MyDrive/Base_datos
+Numero de elementos: 4
+(0) fuente_de_datos.gdoc
+(1) shapes
+(2) biomedicina
+(3) meteorologia
+</pre></div>
+</div>
+</div>
+</div>
+<p>La siguiente celda de código, genera una lista de archivos y directorios contenidos en el directorio ó carpeta <strong><code class="docutils literal notranslate"><span class="pre">Base_datos/biomedicina</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listar_carpeta</span><span class="p">(</span><span class="s2">&quot;Base_datos/biomedicina&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta: /content/drive/MyDrive/Base_datos/biomedicina
+Numero de elementos: 12
+(0) datos_abiertos_vigilancia_dengue_2000_2023.csv
+(1) datos_abiertos_vigilancia_malaria_2000_2008.csv
+(2) datos_abiertos_vigilancia_malaria_2009_2023.csv
+(3) Dataset_ExamenesLaboratorio_ConsultaExterna_PatologíasRelacionadas_Diabetes_202001_202404.csv
+(4) datos_abiertos_vigilancia_zoonosis_2000_2023.csv
+(5) datos_abiertos_vigilancia_iras_2000_2023.csv
+(6) datos_abiertos_vigilancia_enfermedad_carrion_2000_2023.csv
+(7) pmGenoma_25Septiembre2021.csv
+(8) pmGenoma_27Sep2023.csv
+(9) TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv
+(10) primeras_100_filas_anemia.xlsx
+(11) primeras_100_filas_anemia.gsheet
+</pre></div>
+</div>
+</div>
+</div>
+<p>La siguiente celda de código, genera una lista de archivos y directorios contenidos en el directorio ó carpeta <strong><code class="docutils literal notranslate"><span class="pre">Base_datos/meteorologia</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listar_carpeta</span><span class="p">(</span><span class="s2">&quot;Base_datos/meteorologia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta: /content/drive/MyDrive/Base_datos/meteorologia
+Numero de elementos: 1
+(0) data_estacion_madrid.xlsx
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ii-importar-base-de-datos">
+<h1><strong>II. Importar base de datos</strong><a class="headerlink" href="#ii-importar-base-de-datos" title="Link to this heading">#</a></h1>
+<section id="preparar-entorno">
+<h2>2.1. Preparar entorno<a class="headerlink" href="#preparar-entorno" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Paquete especializado en metodos numericos</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Paquete especialozado manejo de estructuras de datos tipo tablas (Data Frames)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Paquetes especializado para generar graficas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Paquete especializados de estadística y metodos numéricos</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Paquete especializado en estadística</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.formula.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="archivos-en-formato-excel">
+<h2>2.2. Archivos en formato EXCEL<a class="headerlink" href="#archivos-en-formato-excel" title="Link to this heading">#</a></h2>
+<p>Las mediciones de temperatura del aire, humedad relativa y radiación solar (variables ambientales), realizadas por una estación meteorológica en un punto geográfico específico son datos <strong>cuantitativos contínuos</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">excel_data_file</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/MyDrive/Base_datos/meteorologia/data_estacion_madrid.xlsx&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># immportando el archivo Excel</span>
+<span class="n">df_excel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">excel_data_file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_excel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
+0             0 2021-01-01   3.625000  73.583333   99.833333
+1             1 2021-01-02   1.329167  60.625000   74.333333
+2             2 2021-01-03   1.920833  63.958333  101.500000
+3             3 2021-01-04   3.433333  57.791667  101.958333
+4             4 2021-01-05   0.445833  69.541667  106.666667
+..          ...        ...        ...        ...         ...
+329         329 2021-11-26   5.562500  69.875000   87.833333
+330         330 2021-11-27   5.500000  61.500000   93.041667
+331         331 2021-11-28   4.783333  60.291667  117.750000
+332         332 2021-11-29  10.112500  61.541667  108.750000
+333         333 2021-11-30   6.691667  74.000000  102.958333
+
+[334 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_met</span> <span class="o">=</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Unnamed: 0      fecha  temp_aire         hr   rxn_solar
+0             0 2021-01-01   3.625000  73.583333   99.833333
+1             1 2021-01-02   1.329167  60.625000   74.333333
+2             2 2021-01-03   1.920833  63.958333  101.500000
+3             3 2021-01-04   3.433333  57.791667  101.958333
+4             4 2021-01-05   0.445833  69.541667  106.666667
+..          ...        ...        ...        ...         ...
+329         329 2021-11-26   5.562500  69.875000   87.833333
+330         330 2021-11-27   5.500000  61.500000   93.041667
+331         331 2021-11-28   4.783333  60.291667  117.750000
+332         332 2021-11-29  10.112500  61.541667  108.750000
+333         333 2021-11-30   6.691667  74.000000  102.958333
+
+[334 rows x 5 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="archivos-en-formato-csv">
+<h2>2.3. Archivos en formato CSV<a class="headerlink" href="#archivos-en-formato-csv" title="Link to this heading">#</a></h2>
+<p>Importar archivos en formato CSV (Comma-Separated Values, o Valores Separados por Comas) consiste en el proceso de cargar o transferir datos almacenados en un archivo CSV a un programa, aplicación o base de datos para su procesamiento, análisis o almacenamiento. Un archivo CSV es un formato de texto plano que organiza datos en filas y columnas, donde los valores están separados por comas (u otros delimitadores, como punto y coma o tabulaciones) y cada fila representa un registro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_data_file</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/My Drive/Base_datos/biomedicina/TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv&quot;</span>
+
+<span class="n">df_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_data_file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_csv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo  id_persona  Edad Tipo_edad  id_ubigeo  Fecha_atencion    Etapa  \
+0         F    41031388    20         A        NaN        20230208  18a-29a   
+1         F    40489600     2         A     1128.0        20230107  00a-11a   
+2         M    40315865     1         A        NaN        20230207  00a-11a   
+3         F    38917347    19         D     1460.0        20210511  00a-11a   
+4         M    40507941     3         A     1668.0        20230224  00a-11a   
+...     ...         ...   ...       ...        ...             ...      ...   
+248888    M     9206744     6         A     1631.0        20230119  00a-11a   
+248889    M    25824229     4         A      163.0        20210528  00a-11a   
+248890    F    19472530     6         A     1161.0        20230107  00a-11a   
+248891    F    33840534     4         A      242.0        20210412  00a-11a   
+248892    F    19486739    84         A     1703.0        20230525     60a+   
+
+        Diagnostico Tipo_Dx  Lab  id_eess  
+0          99199.17       D  SF3     5942  
+1          99199.17       D  SF3     6856  
+2          99199.17       D  SF1    27109  
+3          99199.17       D  SF1       16  
+4          99199.17       D   TA     2978  
+...             ...     ...  ...      ...  
+248888     99199.17       D  SF2     3263  
+248889     99199.17       D  SF1     1819  
+248890     99199.17       D  SF2     5217  
+248891     99199.17       D  SF1     1812  
+248892     99199.17       D  SF1     3161  
+
+[248893 rows x 11 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_anemia</span> <span class="o">=</span> <span class="n">df_csv</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_anemia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Sexo  id_persona  Edad Tipo_edad  id_ubigeo  Fecha_atencion    Etapa  \
+0         F    41031388    20         A        NaN        20230208  18a-29a   
+1         F    40489600     2         A     1128.0        20230107  00a-11a   
+2         M    40315865     1         A        NaN        20230207  00a-11a   
+3         F    38917347    19         D     1460.0        20210511  00a-11a   
+4         M    40507941     3         A     1668.0        20230224  00a-11a   
+...     ...         ...   ...       ...        ...             ...      ...   
+248888    M     9206744     6         A     1631.0        20230119  00a-11a   
+248889    M    25824229     4         A      163.0        20210528  00a-11a   
+248890    F    19472530     6         A     1161.0        20230107  00a-11a   
+248891    F    33840534     4         A      242.0        20210412  00a-11a   
+248892    F    19486739    84         A     1703.0        20230525     60a+   
+
+        Diagnostico Tipo_Dx  Lab  id_eess  
+0          99199.17       D  SF3     5942  
+1          99199.17       D  SF3     6856  
+2          99199.17       D  SF1    27109  
+3          99199.17       D  SF1       16  
+4          99199.17       D   TA     2978  
+...             ...     ...  ...      ...  
+248888     99199.17       D  SF2     3263  
+248889     99199.17       D  SF1     1819  
+248890     99199.17       D  SF2     5217  
+248891     99199.17       D  SF1     1812  
+248892     99199.17       D  SF1     3161  
+
+[248893 rows x 11 columns]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iii-estadistica-descriptiva">
+<h1><strong>III. Estadística Descriptiva</strong><a class="headerlink" href="#iii-estadistica-descriptiva" title="Link to this heading">#</a></h1>
+<p>La <strong>estadística descriptiva</strong> tiene como objetivo resumir, organizar y presentar datos de manera clara y comprensible, permitiendo identificar patrones, tendencias o características principales de un conjunto de datos sin hacer inferencias sobre una población mayor.</p>
+<section id="organizar-datos">
+<h2>3.1. Organizar Datos<a class="headerlink" href="#organizar-datos" title="Link to this heading">#</a></h2>
+<p>Organizar datos es el proceso fundamental en estadística descriptiva que implica estructurar y preparar un conjunto de datos para su análisis. Este proceso busca facilitar la comprensión, identificación de patrones, cálculo de medidas resumen y la visualización de la información.</p>
+<p>Las principales formas de organizar datos incluyen:</p>
+<ul class="simple">
+<li><p><strong>Tablas de Frecuencia</strong></p></li>
+<li><p><strong>Distribuciones de Frecuencia</strong></p></li>
+<li><p><strong>Percentiles y cuartiles</strong></p></li>
+</ul>
+<p>La organización adecuada de los datos es el primer paso crucial antes de calcular medidas de tendencia central, dispersión o realizar visualizaciones, ya que permite tener una visión clara y concisa de la información disponible.</p>
+<section id="tablas-de-frecuencia">
+<h3>3.1.1. Tablas de frecuencia<a class="headerlink" href="#tablas-de-frecuencia" title="Link to this heading">#</a></h3>
+<p>Resumen la distribución de una variable, mostrando cuántas veces aparece cada valor o categoría. Esto puede ser en términos de frecuencia absoluta (conteo) o frecuencia relativa (proporción o porcentaje).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la tabla de frecuencias absolutas para la columna &#39;Sexo&#39;</span>
+<span class="n">frecuencia_absoluta_sexo</span> <span class="o">=</span> <span class="n">df_anemia</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabla de Frecuencia Absoluta para &#39;Sexo&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frecuencia_absoluta_sexo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tabla de Frecuencia Absoluta para &#39;Sexo&#39;:
+Sexo
+M    126255
+F    122638
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la tabla de frecuencias relativas para la columna &#39;Sexo&#39;</span>
+<span class="n">frecuencia_relativa_sexo</span> <span class="o">=</span> <span class="n">df_anemia</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Tabla de Frecuencia Relativa para &#39;Sexo&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frecuencia_relativa_sexo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tabla de Frecuencia Relativa para &#39;Sexo&#39;:
+Sexo
+M    0.507266
+F    0.492734
+Name: proportion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="distribuciones-de-frecuencia">
+<h3>3.1.2. Distribuciones de frecuencia<a class="headerlink" href="#distribuciones-de-frecuencia" title="Link to this heading">#</a></h3>
+<p>Similar a las tablas de frecuencia, pero a menudo utilizadas para datos cuantitativos continuos, donde los datos se agrupan en intervalos o clases. Esto ayuda a visualizar la forma de la distribución de los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribucion de Temperaturas&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1f0f4c618ce00e50a1933f339e054c69414215e3a54ebf6169f22f74e3683e34.png" src="../_images/1f0f4c618ce00e50a1933f339e054c69414215e3a54ebf6169f22f74e3683e34.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df_anemia</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribucion de Temperaturas&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/faaeb95657cb298a8bdceb5dabb7201aedc946f57bcd8efd319d475462766e4b.png" src="../_images/faaeb95657cb298a8bdceb5dabb7201aedc946f57bcd8efd319d475462766e4b.png" />
+</div>
+</div>
+</section>
+<section id="percentiles-y-cuartiles">
+<h3>3.1.3. Percentiles y cuartiles<a class="headerlink" href="#percentiles-y-cuartiles" title="Link to this heading">#</a></h3>
+</section>
+<section id="id1">
+<h3>Percentiles y cuartiles<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Los percentiles y cuartiles son medidas de posición que dividen un conjunto de datos ordenado en partes iguales, proporcionando información sobre la distribución de los valores.</p>
+<ul class="simple">
+<li><p><strong>Percentiles:</strong> Los percentiles dividen un conjunto de datos ordenado en 100 partes iguales. El percentil Pk es el valor por debajo del cual se encuentra el k% de los datos. Por ejemplo, el percentil 90 (P90) es el valor por debajo del cual se encuentra el 90% de los datos. Son útiles para entender la distribución de datos y comparar un valor individual con el resto del conjunto.</p></li>
+<li><p><strong>Cuartiles:</strong> Los cuartiles son percentiles específicos que dividen el conjunto de datos ordenado en cuatro partes iguales:</p>
+<ul>
+<li><p><strong>Primer cuartil (Q1):</strong> Corresponde al percentil 25 (P25). Es el valor por debajo del cual se encuentra el 25% de los datos.</p></li>
+<li><p><strong>Segundo cuartil (Q2):</strong> Corresponde al percentil 50 (P50). Es la mediana, el valor que divide el conjunto de datos en dos mitades iguales.</p></li>
+<li><p><strong>Tercer cuartil (Q3):</strong> Corresponde al percentil 75 (P75). Es el valor por debajo del cual se encuentra el 75% de los datos.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular cuartiles (Q1, Q2, Q3)</span>
+<span class="n">quartiles_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cuartiles para &#39;hr&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quartiles_hr</span><span class="p">)</span>
+
+<span class="c1"># Calcular percentiles (ejemplo: P10, P90)</span>
+<span class="n">percentiles_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Percentiles para &#39;hr&#39; (P10 y P90):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">percentiles_hr</span><span class="p">)</span>
+
+<span class="c1"># Calcular percentiles personalizados (ejemplo: P5, P50, P95)</span>
+<span class="n">percentiles_personalizados_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Percentiles personalizados para &#39;hr&#39; (P5, P50 y P95):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">percentiles_personalizados_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cuartiles para &#39;hr&#39;:
+0.25    45.031250
+0.50    57.937500
+0.75    70.885417
+Name: hr, dtype: float64
+
+Percentiles para &#39;hr&#39; (P10 y P90):
+0.1    35.116667
+0.9    80.579167
+Name: hr, dtype: float64
+
+Percentiles personalizados para &#39;hr&#39; (P5, P50 y P95):
+0.05    30.233333
+0.50    57.937500
+0.95    87.295833
+Name: hr, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="medidas-de-tendencia-central">
+<h2>3.2. Medidas de Tendencia Central<a class="headerlink" href="#medidas-de-tendencia-central" title="Link to this heading">#</a></h2>
+<p>Las medidas de tendencia central son valores que buscan ubicar el centro de un conjunto de datos. Son estadísticas que resumen un conjunto de valores en un solo número que representa el “centro” o valor típico de la distribución. Son fundamentales para comprender la distribución de los datos y comparar diferentes conjuntos de datos.</p>
+<p>Las principales medidas de tendencia central son:</p>
+<ul class="simple">
+<li><p><strong>Media aritmética</strong></p></li>
+<li><p><strong>Mediana</strong></p></li>
+<li><p><strong>Moda</strong></p></li>
+</ul>
+<p><strong>¿Para qué sirven las medidas de tendencia central?</strong></p>
+<ul class="simple">
+<li><p><strong>Resumir datos:</strong> Proporcionan un valor único que representa el conjunto de datos, facilitando su comprensión.</p></li>
+<li><p><strong>Comparar conjuntos de datos:</strong> Permiten comparar el “centro” de diferentes distribuciones de datos.</p></li>
+<li><p><strong>Identificar valores típicos:</strong> Ayudan a determinar cuál es el valor más representativo o común en un conjunto de datos.</p></li>
+<li><p><strong>Base para análisis posteriores:</strong> Son el punto de partida para calcular otras medidas estadísticas y realizar análisis más complejos.</p></li>
+</ul>
+<section id="media-aritmetica">
+<h3>3.2.1. Media aritmética<a class="headerlink" href="#media-aritmetica" title="Link to this heading">#</a></h3>
+<p>La media aritmética (<span class="math notranslate nohighlight">\(\overline{x}\)</span>) es la suma de todos los valores en un conjunto de datos dividida por el número total de valores. Es la medida de tendencia central más común, pero es sensible a los valores atípicos (extremos).</p>
+<p>Sea <span class="math notranslate nohighlight">\(x\)</span> una muestra de una población de <strong><span class="math notranslate nohighlight">\(n\)</span></strong> elementos.</p>
+<p><span class="math notranslate nohighlight">\(x = (x_{1}, x_{2}, \dots, x_{n})\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-mediaaritmetica">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-mediaaritmetica" title="Link to this equation">#</a></span>\[\overline{x} = \frac{1}{n} \sum_{i=1}^{n}x_{i}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.556998502994013
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.556998502994013
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">tmean</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.556998502994013
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mediana-y-moda">
+<h3>3.2.2. Mediana y moda<a class="headerlink" href="#mediana-y-moda" title="Link to this heading">#</a></h3>
+<p>La <strong>mediana</strong> el valor medio de un conjunto de datos cuando los datos están ordenados de menor a mayor. Si el número de datos es impar, la mediana es el valor central. Si el número de datos es par, la mediana es el promedio de los dos valores centrales. La mediana es menos sensible a los valores atípicos que la media.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;hr&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.9375
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la mediana para la columna &#39;hr&#39;</span>
+<span class="n">mediana_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mediana para &#39;hr&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mediana_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mediana para &#39;hr&#39;:
+57.9375
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por otro lado, la <strong>moda</strong> el valor que aparece con mayor frecuencia en un conjunto de datos. Un conjunto de datos puede tener una moda (unimodal), varias modas (multimodal) o ninguna moda. La moda es útil para datos categóricos o discretos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la moda para la columna &#39;hr&#39;</span>
+<span class="n">moda_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda para &#39;hr&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">moda_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moda para &#39;hr&#39;:
+0    49.291667
+1    62.541667
+2    72.291667
+Name: hr, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Interpretación del resultado:</strong>
+La moda para <code class="docutils literal notranslate"><span class="pre">'hr'</span></code> muestra tres valores (49.29, 62.54, y 72.29) porque estos tres valores aparecen con la misma frecuencia más alta en el conjunto de datos de la columna ‘hr’. Esto significa que la distribución de ‘hr’ es multimodal, específicamente trimodal en este caso.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la moda para la columna &#39;hr&#39;</span>
+<span class="n">moda_tipoEdad</span> <span class="o">=</span> <span class="n">df_anemia</span><span class="p">[</span><span class="s1">&#39;Tipo_edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moda para &#39;Tipo_edad&#39;:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">moda_tipoEdad</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moda para &#39;Tipo_edad&#39;:
+0    A
+Name: Tipo_edad, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="medidas-de-dispesion">
+<h2>3.3. Medidas de Dispesión<a class="headerlink" href="#medidas-de-dispesion" title="Link to this heading">#</a></h2>
+<p>Las medidas de dispersión son indicadores estadísticos que describen cuánto se alejan o dispersan los valores de un conjunto de datos respecto a una medida de tendencia central (media, mediana).</p>
+<p>En otras palabras, mientras las medidas de tendencia central (media, mediana, moda) indican el centro de los datos, las medidas de dispersión muestran el grado de variabilidad o la homogeneidad de los datos.</p>
+<section id="varianza">
+<h3>3.3.1. Varianza<a class="headerlink" href="#varianza" title="Link to this heading">#</a></h3>
+<p>La varianza es una medida estadística de dispersión que cuantifica cuánto se alejan los valores individuales de un conjunto de datos de su media (promedio). En esencia, mide la variabilidad o la “dispersión” de los datos alrededor de la media: una varianza alta indica que los datos están muy dispersos, mientras que una varianza baja significa que los valores están más concentrados cerca de la media.</p>
+<p>Sea <span class="math notranslate nohighlight">\(x\)</span> una muestra de una población de <strong><span class="math notranslate nohighlight">\(n\)</span></strong> elementos.</p>
+<p><span class="math notranslate nohighlight">\(x = (x_{1}, x_{2}, \dots, x_{n})\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-varianza">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-varianza" title="Link to this equation">#</a></span>\[\mathbf{S}_{x}=\mathbf{\sigma}^{2}_{x} = \frac{1}{n}\sum_{i=1}^{n}(x_{i} -\bar{x})^{2}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58.22304353384678
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58.39788750842289
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="desviacion-estandar">
+<h3>3.3.2. Desviación estándar<a class="headerlink" href="#desviacion-estandar" title="Link to this heading">#</a></h3>
+<p>La <strong>desviación estándar</strong> (<span class="math notranslate nohighlight">\(\mathbf{\sigma}\)</span>) es una medida estadística de dispersión que indica cuánto se desvían los valores de un conjunto de datos con respecto a su media (promedio). En otras palabras, mide la variabilidad o la dispersión de los datos: una desviación estándar baja indica que los valores están agrupados cerca de la media, mientras que una alta sugiere que los valores están más dispersos.</p>
+<p>Sea <span class="math notranslate nohighlight">\(x\)</span> una muestra de una población de <strong><span class="math notranslate nohighlight">\(n\)</span></strong> elementos.</p>
+<p><span class="math notranslate nohighlight">\(x = (x_{1}, x_{2}, \dots, x_{n})\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-desviacionestandar">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-desviacionestandar" title="Link to this equation">#</a></span>\[\mathbf{\sigma}_{x} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_{i} - \bar{x})^{2}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.630402580063962
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.6418510524887155
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rango-intercuartil">
+<h3>3.3.3. Rango intercuartil<a class="headerlink" href="#rango-intercuartil" title="Link to this heading">#</a></h3>
+<p>El rango intercuartil (RIQ o IQR, por sus siglas en inglés: Interquartile Range) es una medida de dispersión estadística que representa la diferencia entre el tercer cuartil (Q3) y el primer cuartil (Q1) de un conjunto de datos ordenado. En otras palabras, mide la amplitud del 50% central de los datos, excluyendo los valores extremos, y es una herramienta clave en estadística descriptiva para entender la variabilidad de un conjunto de datos.</p>
+<p>Sea <span class="math notranslate nohighlight">\(x\)</span> una muestra de una población de <strong><span class="math notranslate nohighlight">\(n\)</span></strong> elementos.</p>
+<p><span class="math notranslate nohighlight">\(x = (x_{1}, x_{2}, \dots, x_{n})\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-rangointercuartil">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-rangointercuartil" title="Link to this equation">#</a></span>\[RIQ = Q_{3} - Q_{1}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular el primer cuartil (Q1) y el tercer cuartil (Q3)</span>
+<span class="n">Q1_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3_hr</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+
+<span class="c1"># Calcular el Rango Intercuartil (RIQ)</span>
+<span class="n">RIQ_hr</span> <span class="o">=</span> <span class="n">Q3_hr</span> <span class="o">-</span> <span class="n">Q1_hr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El Rango Intercuartil (RIQ) para &#39;hr&#39; es: </span><span class="si">{</span><span class="n">RIQ_hr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Rango Intercuartil (RIQ) para &#39;hr&#39; es: 25.85416666666667
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="medidas-de-asociacion">
+<h3>3.4. Medidas de Asociación<a class="headerlink" href="#medidas-de-asociacion" title="Link to this heading">#</a></h3>
+<p>En estadística, además de las medidas de tendencia central y dispersión, existen las medidas de relación o correlación, que cuantifican la intensidad y dirección de la asociación entre dos o más variables.</p>
+</section>
+<section id="covarianza">
+<h3>3.4.1. Covarianza<a class="headerlink" href="#covarianza" title="Link to this heading">#</a></h3>
+<p>La covarianza es una medida estadística que indica el grado de asociación lineal entre dos variables aleatorias.</p>
+<p>Sea <span class="math notranslate nohighlight">\(x\)</span> é <span class="math notranslate nohighlight">\(y\)</span> dos muestras distintas de <strong><span class="math notranslate nohighlight">\(n\)</span></strong> elementos.</p>
+<p><span class="math notranslate nohighlight">\(x = (x_{1}, x_{2}, \dots, x_{n})\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = (y_{1}, y_{2}, \dots, y_{n})\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-covarianza">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-covarianza" title="Link to this equation">#</a></span>\[\mathbf{S}_{xy} = \frac{1}{n}\sum_{i=1}^{n}(x_{i} - \bar{x})(y_{i} - \bar{y})\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extraer las columnas como arrays de numpy</span>
+<span class="n">temp_aire_np</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">rxn_solar_np</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Calcular la matriz de covarianza usando numpy</span>
+<span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">temp_aire_np</span><span class="p">,</span> <span class="n">rxn_solar_np</span><span class="p">)</span>
+
+<span class="c1"># La covarianza entre las dos variables es el elemento fuera de la diagonal</span>
+<span class="n">covarianza_np</span> <span class="o">=</span> <span class="n">cov_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La covarianza entre &#39;temp_aire&#39; y &#39;rxn_solar&#39; usando numpy es: </span><span class="si">{</span><span class="n">covarianza_np</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La covarianza entre &#39;temp_aire&#39; y &#39;rxn_solar&#39; usando numpy es: 548.19588369245
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la covarianza entre &#39;temp_aire&#39; y &#39;rxn_solar&#39;</span>
+<span class="n">covarianza_temp_rxn</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La covarianza entre &#39;temp_aire&#39; y &#39;rxn_solar&#39; es: </span><span class="si">{</span><span class="n">covarianza_temp_rxn</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La covarianza entre &#39;temp_aire&#39; y &#39;rxn_solar&#39; es: 548.19588369245
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="coeficiente-de-correlacion-de-pearson">
+<h3>3.4.1 Coeficiente de correlación de Pearson<a class="headerlink" href="#coeficiente-de-correlacion-de-pearson" title="Link to this heading">#</a></h3>
+<p>El <strong>coeficiente de correlación de Pearson</strong> (<span class="math notranslate nohighlight">\(r\)</span>) mide la fuerza y dirección de la relación lineal entre dos variables cuantitativas.</p>
+<p>Sea <span class="math notranslate nohighlight">\(x\)</span> é <span class="math notranslate nohighlight">\(y\)</span> dos muestras distintas de <strong><span class="math notranslate nohighlight">\(n\)</span></strong> elementos.</p>
+<p><span class="math notranslate nohighlight">\(x = (x_{1}, x_{2}, \dots, x_{n})\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = (y_{1}, y_{2}, \dots, y_{n})\)</span></p>
+<div class="math notranslate nohighlight" id="equation-eq-correlacionpearson">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-correlacionpearson" title="Link to this equation">#</a></span>\[
+r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \; \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular el coeficiente de Pearson usando pandas</span>
+<span class="n">pearson_corr_pandas</span> <span class="o">=</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coeficiente de Pearson (pandas): </span><span class="si">{</span><span class="n">pearson_corr_pandas</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcular el coeficiente de Pearson usando numpy</span>
+<span class="n">pearson_corr_numpy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">],</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coeficiente de Pearson (numpy): </span><span class="si">{</span><span class="n">pearson_corr_numpy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calcular el coeficiente de Pearson usando scipy.stats</span>
+<span class="n">pearson_corr_stats</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">],</span> <span class="n">df_met</span><span class="p">[</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coeficiente de Pearson (scipy.stats): </span><span class="si">{</span><span class="n">pearson_corr_stats</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coeficiente de Pearson (pandas): 0.7463695395822112
+Coeficiente de Pearson (numpy): 0.7463695395822112
+Coeficiente de Pearson (scipy.stats): 0.7463695395822112
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-referencias">
+<h1><strong>IV. Referencias</strong><a class="headerlink" href="#iv-referencias" title="Link to this heading">#</a></h1>
+<p><strong>Libros y manuales</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.editorial-sciela.org/index.php/sciela/article/view/16/49">Libro de estadisitica con python</a></p></li>
+<li><p><a class="reference external" href="https://ciladi.org/wp-content/uploads/Version_final_Introduccion-Probabilidad-Python-vf_Bayas-3.pdf">Introducción a la teoria de probabilidades</a></p></li>
+<li><p><a class="reference external" href="https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf">Guía practica de análsis exploratorio de python</a></p></li>
+</ul>
+<p><strong>Cursos en linea</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.w3schools.com/statistics/index.php">Estadística W3School</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/es/3/library/statistics.html">Estadística con python</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/code/saurav9786/statistics-for-data-scientists">Kaggle</a></p></li>
+</ul>
+<p><strong>Chatbots de inteligencia artifical</strong></p>
+<p><a class="reference external" href="https://gemini.google.com">Gemini iA</a>, <a class="reference external" href="https://www.deepseek.com/">DeepSeek</a>, <a class="reference external" href="https://chatgpt.com/">Chat GPT</a>, <a class="reference external" href="https://claude.ai/">Claude IA</a> y <a class="reference external" href="https://julius.ai">Julius IA</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sesion3-visualizacion_graficas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>3. Visualización de gráficos</strong></p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>4. Estadística Descriptiva</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#i-gestion-de-directorios-y-archivos-en-la-nube"><strong>I. Gestión de directorios y archivos en la nube</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#montar-google-drive-a-colaboratory">1.1. Montar Google drive a Colaboratory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explorar-contenido-de-google-drive">1.2. Explorar contenido de Google Drive</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-importar-base-de-datos"><strong>II. Importar base de datos</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-entorno">2.1. Preparar entorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-en-formato-excel">2.2. Archivos en formato EXCEL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-en-formato-csv">2.3. Archivos en formato CSV</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-estadistica-descriptiva"><strong>III. Estadística Descriptiva</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#organizar-datos">3.1. Organizar Datos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-de-frecuencia">3.1.1. Tablas de frecuencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribuciones-de-frecuencia">3.1.2. Distribuciones de frecuencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percentiles-y-cuartiles">3.1.3. Percentiles y cuartiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Percentiles y cuartiles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-tendencia-central">3.2. Medidas de Tendencia Central</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-aritmetica">3.2.1. Media aritmética</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mediana-y-moda">3.2.2. Mediana y moda</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-dispesion">3.3. Medidas de Dispesión</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#varianza">3.3.1. Varianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desviacion-estandar">3.3.2. Desviación estándar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rango-intercuartil">3.3.3. Rango intercuartil</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medidas-de-asociacion">3.4. Medidas de Asociación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#covarianza">3.4.1. Covarianza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficiente-de-correlacion-de-pearson">3.4.1 Coeficiente de correlación de Pearson</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-referencias"><strong>IV. Referencias</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By VR Rojas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <style>
+  .slideshow-container { max-width: 800px; margin: auto; position: relative; }
+  .slides { display: none; width: 100%; height: auto; }
+  .slides.active { display: block; }
+  .controls { text-align: center; margin-top: 10px; }
+  .controls button { margin: 0 10px; padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 5px; }
+  .controls button:hover { background: #0056b3; }
+</style>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
