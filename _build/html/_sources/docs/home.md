@@ -1,5 +1,5 @@
 <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #D0F5D2">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Usando Python</b></span></h1>
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Ciencia de Datos usando Python</b></span></h1>
 </div>
 <br>
 <style>
