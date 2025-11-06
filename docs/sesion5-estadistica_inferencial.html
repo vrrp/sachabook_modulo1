@@ -206,6 +206,7 @@
 
 
 
+
 </ul>
 
     </div>
@@ -455,6 +456,20 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homocedasticidad">3.5. Homocedasticidad</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-modelo-de-regresion-logistica-binaria"><strong>IV. Modelo de regresión logística binaria</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-logistica">4.1 Función logística</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tamano-muestral-suficiente">4.2. Tamaño muestral suficiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-dependiente-binaria">4.3. Variable dependiente binaria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.4. Independencia de las observaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-entre-variables-categoricas-tipo-dx-y-sexo">Independencia entre variables categóricas (Tipo_Dx y Sexo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-entre-una-variable-categorica-y-una-continua-sexo-y-edad">Independencia entre una variable categórica y una continua (Sexo y Edad)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-entre-una-variable-categorica-y-una-continua-tipo-dx-y-edad">Independencia entre una variable categórica y una continua (Tipo_Dx y Edad)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-e-interpretacion-de-la-separacion-perfecta-en-la-figura-distribucion-de-edad-por-tipo-dx">Análisis e Interpretación de la Separación Perfecta en la figura “Distribución de Edad por Tipo_Dx”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-logistica-binaria">4.5 Modelo de regresion logística binaria</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -554,11 +569,12 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta: /content/drive/MyDrive/Base_datos
-Numero de elementos: 4
+Numero de elementos: 5
 (0) fuente_de_datos.gdoc
 (1) shapes
 (2) biomedicina
 (3) meteorologia
+(4) finanzas
 </pre></div>
 </div>
 </div>
@@ -572,7 +588,7 @@ Numero de elementos: 4
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruta: /content/drive/MyDrive/Base_datos/biomedicina
-Numero de elementos: 12
+Numero de elementos: 13
 (0) datos_abiertos_vigilancia_dengue_2000_2023.csv
 (1) datos_abiertos_vigilancia_malaria_2000_2008.csv
 (2) datos_abiertos_vigilancia_malaria_2009_2023.csv
@@ -582,9 +598,10 @@ Numero de elementos: 12
 (6) datos_abiertos_vigilancia_enfermedad_carrion_2000_2023.csv
 (7) pmGenoma_25Septiembre2021.csv
 (8) pmGenoma_27Sep2023.csv
-(9) TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv
-(10) primeras_100_filas_anemia.xlsx
-(11) primeras_100_filas_anemia.gsheet
+(9) primeras_100_filas_anemia.xlsx
+(10) primeras_100_filas_anemia.gsheet
+(11) TB_DIGTEL_ANEMIA_TRATAMIENTOS.csv
+(12) analisis_datos.docx
 </pre></div>
 </div>
 </div>
@@ -755,16 +772,16 @@ Numero de elementos: 1
 <p>En un modelo de regresión lineal simple, el <strong>error residual</strong> (<span class="math notranslate nohighlight">\(\epsilon\)</span>) es la diferencia entre el valor observado de la variable dependiente (<span class="math notranslate nohighlight">\(Y\)</span>) y el valor predicho por el modelo (<span class="math notranslate nohighlight">\(\hat{Y}\)</span>), ecuación <a class="reference internal" href="#equation-eq-errorresidual">(12)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-errorresidual">
 <span class="eqno">(12)<a class="headerlink" href="#equation-eq-errorresidual" title="Link to this equation">#</a></span>\[\epsilon = Y - \hat{Y}\]</div>
-<p>Reducir el error residual implica mejorar la capacidad del modelo para predecir la variable dependiente. Aquí hay algunas estrategias, aplicables a tus datos si los supuestos no se cumplen completamente:</p>
+<p>Reducir el error residual implica mejorar la capacidad del modelo para predecir la variable dependiente.</p>
 <p><strong>Verificar y Abordar los Supuestos del Modelo</strong></p>
 <p>Es crucial examinar los supuestos de la regresión lineal. Si alguno de lo supuestos no se cumple, la precisión del modelo y la magnitud de los residuos pueden verse afectadas. Los supuesto que se debe cumplir son los siguientes:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*   Linealidad
-*   Independencia de los Errores (Autocorrelación)
-*   Homocedasticidad
-*   Normalidad de los Residuos
-*   Ausencia de valores atípicos (outliers)
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>Linealidad</p></li>
+<li><p>Independencia de los Errores (Autocorrelación)</p></li>
+<li><p>Homocedasticidad</p></li>
+<li><p>Normalidad de los Residuos</p></li>
+<li><p>Ausencia de valores atípicos (outliers)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir conjunto de variables</span>
@@ -896,8 +913,8 @@ Numero de elementos: 1
 Dep. Variable:              rxn_solar   R-squared:                       0.557
 Model:                            OLS   Adj. R-squared:                  0.556
 Method:                 Least Squares   F-statistic:                     417.5
-Date:                Tue, 07 Oct 2025   Prob (F-statistic):           1.15e-60
-Time:                        20:58:36   Log-Likelihood:                -1862.3
+Date:                Thu, 06 Nov 2025   Prob (F-statistic):           1.15e-60
+Time:                        18:28:09   Log-Likelihood:                -1862.3
 No. Observations:                 334   AIC:                             3729.
 Df Residuals:                     332   BIC:                             3736.
 Df Model:                           1                                         
@@ -923,7 +940,7 @@ Notes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">modelo_rxn_temp</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;Intercept&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">modelo_rxn_temp</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;temp_prom&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">modelo_rxn_temp</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;temp_aire&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -998,7 +1015,7 @@ Estadístico Durbin-Watson statistico menor que 1.5: autocorrelación positiva.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a box plot of the residuals</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">modelo_rxn_temp</span><span class="o">.</span><span class="n">resid</span><span class="p">,</span>
             <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;.8&quot;</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">&quot;#137&quot;</span><span class="p">,</span>
             <span class="n">linewidth</span><span class="o">=</span><span class="mf">.75</span><span class="p">,</span>
@@ -1012,7 +1029,7 @@ Estadístico Durbin-Watson statistico menor que 1.5: autocorrelación positiva.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe2fc8848c26894ed51a73e534e31a28354a2254f5d2f6a1f5b13d74fd7a736d.png" src="../_images/fe2fc8848c26894ed51a73e534e31a28354a2254f5d2f6a1f5b13d74fd7a736d.png" />
+<img alt="../_images/769f2ef4b80d9bf7afc687dbcde82aa1875487c95eff6855757218bf5c0cd990.png" src="../_images/769f2ef4b80d9bf7afc687dbcde82aa1875487c95eff6855757218bf5c0cd990.png" />
 </div>
 </div>
 </section>
@@ -1086,7 +1103,7 @@ Estadístico Durbin-Watson statistico menor que 1.5: autocorrelación positiva.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0530df437cd04d4b5e12ceab5f3ca43cf1c0255bbc85b5f80fdaa63a56efd1cc.png" src="../_images/0530df437cd04d4b5e12ceab5f3ca43cf1c0255bbc85b5f80fdaa63a56efd1cc.png" />
+<img alt="../_images/2462f7f83a2a0ab3bd9ab01bd61b92c104605f266b1062d81f52e62de131dfeb.png" src="../_images/2462f7f83a2a0ab3bd9ab01bd61b92c104605f266b1062d81f52e62de131dfeb.png" />
 </div>
 </div>
 </section>
@@ -1336,6 +1353,505 @@ Estadístico Durbin-Watson statistico menor que 1.5: autocorrelación positiva.
 </div>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="iv-modelo-de-regresion-logistica-binaria">
+<h1><strong>IV. Modelo de regresión logística binaria</strong><a class="headerlink" href="#iv-modelo-de-regresion-logistica-binaria" title="Link to this heading">#</a></h1>
+<p>La regresión logística binaria  es un modelo estadístico que predice la probabilidad de un resultado en una variable de dos categorías, basándose en una o más variables independientes. Se emplea para clasificar, explicar o predecir, y es una herramienta común en campos como medicina, finanzas y ciencias sociales.</p>
+<p><strong>¿Para que sirve?</strong></p>
+<p>Sirve para modelar la relación entre una o más <strong>variables independientes</strong> (predictoras) y una <strong>variable dependiente categórica</strong> (la que queremos predecir). La variable dependiente suele ser binaria (con dos categorías, como sí/no, verdadero/falso, 0/1).</p>
+<p><strong>Verificar y abordar Supuestos del Modelo para un caso estudio de Anemia</strong></p>
+<p>Para implementar un modelo de <strong>regresión logística binaria</strong> con una base de datos de anemia, utilizando <strong>Dx_Definitivo</strong> como variable dependiente y <strong>Edad</strong> y <strong>Sexo</strong> como variables independientes, es fundamental que cada variable cumpla con los siguientes supuestos y condiciones específicas:</p>
+<ul>
+  <li>Tamaño muestral sufuciente.</li>
+  <li>La variable dependiente tiene que ser binaria.</li>
+  <li>Independencia de las observaciones.</li>
+</ul><p>Antes de abordar cada uno de los supuestos y condiciones que deben cumplir las variables dependientes e independientes, primero se describe la función logística.</p>
+<section id="funcion-logistica">
+<h2>4.1 Función logística<a class="headerlink" href="#funcion-logistica" title="Link to this heading">#</a></h2>
+<p>El modelo de regresión logística binaria utiliza una función logística para modelar la probabilidad de un resultado, la relación matemática general para la probabilidad predicha viene definida en la ecuación <a class="reference internal" href="#equation-eq-regresionlogisticabinaria">(13)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-regresionlogisticabinaria">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-regresionlogisticabinaria" title="Link to this equation">#</a></span>\[ P(y) = \frac{1}{1 + e^{-(\beta_{0} + \beta_{1}\times x_{1} + \beta_{2}\times x_{2})}}\]</div>
+<p>Donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y\)</span> es la variable dependiente.</p></li>
+<li><p>Las variables predictoras <span class="math notranslate nohighlight">\(x_{1}\)</span>, <span class="math notranslate nohighlight">\(x_{2}\)</span> tienen que ser linealmente independientes.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_0, \beta_1\)</span> y <span class="math notranslate nohighlight">\(\beta_2\)</span> son coeficientes estimados.</p></li>
+</ul>
+<p>Para el caso estudio de anemia la función logística se define a través de la ecuación <a class="reference internal" href="#equation-eq-regresionlogisticabinariaanemia">(14)</a>. Donde, <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> será la variable dependiente y <code class="docutils literal notranslate"><span class="pre">Edad</span></code> y <code class="docutils literal notranslate"><span class="pre">Sexo</span></code> serán las variables linealmente independinetes predictoras.</p>
+<div class="math notranslate nohighlight" id="equation-eq-regresionlogisticabinariaanemia">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-regresionlogisticabinariaanemia" title="Link to this equation">#</a></span>\[ P(Tipo\_Dx) = \frac{1}{1 + e^{-(\beta_{0} + \beta_{1}\times Edad + \beta_{2}\times Sexo)}}\]</div>
+</section>
+<section id="tamano-muestral-suficiente">
+<h2>4.2. Tamaño muestral suficiente<a class="headerlink" href="#tamano-muestral-suficiente" title="Link to this heading">#</a></h2>
+<p>Se recomienda un número adecuado de observaciones por categoría de la variable dependiente (generalmente al menos 10 eventos por variable independiente para estimaciones estables).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_csv</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 248893 entries, 0 to 248892
+Data columns (total 11 columns):
+ #   Column          Non-Null Count   Dtype  
+---  ------          --------------   -----  
+ 0   Sexo            248893 non-null  object 
+ 1   id_persona      248893 non-null  int64  
+ 2   Edad            248893 non-null  int64  
+ 3   Tipo_edad       248893 non-null  object 
+ 4   id_ubigeo       243110 non-null  float64
+ 5   Fecha_atencion  248893 non-null  int64  
+ 6   Etapa           248893 non-null  object 
+ 7   Diagnostico     248893 non-null  float64
+ 8   Tipo_Dx         248893 non-null  object 
+ 9   Lab             248893 non-null  object 
+ 10  id_eess         248893 non-null  int64  
+dtypes: float64(2), int64(4), object(5)
+memory usage: 20.9+ MB
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_csv</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sexo                 0
+id_persona           0
+Edad                 0
+Tipo_edad            0
+id_ubigeo         5783
+Fecha_atencion       0
+Etapa                0
+Diagnostico          0
+Tipo_Dx              0
+Lab                  0
+id_eess              0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="variable-dependiente-binaria">
+<h2>4.3. Variable dependiente binaria<a class="headerlink" href="#variable-dependiente-binaria" title="Link to this heading">#</a></h2>
+<p>La variable dependiente debe tener solo dos categorías (p. ej., 0 y 1, o “sí” y “no”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_csv</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo_Dx
+D    248398
+R       454
+P        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrar el DataFrame para excluir las filas donde &#39;Tipo_Dx&#39; es &#39;R&#39;</span>
+<span class="n">df_Dx_sinR</span> <span class="o">=</span> <span class="n">df_csv</span><span class="p">[</span><span class="n">df_csv</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;R&quot;</span><span class="p">]</span>
+
+<span class="c1"># Mostrar las counts de la columna &#39;Tipo_Dx&#39; en el nuevo DataFrame para verificar</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo_Dx
+D    248398
+P        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dx_Definitivo
+1    248398
+0        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipython-input-2493932122.py:1: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_Dx_sinR[&quot;Dx_Definitivo&quot;] = (df_Dx_sinR[&quot;Tipo_Dx&quot;] == &quot;D&quot;).astype(int)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>4.4. Independencia de las observaciones<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Las observaciones deben ser independientes entre sí (sin correlación entre casos, como en datos repetidos o longitudinales sin ajustar).</p>
+<section id="independencia-entre-variables-categoricas-tipo-dx-y-sexo">
+<h3>Independencia entre variables categóricas (Tipo_Dx y Sexo)<a class="headerlink" href="#independencia-entre-variables-categoricas-tipo-dx-y-sexo" title="Link to this heading">#</a></h3>
+<p>Para evaluar la independencia entre dos variables categóricas como <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> y <code class="docutils literal notranslate"><span class="pre">Sexo</span></code>, podemos utilizar la prueba de independencia Chi-cuadrado (<span class="math notranslate nohighlight">\(\chi^2\)</span>).</p>
+<p><strong>Hipótesis de la prueba:</strong></p>
+<ul class="simple">
+<li><p><strong>Hipótesis Nula (<span class="math notranslate nohighlight">\(H_0\)</span>):</strong> Las variables <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> y <code class="docutils literal notranslate"><span class="pre">Sexo</span></code> son independientes. No hay asociación entre el tipo de diagnóstico y el sexo.</p></li>
+<li><p><strong>Hipótesis Alternativa (<span class="math notranslate nohighlight">\(H_1\)</span>):</strong> Las variables <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> y <code class="docutils literal notranslate"><span class="pre">Sexo</span></code> no son independientes. Existe una asociación entre el tipo de diagnóstico y el sexo.</p></li>
+</ul>
+<p>Realizaremos la prueba utilizando la función <code class="docutils literal notranslate"><span class="pre">chi2_contingency</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo_Dx
+D    248398
+P        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una tabla de contingencia de Tipo_Dx y Sexo</span>
+<span class="n">contingency_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">],</span> <span class="n">df_csv</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabla de Contingencia (Tipo_Dx vs Sexo):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contingency_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tabla de Contingencia (Tipo_Dx vs Sexo):
+Sexo          F       M
+Tipo_Dx                
+D        122359  126039
+P            26      15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realizar la prueba de independencia Chi-cuadrado</span>
+<span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2_contingency</span><span class="p">(</span><span class="n">contingency_table</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Estadístico Chi-cuadrado: </span><span class="si">{</span><span class="n">chi2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valor p: </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Grados de libertad (dof): </span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estadístico Chi-cuadrado: 2.7444
+Valor p: 0.0976
+Grados de libertad (dof): 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interpretar el resultado</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">El valor p (</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">) es menor que el nivel de significancia (</span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rechazamos la hipótesis nula.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Existe una asociación significativa entre Tipo_Dx y Sexo.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">El valor p (</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">) es mayor que el nivel de significancia (</span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2">).&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No rechazamos la hipótesis nula.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No hay evidencia suficiente para decir que existe una asociación significativa entre Tipo_Dx y Sexo.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El valor p (0.0976) es mayor que el nivel de significancia (0.05).
+No rechazamos la hipótesis nula.
+No hay evidencia suficiente para decir que existe una asociación significativa entre Tipo_Dx y Sexo.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="independencia-entre-una-variable-categorica-y-una-continua-sexo-y-edad">
+<h3>Independencia entre una variable categórica y una continua (Sexo y Edad)<a class="headerlink" href="#independencia-entre-una-variable-categorica-y-una-continua-sexo-y-edad" title="Link to this heading">#</a></h3>
+<p>Para evaluar la independencia entre una variable categórica (<code class="docutils literal notranslate"><span class="pre">Sexo</span></code>) y una variable continua (<code class="docutils literal notranslate"><span class="pre">Edad</span></code>), podemos visualizar la distribución de la variable continua para cada categoría de la variable categórica. Un diagrama de cajas (boxplot). <strong>Si las distribuciones de <code class="docutils literal notranslate"><span class="pre">Edad</span></code> son similares para ambos sexos, sugiere independencia; si son diferentes, sugiere dependencia.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas para Edad por Sexo</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sexo&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df_Dx_sinR</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sexo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Edad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Edad por Sexo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a6acfe64ae78b59387a8beba170d8c0fc56cc8fbad9a27a4e186012493601e40.png" src="../_images/a6acfe64ae78b59387a8beba170d8c0fc56cc8fbad9a27a4e186012493601e40.png" />
+</div>
+</div>
+<p>Ejemplo de dependencia entre una variable categórica y una variable contínua usando datos sintéticos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generar datos sintéticos para demostrar dependencia entre Edad y Sexo</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># para reproducibilidad</span>
+
+<span class="c1"># Número de observaciones por categoría de sexo</span>
+<span class="n">n_femenino</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_masculino</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Generar edades para mujeres (con una distribución diferente, por ejemplo, menor media)</span>
+<span class="n">edad_femenino</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_femenino</span><span class="p">)</span> <span class="c1"># Media 30, desviación estándar 10</span>
+
+<span class="c1"># Generar edades para hombres (con una distribución diferente, por ejemplo, mayor media)</span>
+<span class="n">edad_masculino</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_masculino</span><span class="p">)</span> <span class="c1"># Media 40, desviación estándar 12</span>
+
+<span class="c1"># Crear Series de Sexo</span>
+<span class="n">sexo_femenino</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;F&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_femenino</span><span class="p">)</span>
+<span class="n">sexo_masculino</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;M&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_masculino</span><span class="p">)</span>
+
+<span class="c1"># Combinar los datos en un DataFrame</span>
+<span class="n">df_sintetico_sexo_edad</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Edad&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">edad_femenino</span><span class="p">,</span> <span class="n">edad_masculino</span><span class="p">]),</span>
+    <span class="s1">&#39;Sexo&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">sexo_femenino</span><span class="p">,</span> <span class="n">sexo_masculino</span><span class="p">])</span>
+<span class="p">})</span>
+
+<span class="c1"># Mostrar las primeras filas del DataFrame sintético</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DataFrame Sintético (Edad vs Sexo):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_sintetico_sexo_edad</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame Sintético (Edad vs Sexo):
+        Edad Sexo
+0  34.967142    F
+1  28.617357    F
+2  36.476885    F
+3  45.230299    F
+4  27.658466    F
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas para visualizar la dependencia</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sexo&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_sintetico_sexo_edad</span><span class="p">,</span>
+            <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;.8&quot;</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">&quot;#137&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">.75</span><span class="p">,</span>
+            <span class="n">flierprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span><span class="p">},</span>
+            <span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sexo&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Edad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Edad por Sexo (Datos Sintéticos)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f134ea08bfadf1a55573545e708b65d4a68e7b0c3e64e38068d09150edb43689.png" src="../_images/f134ea08bfadf1a55573545e708b65d4a68e7b0c3e64e38068d09150edb43689.png" />
+</div>
+</div>
+<p><strong>Análisis e interpretación</strong></p>
+<ul>
+  <li><b>Diferencia en la Mediana</b>: La línea que representa la mediana de la Edad es diferente para cada Sexo. En este caso sintético, la mediana de la Edad para el Sexo Masculino es visiblemente mayor que la mediana para el Sexo Femenino.</li>
+  <li><b>Diferencia en la dispersión</b>:La longitud de la caja (que representa el rango intercuartil, donde se encuentra el 50% central de los datos) y la extensión de los bigotes son diferentes. En este gráfico, la dispersión de la Edad es ligeramente mayor para el sexo Masculino, lo que refleja la mayor desviación estándar.</li>
+  <li><b>Valores atípicos</b>: Los puntos individuales fuera de los bigotes representan valores atípicos. Su presencia y distribución también pueden diferir entre las categorias.</li>
+</ul>
+<p><strong>Conclusión</strong></p>
+<p>Dado que las distribuciones de la variable “Edad” son claramente diferentes entre las categorías de la variable “Sexo” (diferentes medianas y dispersiones), este gráfico de cajas demuestra visualmente una dependencia o asociación entre la Edad y el Sexo en estos datos sintéticos. Si las distribuciones fueran muy similares, sugeriría independencia.</p>
+<p>Este tipo de visualización es útil para evaluar la independencia entre una variable continua y una categórica antes de incluirlas en modelos como la regresión logística.</p>
+</section>
+<section id="independencia-entre-una-variable-categorica-y-una-continua-tipo-dx-y-edad">
+<h3>Independencia entre una variable categórica y una continua (Tipo_Dx y Edad)<a class="headerlink" href="#independencia-entre-una-variable-categorica-y-una-continua-tipo-dx-y-edad" title="Link to this heading">#</a></h3>
+<p>De manera similar, para evaluar la independencia entre <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> (categórica binaria, usando <code class="docutils literal notranslate"><span class="pre">Dx_Definitivo</span></code> que creamos previamente) y <code class="docutils literal notranslate"><span class="pre">Edad</span></code> (continua), podemos usar un diagrama de cajas. Una diferencia en la distribución de <code class="docutils literal notranslate"><span class="pre">Edad</span></code> entre las categorías de <code class="docutils literal notranslate"><span class="pre">Dx_Definitivo</span></code> (<code class="docutils literal notranslate"><span class="pre">0</span></code> y <code class="docutils literal notranslate"><span class="pre">1</span></code>) sugeriría dependencia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dx_Definitivo
+1    248398
+0        41
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un diagrama de cajas para Edad por Dx_Definitivo</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Edad&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_Dx_sinR</span><span class="p">,</span>
+            <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;.8&quot;</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">&quot;#137&quot;</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">.75</span><span class="p">,</span>
+            <span class="n">flierprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker&quot;</span><span class="p">:</span> <span class="s2">&quot;o&quot;</span><span class="p">},</span>
+            <span class="n">medianprops</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tipo_Dx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Edad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Edad por Tipo_Dx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/794a8a2bdea4530b87fe320dfd9a7b1d870d1d50e09898c5d843142d182f2c59.png" src="../_images/794a8a2bdea4530b87fe320dfd9a7b1d870d1d50e09898c5d843142d182f2c59.png" />
+</div>
+</div>
+</section>
+<section id="analisis-e-interpretacion-de-la-separacion-perfecta-en-la-figura-distribucion-de-edad-por-tipo-dx">
+<h3>Análisis e Interpretación de la Separación Perfecta en la figura “Distribución de Edad por Tipo_Dx”<a class="headerlink" href="#analisis-e-interpretacion-de-la-separacion-perfecta-en-la-figura-distribucion-de-edad-por-tipo-dx" title="Link to this heading">#</a></h3>
+<p>La <strong>separación perfecta</strong> (o separación completa) en el contexto de la regresión logística ocurre cuando una o más variables independientes pueden predecir el resultado de la variable dependiente binaria con un 100% de precisión. En otras palabras, existe un valor o rango de valores de la variable independiente que divide perfectamente a las observaciones en las dos categorías de la variable dependiente.</p>
+<p>En el caso de la figura “Distribución de Edad por Tipo_Dx”, que muestra la distribución de la variable continua <code class="docutils literal notranslate"><span class="pre">Edad</span></code> para las dos categorías de <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> (que ahora es binaria, esencialmente “D” y “P” después de filtrar “R”), la separación perfecta ocurriría si:</p>
+<ol class="arabic simple">
+<li><p><strong>No hay superposición en las distribuciones de Edad:</strong> Si el rango de edades para el grupo con <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span> <span class="pre">=</span> <span class="pre">D</span></code> y el rango de edades para el grupo con <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span> <span class="pre">=</span> <span class="pre">P</span></code> no se solaparan en absoluto. Por ejemplo, si todas las personas con <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span> <span class="pre">=</span> <span class="pre">D</span></code> tuvieran edades entre 0 y 10 años, y todas las personas con <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span> <span class="pre">=</span> <span class="pre">P</span></code> tuvieran edades entre 20 y 80 años, habría una separación perfecta basada en la Edad.</p></li>
+<li><p><strong>Un punto de corte claro:</strong> Existiría un valor de edad específico (un punto de corte) por encima o por debajo del cual todas las observaciones pertenecerían a una sola categoría de <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code>.</p></li>
+</ol>
+<p><strong>Cómo la figura ayuda a evaluar la separación perfecta:</strong></p>
+<p>El diagrama de cajas te permite evaluar visualmente si existe esta separación perfecta:</p>
+<ul class="simple">
+<li><p><strong>Superposición de las cajas y bigotes:</strong> Si las cajas (que representan el 50% central de los datos) y/o los bigotes (que se extienden para cubrir la mayor parte de los datos dentro de un rango razonable) de las dos categorías de <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code> se superponen significativamente, como parece ser el caso en tu figura, esto <strong>indica que NO hay separación perfecta</strong> basada únicamente en la variable <code class="docutils literal notranslate"><span class="pre">Edad</span></code>. Hay individuos con edades similares en ambos grupos de diagnóstico.</p></li>
+<li><p><strong>Ausencia de superposición:</strong> Si las cajas y bigotes estuvieran completamente separados en el eje Y (Edad), sugeriría una posible separación perfecta o casi perfecta.</p></li>
+</ul>
+<p><strong>Implicaciones de la Separación Perfecta en la Regresión Logística:</strong></p>
+<p>La separación perfecta es un problema para la estimación en la regresión logística porque los algoritmos de máxima verosimilitud utilizados para estimar los coeficientes del modelo no convergen. Los coeficientes para las variables que causan la separación se vuelven infinitos, y los errores estándar asociados son muy grandes. Esto hace que el modelo no se pueda ajustar correctamente.</p>
+<p>En tu figura, dado que las cajas se superponen, puedes concluir visualmente que la variable <code class="docutils literal notranslate"><span class="pre">Edad</span></code> por sí sola <strong>no causa separación perfecta</strong> en la variable <code class="docutils literal notranslate"><span class="pre">Tipo_Dx</span></code>. Esto es una buena noticia para proceder con el modelo de regresión logística que incluye <code class="docutils literal notranslate"><span class="pre">Edad</span></code> como predictor.</p>
+</section>
+</section>
+<section id="modelo-de-regresion-logistica-binaria">
+<h2>4.5 Modelo de regresion logística binaria<a class="headerlink" href="#modelo-de-regresion-logistica-binaria" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">,</span> <span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">,</span> <span class="s2">&quot;Sexo&quot;</span><span class="p">,</span> <span class="s2">&quot;Edad&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Dx_Definitivo Tipo_Dx Sexo  Edad
+0              1       D    F    20
+1              1       D    F     2
+2              1       D    M     1
+3              1       D    F    19
+4              1       D    M     3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modelo</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="s2">&quot;Dx_Definitivo ~ Edad + C(Sexo)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_Dx_sinR</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">modelo</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimization terminated successfully.
+         Current function value: 0.001502
+         Iterations 13
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:          Dx_Definitivo   No. Observations:               248439
+Model:                          Logit   Df Residuals:                   248436
+Method:                           MLE   Df Model:                            2
+Date:                Thu, 06 Nov 2025   Pseudo R-squ.:                 0.06241
+Time:                        19:06:41   Log-Likelihood:                -373.24
+converged:                       True   LL-Null:                       -398.08
+Covariance Type:            nonrobust   LLR p-value:                 1.620e-11
+================================================================================
+                   coef    std err          z      P&gt;|z|      [0.025      0.975]
+--------------------------------------------------------------------------------
+Intercept        9.0062      0.229     39.329      0.000       8.557       9.455
+C(Sexo)[T.M]     0.4370      0.327      1.338      0.181      -0.203       1.077
+Edad            -0.0594      0.006    -10.126      0.000      -0.071      -0.048
+================================================================================
+
+Possibly complete quasi-separation: A fraction 0.24 of observations can be
+perfectly predicted. This might indicate that there is complete
+quasi-separation. In this case some parameters will not be identified.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtener las predicciones del modelo para los datos de entrenamiento</span>
+<span class="n">df_f</span> <span class="o">=</span> <span class="n">df_Dx_sinR</span><span class="p">[</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;F&quot;</span><span class="p">]</span>
+<span class="n">df_m</span> <span class="o">=</span> <span class="n">df_Dx_sinR</span><span class="p">[</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Sexo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;M&quot;</span><span class="p">]</span>
+
+<span class="n">y_pred_f</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df_f</span><span class="p">)</span>
+<span class="n">y_pred_m</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df_m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un gráfico de dispersión con los datos observados y forzados</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># Ajustar el tamaño de la figura si es necesario</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">][</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">][</span><span class="n">df_Dx_sinR</span><span class="p">[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observado (Definitivo: 1)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_f</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">],</span> <span class="n">y_pred_f</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Forzado F&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>  <span class="c1"># Datos forzados (predichos)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_m</span><span class="p">[</span><span class="s2">&quot;Edad&quot;</span><span class="p">],</span> <span class="n">y_pred_m</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Forzado M&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Datos forzados (predichos)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Edad&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Probabilidad de Dx_Definitivo&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Datos Observados vs. Forzados (Regresión Logística)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span> <span class="c1"># loc: lower, upper:left, right, center</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/895a1e5f3adbdb3226fae50a88e88f7e63da68bb2b1cddf262112409e677a26a.png" src="../_images/895a1e5f3adbdb3226fae50a88e88f7e63da68bb2b1cddf262112409e677a26a.png" />
+</div>
+</div>
+<p><strong>Referencias</strong></p>
+<blockquote>
+<div><p><a href="https://link.springer.com/article/10.1186/s12889-024-18338-8">Lyu, Y., Xu, Q., &amp; Liu, J. (2024). Exploring the medical decision-making patterns and influencing factors among the general Chinese public: a binary logistic regression analysis. BMC public health, 24(1), 887.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://www.nature.com/articles/s41598-023-49872-x">Talin, I. A., Abid, M. H., Samad, M. A., Domínguez Azpíroz, I., de la Torre Diez, I., Ashraf, I., &amp; Nahid, A. A. (2023). Exploring factors influencing the severity of pregnancy anemia in India: a study using proportional odds model. Scientific Reports, 13(1), 22816.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://sjuoz.uoz.edu.krd/index.php/sjuoz/article/view/442">Abdulqader, Q. M. (2017). Applying the binary logistic regression analysis on the medical data. Science Journal of University of Zakho, 5(4), 330-334.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4419893/">Avali, V. R., Cooper, G. F., &amp; Gopalakrishnan, V. (2014, November). Application of Bayesian logistic regression to mining biomedical data. In AMIA Annual Symposium Proceedings (Vol. 2014, p. 266)</a></p>
+</div></blockquote>
+<blockquote>
+<div><p><a href="https://www.bioestadistica.uma.es/apuntesMaster/regresi%C3%B3n-log%C3%ADstica-binaria.html">Apuntes de Estadística</a></p>
+</div></blockquote>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1413,6 +1929,20 @@ Estadístico Durbin-Watson statistico menor que 1.5: autocorrelación positiva.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ausencia-de-valores-atipicos">3.3. Ausencia de valores atípicos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalidad-de-los-residuos">3.4. Normalidad de los residuos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homocedasticidad">3.5. Homocedasticidad</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-modelo-de-regresion-logistica-binaria"><strong>IV. Modelo de regresión logística binaria</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-logistica">4.1 Función logística</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tamano-muestral-suficiente">4.2. Tamaño muestral suficiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-dependiente-binaria">4.3. Variable dependiente binaria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.4. Independencia de las observaciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-entre-variables-categoricas-tipo-dx-y-sexo">Independencia entre variables categóricas (Tipo_Dx y Sexo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-entre-una-variable-categorica-y-una-continua-sexo-y-edad">Independencia entre una variable categórica y una continua (Sexo y Edad)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-entre-una-variable-categorica-y-una-continua-tipo-dx-y-edad">Independencia entre una variable categórica y una continua (Tipo_Dx y Edad)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-e-interpretacion-de-la-separacion-perfecta-en-la-figura-distribucion-de-edad-por-tipo-dx">Análisis e Interpretación de la Separación Perfecta en la figura “Distribución de Edad por Tipo_Dx”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-logistica-binaria">4.5 Modelo de regresion logística binaria</a></li>
 </ul>
 </li>
 </ul>
