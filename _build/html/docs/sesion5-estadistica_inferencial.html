@@ -457,7 +457,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-modelo-de-regresion-logistica-binaria"><strong>IV. Modelo de regresión logística binaria</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-logistica">4.1 Función logística</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-logistica">4.1. Función logística</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tamano-muestral-suficiente">4.2. Tamaño muestral suficiente</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-dependiente-binaria">4.3. Variable dependiente binaria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.4. Independencia de las observaciones</a><ul class="nav section-nav flex-column">
@@ -467,7 +467,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-e-interpretacion-de-la-separacion-perfecta-en-la-figura-distribucion-de-edad-por-tipo-dx">Análisis e Interpretación de la Separación Perfecta en la figura “Distribución de Edad por Tipo_Dx”</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-logistica-binaria">4.5 Modelo de regresion logística binaria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-logistica-binaria">4.5. Modelo de regresión logística binaria</a></li>
 </ul>
 </li>
 </ul>
@@ -1366,7 +1366,7 @@ Estadístico Durbin-Watson statistico menor que 1.5: autocorrelación positiva.
   <li>Independencia de las observaciones.</li>
 </ul><p>Antes de abordar cada uno de los supuestos y condiciones que deben cumplir las variables dependientes e independientes, primero se describe la función logística.</p>
 <section id="funcion-logistica">
-<h2>4.1 Función logística<a class="headerlink" href="#funcion-logistica" title="Link to this heading">#</a></h2>
+<h2>4.1. Función logística<a class="headerlink" href="#funcion-logistica" title="Link to this heading">#</a></h2>
 <p>El modelo de regresión logística binaria utiliza una función logística para modelar la probabilidad de un resultado, la relación matemática general para la probabilidad predicha viene definida en la ecuación <a class="reference internal" href="#equation-eq-regresionlogisticabinaria">(13)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-regresionlogisticabinaria">
 <span class="eqno">(13)<a class="headerlink" href="#equation-eq-regresionlogisticabinaria" title="Link to this equation">#</a></span>\[ P(y) = \frac{1}{1 + e^{-(\beta_{0} + \beta_{1}\times x_{1} + \beta_{2}\times x_{2})}}\]</div>
@@ -1745,7 +1745,7 @@ Name: count, dtype: int64
 </section>
 </section>
 <section id="modelo-de-regresion-logistica-binaria">
-<h2>4.5 Modelo de regresion logística binaria<a class="headerlink" href="#modelo-de-regresion-logistica-binaria" title="Link to this heading">#</a></h2>
+<h2>4.5. Modelo de regresión logística binaria<a class="headerlink" href="#modelo-de-regresion-logistica-binaria" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_Dx_sinR</span><span class="p">[[</span><span class="s2">&quot;Dx_Definitivo&quot;</span><span class="p">,</span> <span class="s2">&quot;Tipo_Dx&quot;</span><span class="p">,</span> <span class="s2">&quot;Sexo&quot;</span><span class="p">,</span> <span class="s2">&quot;Edad&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -1932,7 +1932,7 @@ quasi-separation. In this case some parameters will not be identified.
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-modelo-de-regresion-logistica-binaria"><strong>IV. Modelo de regresión logística binaria</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-logistica">4.1 Función logística</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-logistica">4.1. Función logística</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tamano-muestral-suficiente">4.2. Tamaño muestral suficiente</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-dependiente-binaria">4.3. Variable dependiente binaria</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.4. Independencia de las observaciones</a><ul class="nav section-nav flex-column">
@@ -1942,7 +1942,7 @@ quasi-separation. In this case some parameters will not be identified.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-e-interpretacion-de-la-separacion-perfecta-en-la-figura-distribucion-de-edad-por-tipo-dx">Análisis e Interpretación de la Separación Perfecta en la figura “Distribución de Edad por Tipo_Dx”</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-logistica-binaria">4.5 Modelo de regresion logística binaria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-regresion-logistica-binaria">4.5. Modelo de regresión logística binaria</a></li>
 </ul>
 </li>
 </ul>
