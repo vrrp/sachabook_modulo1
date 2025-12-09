@@ -156,7 +156,7 @@ Google Colaboratory.
 <br><br>
 
 # Donaciones
-¡Apoya este proyecto con una donación, para seguir creando contenido gratuito y de calidad sobre ciencia de datos aplicado a Ciencias de la Tierra, Biomedicina, Finanzas y Educación usando Python!.
+¡Apoya este proyecto con una donación, para seguir creando contenido gratuito y de calidad sobre Ciencia de Datos aplicado en Ciencias de la Tierra, Biomedicina, Finanzas y Educación usando Python!.
 
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
