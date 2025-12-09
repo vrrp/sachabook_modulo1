@@ -153,14 +153,12 @@ Google Colaboratory.
 })();
 </script>
 
+<br><br>
+
 # Donaciones
-¡Apoya este proyecto con una donación, para seguir creando contenido gratuito y de calidad sobre ciencia de datos aplicado a Ciencias de la Tierra, Biomedicina, Finanzas y Educación usando Python!.
+¡Apoya este proyecto con una donación, para seguir creando contenido gratuito y de calidad sobre Ciencia de Datos aplicado en Ciencias de la Tierra, Biomedicina, Finanzas y Educación usando Python!.
+
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="300">
-:::{figure} https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true
-:name: fig:cajaHerramientas
-:align: center
-
-:::
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="200">
 
