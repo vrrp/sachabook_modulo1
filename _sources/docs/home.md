@@ -11,12 +11,20 @@ table tr:last-child td:last-child {
 
 <table align="left" style="background-color: #D0F5D2">
 <tr>
-    <th align="left"><span style="font-family:Monospace;color:#046D0B">AUTOR :</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">Autor :</span></th>
     <th align="left"><span style="font-family:Monospace;color:#046D0B">VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">Email :</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">Web :</span></th>
+    <th align="left"><a href="https://sacha-analytics.github.io/" style="font-family:Monospace;color:#046D0B">https://sacha-analytics.github.io</a></th>
 </tr>
 </table>
 
-<br><br>
+<br><br><br><br>
 
 # Descripción del Curso
 %-----------------------------------------------------------------------------------------------------
@@ -160,5 +168,5 @@ Google Colaboratory.
 
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="150">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="140">
 
