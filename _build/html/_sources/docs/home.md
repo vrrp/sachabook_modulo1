@@ -20,7 +20,7 @@ table tr:last-child td:last-child {
 </tr>
 <tr>
     <th align="left"><span style="font-family:Monospace;color:#046D0B">Web :</span></th>
-    <th align="left"><a href="https://sacha-analytics.github.io/" style="font-family:Monospace;color:#046D0B">https://sacha-analytics.github.io</a></th>
+    <th align="left"><a href="https://sacha-analytics.github.io/" style="font-family:Monospace;color:#046D0B">sacha-analytics</a></th>
 </tr>
 </table>
 
