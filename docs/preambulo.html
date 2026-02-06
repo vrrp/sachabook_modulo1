@@ -434,11 +434,7 @@ document.write(`
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4: Evolución 4">
-  <div class="languages-controls">
-    <button onclick="languagesChangeSlide(-1)">Anterior</button>
-    <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
-    <button onclick="languagesChangeSlide(1)">Siguiente</button>
-  </div>
+  <div class="languages-controls"><button onclick="languagesChangeSlide(-1)">Anterior</button><button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button><button onclick="languagesChangeSlide(1)">Siguiente</button><button onclick="languagesToggleFullscreen()" id="languages-fullscreen-btn">Pantalla completa</button></div>
 </div>
 <style>
 .languages-slideshow-container {
@@ -462,10 +458,14 @@ document.write(`
   text-align: center;
   margin-top: 10px;
   padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 .languages-controls button {
-  margin: 0 10px;
-  padding: 10px 20px;
+  margin: 0 5px;
+  padding: 8px 15px;
   cursor: pointer;
   background: #007bff;
   color: white;
@@ -477,6 +477,35 @@ document.write(`
 .languages-controls button:hover {
   background: #0056b3;
   transform: translateY(-2px);
+}
+.languages-slideshow-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  z-index: 9999;
+  background: #000;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.languages-slideshow-container.fullscreen .languages-slides {
+  max-height: calc(100vh - 80px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.languages-slideshow-container.fullscreen .languages-controls {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 15px;
 }
 </style>
 <script>
@@ -513,6 +542,35 @@ document.write(`
       languagesPlayBtn.textContent = "Pause";
     }
   };
+
+  window.languagesToggleFullscreen = function() {
+    const container = document.querySelector('.languages-slideshow-container');
+    const fullscreenBtn = document.getElementById('languages-fullscreen-btn');
+    
+    if (!document.fullscreenElement) {
+      container.requestFullscreen().then(() => {
+        container.classList.add('fullscreen');
+        fullscreenBtn.textContent = 'Salir';
+      }).catch(err => {
+        container.classList.add('fullscreen');
+        fullscreenBtn.textContent = 'Salir';
+      });
+    } else {
+      document.exitFullscreen().then(() => {
+        container.classList.remove('fullscreen');
+        fullscreenBtn.textContent = 'Pantalla completa';
+      });
+    }
+  };
+
+  document.addEventListener('fullscreenchange', function() {
+    const container = document.querySelector('.languages-slideshow-container');
+    const fullscreenBtn = document.getElementById('languages-fullscreen-btn');
+    if (!document.fullscreenElement) {
+      container.classList.remove('fullscreen');
+      fullscreenBtn.textContent = 'Pantalla completa';
+    }
+  });
 
   languagesShowSlide(languagesSlideIndex);
 })();
