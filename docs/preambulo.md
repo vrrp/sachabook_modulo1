@@ -1,5 +1,5 @@
 <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Procesamiento de Datos con Inteligencia Artificial</b></span></h1>
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Ciencia de Datos para Investigación Aplicada usando Python</b></span></h1>
 </div>
 <br><br>
 
