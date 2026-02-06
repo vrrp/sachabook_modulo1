@@ -9,7 +9,7 @@
 %- [Top 10 lenguajes de programación](#s2)
 %- [Ecosistema de Python](#s2)
 %- [Aplicaciones con Python](#s4)
-<br><br>
+<br>
 
 # Preámbulo
 <a name="pre"></a>
