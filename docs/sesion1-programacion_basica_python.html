@@ -724,7 +724,7 @@ residuo = 4
 </div>
 </div>
 <p><strong>Raiz general</strong></p>
-<p>y = f(x) = <span class="math notranslate nohighlight">\(\sqrt[n]{x^m}= \frac{m}{n}\)</span></p>
+<p>y = f(x) = <span class="math notranslate nohighlight">\(\sqrt[n]{x^m}= x^{\frac{m}{n}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="mi">125</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
@@ -1260,7 +1260,7 @@ hola
 
 <span class="c1">#fechas = pd.date_range(start=&#39;1984-01-01&#39;, end=&#39;1984-01-30&#39;, freq=&#39;D&#39;)</span>
 <span class="n">fechas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;1984-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
-<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).sttftime(&#39;%Y-%m-%d&#39;)</span>
+<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).strftime(&#39;%Y-%m-%d&#39;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fechas</span><span class="p">)</span>
 </pre></div>
 </div>
