@@ -470,7 +470,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-graficos">
+  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+</div>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<br><section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-graficos">
 <h1><strong>3. Visualización de gráficos</strong><a class="headerlink" href="#visualizacion-de-graficos" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-gestion-de-directorios-y-archivos-en-la-nube">
@@ -793,13 +815,6 @@ Numero de elementos: 1
 <span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;fecha&quot;</span><span class="p">)</span>
 <span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Estacion de monitoreo en Madrid&quot;</span><span class="p">)</span>
 <span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-
-<span class="n">axes</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;°C&quot;</span><span class="p">)</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;fecha&quot;</span><span class="p">)</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Madrid&quot;</span><span class="p">)</span>
-<span class="n">axes</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
 <span class="n">axes</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span> <span class="c1"># loc: lower, upper:left, right, center</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -954,6 +969,134 @@ Numero de elementos: 1
 <img alt="../_images/b57c1767883615f5aa8dba9871e64f3e1397a830f5e04fea712f5b273d34510e.png" src="../_images/b57c1767883615f5aa8dba9871e64f3e1397a830f5e04fea712f5b273d34510e.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hr&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_excel</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Radiación Solar (W/m2)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Humedad Relativa (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dispersión de Humedad Relativa vs Radiación Solar&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c9cce5d692aac6d10a39613cd9d4d1c9d6a6cb32b10da45a0cd2fe4908f5568a.png" src="../_images/c9cce5d692aac6d10a39613cd9d4d1c9d6a6cb32b10da45a0cd2fe4908f5568a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hr&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;mes_nombre&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_excel</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatura del Aire (°C)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Humedad Relativa (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dispersión de Humedad Relativa vs Temperatura del Aire por Mes&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Mes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a54eff0bf03520439882565cc773c1d76ea1530e1fbe2e1c88ba0737cd6ba8d4.png" src="../_images/a54eff0bf03520439882565cc773c1d76ea1530e1fbe2e1c88ba0737cd6ba8d4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df_excel</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Unnamed: 0      fecha  temp_aire         hr   rxn_solar mes_numero  \
+0           0 2021-01-01   3.625000  73.583333   99.833333         01   
+1           1 2021-01-02   1.329167  60.625000   74.333333         01   
+2           2 2021-01-03   1.920833  63.958333  101.500000         01   
+3           3 2021-01-04   3.433333  57.791667  101.958333         01   
+4           4 2021-01-05   0.445833  69.541667  106.666667         01   
+
+  mes_nombre  
+0        Jan  
+1        Jan  
+2        Jan  
+3        Jan  
+4        Jan  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;hr&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_excel</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Temperatura del Aire (°C)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Humedad Relativa (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dispersión de Humedad Relativa vs Temperatura del Aire&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f00062686aefbfa806d047ae3ca9a78d6974635cf980a8e6d8fa1d17f7190e6f.png" src="../_images/f00062686aefbfa806d047ae3ca9a78d6974635cf980a8e6d8fa1d17f7190e6f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular la matriz de correlación</span>
+<span class="n">correlation_matrix</span> <span class="o">=</span> <span class="n">df_excel</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Visualizar la matriz de correlación usando un mapa de calor</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">correlation_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matriz de Correlación de Variables en df_excel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/89f178216cff3bbf25496232b30eaf31751c026aca089c97edce8abd04bba486.png" src="../_images/89f178216cff3bbf25496232b30eaf31751c026aca089c97edce8abd04bba486.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">correlation_rxn_hr</span> <span class="o">=</span> <span class="n">df_excel</span><span class="p">[</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df_excel</span><span class="p">[</span><span class="s1">&#39;hr&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El coeficiente de correlación entre Radiación Solar y Humedad Relativa es: </span><span class="si">{</span><span class="n">correlation_rxn_hr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El coeficiente de correlación entre Radiación Solar y Humedad Relativa es: -0.8485881311165205
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;rxn_solar&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;temp_aire&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_excel</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Radiación Solar (W/m2)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Temperatura del Aire (°C)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Dispersión de Temperatura del Aire vs Radiación Solar&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/58af25dde7f3c3a4013157956d6ebc69e7241bdca44b5f1535e28d08b6e04794.png" src="../_images/58af25dde7f3c3a4013157956d6ebc69e7241bdca44b5f1535e28d08b6e04794.png" />
+</div>
+</div>
+<p><strong>Análisis de la Distribución Mensual de la Temperatura del Aire en Madrid</strong></p>
+<p>La Figura 2 presenta diagramas de caja (box plots) que ilustran la distribución de la temperatura del aire (°C) para cada mes del año 2021 en la estación de monitoreo de Madrid. Esta visualización permite examinar la variabilidad intra-mensual y las diferencias inter-mensuales en la temperatura.</p>
+<p>Se observa una clara progresión estacional en la mediana de la temperatura del aire, la cual aumenta gradualmente desde enero (mes 01) hasta alcanzar su valor máximo en los meses de verano (aproximadamente julio y agosto), para luego disminuir progresivamente hacia finales de año. Los rangos intercuartílicos (IQR), representados por la altura de las cajas, indican la dispersión de las temperaturas diarias dentro de cada mes. Generalmente, los meses de invierno muestran una menor variabilidad térmica diaria en comparación con los meses de transición (primavera y otoño) y el verano, donde la amplitud térmica puede ser mayor.</p>
+<p>Los “bigotes” de los diagramas de caja extienden hasta 1.5 veces el IQR desde los cuartiles, abarcando la mayoría de las observaciones. Los puntos individuales más allá de los bigotes representan valores atípicos (outliers), que son mediciones de temperatura significativamente diferentes del patrón general del mes. La presencia y magnitud de estos valores atípicos pueden ser indicativos de eventos meteorológicos extremos o inusuales.</p>
+<p>La comparación de los diagramas de caja entre meses revela que los meses de verano no solo presentan las medianas más altas, sino también, en algunos casos, una mayor dispersión (mayor IQR), lo que sugiere una mayor variabilidad en las temperaturas máximas y mínimas diarias durante esta estación. Por el contrario, los meses de invierno exhiben distribuciones más compactas y con medianas más bajas.</p>
+<p>En resumen, los diagramas de caja de la Figura 2 cuantifican la distribución de la temperatura del aire a lo largo del ciclo anual, proporcionando información detallada sobre las tendencias centrales, la variabilidad y la presencia de valores atípicos en cada mes. Estos hallazgos son fundamentales para comprender el régimen térmico de la región y para estudios posteriores sobre el impacto del clima en diversos sistemas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
