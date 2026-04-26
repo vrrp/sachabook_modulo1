@@ -1,8 +1,7 @@
-<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #D0F5D2">
-<!--h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Ciencia de Datos para Investigación Aplicada usando Python</b></span></h1-->
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación usando Python y AI</b></span></h1>
+<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
 </div>
-<br>
+
 <style>
 table tr:last-child td:last-child {
   border-bottom-right-radius: 0.5rem;
@@ -10,22 +9,22 @@ table tr:last-child td:last-child {
 </style>
 
 
-<table align="left" style="background-color: #D0F5D2">
+<table align="center" style="font-size: 13px;">
 <tr>
-    <th align="left"><span style="font-family:Monospace;color:#046D0B">Autor :</span></th>
-    <th align="left"><span style="font-family:Monospace;color:#046D0B">VR ROJAS</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
 </tr>
 <tr>
-    <th align="left"><span style="font-family:Monospace;color:#046D0B">Email :</span></th>
-    <th align="left"><span style="font-family:Monospace;color:#046D0B">sacha.analytics@gmail.com</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
 </tr>
 <tr>
-    <th align="left"><span style="font-family:Monospace;color:#046D0B">Web :</span></th>
-    <th align="left"><a href="https://sacha-analytics.github.io/" style="font-family:Monospace;color:#046D0B">sacha-analytics</a></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
 </tr>
 </table>
 
-<br><br><br><br>
+<br>
 
 # Descripción del Curso
 %-----------------------------------------------------------------------------------------------------
@@ -209,5 +208,5 @@ Google Colaboratory.
 
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="140">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="460" height="100">
 
