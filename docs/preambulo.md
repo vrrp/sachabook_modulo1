@@ -1,30 +1,7 @@
 <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Procesamiento de Datos con Inteligencia Artificial</b></span></h1>
 </div>
-
-<style>
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 0.5rem;
-}
-</style>
-
-
-<table align="center" style="font-size: 13px;">
-<tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
-</tr>
-<tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
-</tr>
-<tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
-    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
-</tr>
-</table>
-
-<br>
+<br><br>
 
 %## Contenido
 %- [Preámbulo](#pre)
@@ -32,6 +9,7 @@ table tr:last-child td:last-child {
 %- [Top 10 lenguajes de programación](#s2)
 %- [Ecosistema de Python](#s2)
 %- [Aplicaciones con Python](#s4)
+<br><br>
 
 # Preámbulo
 <a name="pre"></a>
@@ -44,7 +22,11 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev2.png?raw=true" alt="Imagen 2: Evolución 2">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev3.png?raw=true" alt="Imagen 3: Evolución 3">
   <img class="languages-slides" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/rev4.png?raw=true" alt="Imagen 4: Evolución 4">
-  <div class="languages-controls"><button onclick="languagesChangeSlide(-1)">Anterior</button><button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button><button onclick="languagesChangeSlide(1)">Siguiente</button><button onclick="languagesToggleFullscreen()" id="languages-fullscreen-btn">Pantalla completa</button></div>
+  <div class="languages-controls">
+    <button onclick="languagesChangeSlide(-1)">Anterior</button>
+    <button onclick="languagesToggleAutoPlay()" id="languages-play-btn">Play</button>
+    <button onclick="languagesChangeSlide(1)">Siguiente</button>
+  </div>
 </div>
 
 <style>
@@ -69,14 +51,10 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
   text-align: center;
   margin-top: 10px;
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
 }
 .languages-controls button {
-  margin: 0 5px;
-  padding: 8px 15px;
+  margin: 0 10px;
+  padding: 10px 20px;
   cursor: pointer;
   background: #007bff;
   color: white;
@@ -88,35 +66,6 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
 .languages-controls button:hover {
   background: #0056b3;
   transform: translateY(-2px);
-}
-.languages-slideshow-container.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  max-width: 100vw;
-  z-index: 9999;
-  background: #000;
-  border: none;
-  border-radius: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.languages-slideshow-container.fullscreen .languages-slides {
-  max-height: calc(100vh - 80px);
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-.languages-slideshow-container.fullscreen .languages-controls {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  background: rgba(0,0,0,0.5);
-  padding: 15px;
 }
 </style>
 
@@ -154,35 +103,6 @@ La sociedad ha experimentado una evolución significativa a lo largo del tiempo,
       languagesPlayBtn.textContent = "Pause";
     }
   };
-
-  window.languagesToggleFullscreen = function() {
-    const container = document.querySelector('.languages-slideshow-container');
-    const fullscreenBtn = document.getElementById('languages-fullscreen-btn');
-    
-    if (!document.fullscreenElement) {
-      container.requestFullscreen().then(() => {
-        container.classList.add('fullscreen');
-        fullscreenBtn.textContent = 'Salir';
-      }).catch(err => {
-        container.classList.add('fullscreen');
-        fullscreenBtn.textContent = 'Salir';
-      });
-    } else {
-      document.exitFullscreen().then(() => {
-        container.classList.remove('fullscreen');
-        fullscreenBtn.textContent = 'Pantalla completa';
-      });
-    }
-  };
-
-  document.addEventListener('fullscreenchange', function() {
-    const container = document.querySelector('.languages-slideshow-container');
-    const fullscreenBtn = document.getElementById('languages-fullscreen-btn');
-    if (!document.fullscreenElement) {
-      container.classList.remove('fullscreen');
-      fullscreenBtn.textContent = 'Pantalla completa';
-    }
-  });
 
   languagesShowSlide(languagesSlideIndex);
 })();

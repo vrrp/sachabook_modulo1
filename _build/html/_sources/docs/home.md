@@ -1,7 +1,7 @@
-<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Bioestadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
+<div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #D0F5D2">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Ciencia de Datos usando Python</b></span></h1>
 </div>
-
+<br>
 <style>
 table tr:last-child td:last-child {
   border-bottom-right-radius: 0.5rem;
@@ -9,83 +9,43 @@ table tr:last-child td:last-child {
 </style>
 
 
-<table align="center" style="font-size: 13px;">
+<table align="left" style="background-color: #D0F5D2">
 <tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">Autor :</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">VR ROJAS</span></th>
 </tr>
 <tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">Email :</span></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">sacha.analytics@gmail.com</span></th>
 </tr>
 <tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
-    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+    <th align="left"><span style="font-family:Monospace;color:#046D0B">Web :</span></th>
+    <th align="left"><a href="https://sacha-analytics.github.io/" style="font-family:Monospace;color:#046D0B">sacha-analytics</a></th>
 </tr>
 </table>
 
-<br>
+<br><br><br><br>
 
 # Descripción del Curso
 %-----------------------------------------------------------------------------------------------------
-(Última actualización: 13 Marzo, 2026)
+(Última actualización: 26 Agosto, 2025)
 
-  En la era de la información, la capacidad de extraer valor de los datos se ha convertido en una habilidad fundamental en todas las disciplinas. Este curso integral está diseñado para llevar a científicos, ingenieros, docentes y estudiantes universitarios desde los conceptos más básicos de programación hasta el corazón del análisis de datos.
-
-A través de un enfoque práctico y progresivo, aprenderás a utilizar Python, el lenguaje de programación más popular para ciencia de datos, para leer, limpiar, transformar, visualizar y, finalmente, describir y comprender conjuntos de datos del mundo real. No importa si tu área es la investigación, la ingeniería o la academia; este curso te proporcionará las herramientas esenciales para potenciar tu trabajo con datos.
+  Este curso está dividido en cuatro módulos interrelacionados. El primer módulo está diseñado para consolidar y profundizar en los fundamentos de programación, una habilidad indispensable para abordar los desafíos de la ciencia de datos de manera eficiente. Los módulos dos y tres se centran en el preprocesamiento y análisis avanzado de datos, proporcionando herramientas y técnicas esenciales para extraer valor de grandes volúmenes de información.
+Finalmente, el cuarto módulo aborda los principios teóricos y prácticos del análisis de diseños experimentales, destacando su aplicación en la investigación científica y la toma de decisiones basada en evidencia.
 
 
 # Objetivos
 %-----------------------------------------------------------------------------------------------------
-**General**
-
+## General
 Desarrollar aplicaciones para analizar y modelar datos utilizando el lenguaje de programación Python, con el fin de evaluar patrones, tendencias y realizar predicciones.
 
-**Específicos**
-
+## Específicos
 - Introducción a la computación en la nube (Google Colaboratory).
 - Establecer bases en el conocimiento de programación básica emplenado el lenguaje de programación Python.
 - Procesar, analizar y construir base de datos provenientes de archivos en formato CSV y XLSX.
 - Emplear paquetes o librerias estándar de Python para generar gráficos descriptivos que permitan visualizar tendencias y patrones en datos procesados.
 - Organizar y resumir datos para realizar pruebas de normalidad, hipótesis paramétricas y no paramétricas.
-- Implementar modelos de regresión lineal simple logísticos binarios. 
-
-# Estructura del Curso (Plan de Estudio)
-%-----------------------------------------------------------------------------------------------------
-El curso está meticulosamente organizado en cinco partes, construyendo un conocimiento sólido y aplicable:
-
-**Parte 1**: Programación Básica con Python
-
-Sentamos las bases de todo el curso. En este módulo, los participantes sin experiencia previa en programación (o aquellos que deseen un repaso) se familiarizarán con la sintaxis de Python. Aprenderemos sobre variables, tipos de datos, estructuras de control (condicionales y bucles), funciones y manejo de errores. El objetivo es que al finalizar, puedas escribir scripts sencillos pero funcionales y te sientas cómodo con el entorno de desarrollo.
-
-**Parte 2**: Manipulación y Preprocesamiento de Datos
-
-Una vez que tenemos las bases de programación, nos sumergimos en el corazón de la ciencia de datos. Aquí introducimos librerías fundamentales como NumPy para trabajar con arreglos y Pandas para la manipulación de datos tabulados (DataFrames). Aprenderás a importar datos desde diversos formatos (CSV, Excel), limpiarlos (manejar valores nulos y datos duplicados), filtrarlos, transformarlos y prepararlos para la siguiente fase del análisis.
-
-**Parte 3**: Visualización de Datos
-
-Un gráfico vale más que mil tablas. Este módulo está dedicado a comunicar hallazgos de manera efectiva. Utilizando la librería Matplotlib y el más expresivo Seaborn, los participantes aprenderán a crear una amplia variedad de visualizaciones: desde histogramas y gráficos de dispersión hasta diagramas de caja y mapas de calor. El enfoque no será solo en la creación del gráfico, sino en elegir el tipo correcto para cada pregunta y audiencia.
-
-**Parte 4**: Estadística Descriptiva (Nivel Básico)
-
-Con los datos limpios y visualizados, comenzamos a cuantificarlos. Esta parte introduce los conceptos clave de la estadística descriptiva. Aprenderemos a calcular e interpretar medidas de tendencia central (media, mediana, moda), medidas de dispersión (desviación estándar, varianza, rango) y a entender la forma de la distribución de los datos. Todo esto se implementará directamente en Python, aplicándolo a nuestros conjuntos de datos.
-
-**Parte 5**: Estadística Inferencial (Nivel Avanzado y Análisis Exploratorio de Datos - EDA)
-
-En este módulo final, profundizamos en el análisis. Tomamos todas las herramientas aprendidas (programación, manipulación, visualización y estadística básica) y las integramos para realizar un Análisis Exploratorio de Datos (EDA) completo. Exploraremos los supuestos (requisitos) para implementar modelos de regresión lineal simple y logística binaria. El resultado será la capacidad de generar un perfil estadístico profundo de cualquier conjunto de datos, identificando patrones, anomalías e historias ocultas que sirvan como punto de partida para modelos más complejos o para la toma de decisiones informada.
-
-# ¿A quién está dirigido?
-- **Científicos e ingenieros**: Que buscan automatizar el análisis de sus experimentos o simulaciones
-- **Docentes y educadores**: Que deseen incorporar la programación y el análisis de datos como herramientas pedagógicas en sus aulas.
-- **Estudiantes universitarios**: De cualquier disciplina (ciencias, ingeniería, economía, ciencias sociales) que quieran adquirir una habilidad altamente demandada en el mercado laboral y en la investigación.
-- **Profesionales en general**: Con interés en iniciarse en el mundo de los datos desde una perspectiva práctica y estructurada.
-
-**Requisitos**
-
-- No se requiere experiencia previa en programación.
-- Se recomienda tener curiosidad por los datos y las ganas de aprender.
-- Una computadora con acceso a internet para instalar las herramientas necesarias (se proporcionarán guías paso a paso).
-
+- Implementar modelos de regresión lineal simple. 
 
 # Metodología
 %-----------------------------------------------------------------------------------------------------
@@ -208,5 +168,5 @@ Google Colaboratory.
 
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="460" height="100">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="140">
 
