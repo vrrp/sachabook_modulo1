@@ -168,5 +168,7 @@ Google Colaboratory.
 
 ¡Cada aporte  ayuda a mantener y ampliar este proyecto!
 
-<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="500" height="140">
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/bancos_qr.png?raw=true" alt="" width="300" height="100">
+</div>
 
