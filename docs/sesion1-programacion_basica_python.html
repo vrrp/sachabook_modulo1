@@ -468,7 +468,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="programacion-basica-con-python">
+  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Científica usando Python con Inteligencia Artificial</b></span></h1>
+</div>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<br><section class="tex2jax_ignore mathjax_ignore" id="programacion-basica-con-python">
 <h1><strong>1. Programación Básica con Python</strong><a class="headerlink" href="#programacion-basica-con-python" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-conceptos-basicos-de-programacion">
@@ -614,9 +636,13 @@ residuo = 4
 <li><p><strong>Paquetes</strong>: Un paquete es una forma de organizar módulos de Python en directorios (carpetas). Un directorio se considera un paquete si contiene un archivo llamado<code class="docutils literal notranslate"> <span class="pre">__init__.py</span></code>. Este archivo, que puede estar vacío, le dice a Python que el directorio debe ser tratado como un paquete. Los paquetes se utilizan para agrupar módulos relacionados y crear una estructura jerárquica, lo que facilita la gestión de proyectos grandes.</p></li>
 <li><p><strong>Librerías</strong>: Una librería (o biblioteca) es un término más general que se refiere a una colección de código ya escrito que puedes usar en tu propio programa. Las librerías de Python se distribuyen comúnmente como paquetes, pero el término “librería” se enfoca en la funcionalidad que proporcionan. Por ejemplo, <strong>Pandas</strong> y <strong>Numpy</strong> son librerías muy populares que se instalan como paquetes.</p></li>
 </ul>
-<figure class="align-center" id="fig-cajaherramientas">
-<img alt="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" />
-</figure>
+<div class="{figure}https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true docutils">
+<p>:name: fig:cajaHerramientas
+:align: center</p>
+</div>
+<div align="center">
+<img src="https://github.com/vrrp/sachabook_modulo1/blob/main/docs/images/preambulo/cajaHerramientas.png?raw=true" alt="" width="150" height="80">
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paquete</span><span class="p">:</span>
         <span class="n">aplicacion_01</span>
         <span class="n">aplicacion_02</span>
@@ -724,7 +750,7 @@ residuo = 4
 </div>
 </div>
 <p><strong>Raiz general</strong></p>
-<p>y = f(x) = <span class="math notranslate nohighlight">\(\sqrt[n]{x^m}= \frac{m}{n}\)</span></p>
+<p>y = f(x) = <span class="math notranslate nohighlight">\(\sqrt[n]{x^m}= x^{\frac{m}{n}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="mi">125</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
@@ -739,8 +765,7 @@ residuo = 4
 </div>
 </div>
 <p><strong>Logaritmo</strong></p>
-<p><span class="math notranslate nohighlight">\(y = log_{b}x \)</span></p>
-<p><span class="math notranslate nohighlight">\(x = b^y\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = log_{b}x \Rightarrow x = b^y\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># funcion logaritmo de 10 en base 10</span>
@@ -1260,7 +1285,7 @@ hola
 
 <span class="c1">#fechas = pd.date_range(start=&#39;1984-01-01&#39;, end=&#39;1984-01-30&#39;, freq=&#39;D&#39;)</span>
 <span class="n">fechas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;1984-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
-<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).sttftime(&#39;%Y-%m-%d&#39;)</span>
+<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).strftime(&#39;%Y-%m-%d&#39;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fechas</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1570,6 +1595,9 @@ min    1984-01-01 00:00:00     10.00000         30.600000
 75%    1984-02-06 18:00:00     28.37500         76.537500
 max    1984-02-19 00:00:00     34.50000         91.850000
 std                    NaN      7.28869         18.221725
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
