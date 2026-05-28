@@ -1,7 +1,29 @@
+
 <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Procesamiento de Datos con Inteligencia Artificial</b></span></h1>
+<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Científica usando Python con Inteligencia Artificial</b></span></h1>
 </div>
-<br><br>
+<style>
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+</style>
+
+
+<table align="center" style="font-size: 13px;">
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
+</tr>
+<tr>
+    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
+    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
+</tr>
+</table>
+<br>
 
 %## Contenido
 %- [Preámbulo](#pre)
@@ -9,7 +31,6 @@
 %- [Top 10 lenguajes de programación](#s2)
 %- [Ecosistema de Python](#s2)
 %- [Aplicaciones con Python](#s4)
-<br><br>
 
 # Preámbulo
 <a name="pre"></a>
