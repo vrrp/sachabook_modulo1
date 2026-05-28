@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Programación Básica con Python &#8212; Sacha Analytics</title>
+    <title>1. Programación Básica con Python &#8212; Ciencia de Datos usando Python</title>
   
   
   
@@ -152,7 +152,7 @@
   
   
   
-    <p class="title logo__title">Sacha Analytics</p>
+    <p class="title logo__title">Ciencia de Datos usando Python</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -262,7 +262,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/vrrp/sachabook_modulo1/blob/main/docs/docs/sesion1-programacion_basica_python.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/docs/sesion1-programacion_basica_python.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +293,7 @@
       
       
       
-      <li><a href="https://github.com/vrrp/sachabook_modulo1" target="_blank"
+      <li><a href="https://github.com/yenchiah/jupyter-book-template" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +310,7 @@
       
       
       
-      <li><a href="https://github.com/vrrp/sachabook_modulo1/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion1-programacion_basica_python.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/yenchiah/jupyter-book-template/issues/new?title=Issue%20on%20page%20%2Fdocs/sesion1-programacion_basica_python.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -468,29 +468,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="alert alert-block alert-success" style="font-family:Times New Roman;color:#FFFFFF;background-color: #E7E7E7">
-<h1 align="center"><span style="font-family:Times New Roman;color:#046D0B"><b>Estadística para Investigación Científica <br>usando Python con Inteligencia Artificial</b></span></h1>
-</div>
-<style>
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 0.5rem;
-}
-</style>
-<table align="center" style="font-size: 13px;">
-<tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Autor</span></th>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:VR ROJAS</span></th>
-</tr>
-<tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Email</span></th>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">:sacha.analytics@gmail.com</span></th>
-</tr>
-<tr>
-    <th align="left"><span style="font-family:Monospace;font-size: 12px;">Web</span></th>
-    <th align="left">:<a href="https://sacha-analytics.github.io/" style="font-family:Monospace;font-size: 13px;">sacha-analytics</a></th>
-</tr>
-</table>
-<br><section class="tex2jax_ignore mathjax_ignore" id="programacion-basica-con-python">
+  <section class="tex2jax_ignore mathjax_ignore" id="programacion-basica-con-python">
 <h1><strong>1. Programación Básica con Python</strong><a class="headerlink" href="#programacion-basica-con-python" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="i-conceptos-basicos-de-programacion">
@@ -746,7 +724,7 @@ residuo = 4
 </div>
 </div>
 <p><strong>Raiz general</strong></p>
-<p>y = f(x) = <span class="math notranslate nohighlight">\(\sqrt[n]{x^m}= x^{\frac{m}{n}}\)</span></p>
+<p>y = f(x) = <span class="math notranslate nohighlight">\(\sqrt[n]{x^m}= \frac{m}{n}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y4</span> <span class="o">=</span> <span class="mi">125</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
@@ -1282,7 +1260,7 @@ hola
 
 <span class="c1">#fechas = pd.date_range(start=&#39;1984-01-01&#39;, end=&#39;1984-01-30&#39;, freq=&#39;D&#39;)</span>
 <span class="n">fechas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;1984-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_aire</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
-<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).strftime(&#39;%Y-%m-%d&#39;)</span>
+<span class="c1">#fechas = pd.date_range(start=pd.to_datetime(&#39;today&#39;), periods=len(temp_aire), freq=&#39;D&#39;).sttftime(&#39;%Y-%m-%d&#39;)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fechas</span><span class="p">)</span>
 </pre></div>
 </div>
