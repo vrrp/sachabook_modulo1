@@ -28,8 +28,7 @@ table tr:last-child td:last-child {
 %-----------------------------------------------------------------------------------------------------
 (Última actualización: 26 Agosto, 2025)
 
-  Este curso está dividido en cuatro módulos interrelacionados. El primer módulo está diseñado para consolidar y profundizar en los fundamentos de programación, una habilidad indispensable para abordar los desafíos de la ciencia de datos de manera eficiente. Los módulos dos y tres se centran en el preprocesamiento y análisis avanzado de datos, proporcionando herramientas y técnicas esenciales para extraer valor de grandes volúmenes de información.
-Finalmente, el cuarto módulo aborda los principios teóricos y prácticos del análisis de diseños experimentales, destacando su aplicación en la investigación científica y la toma de decisiones basada en evidencia.
+Este curso de 8 módulos está diseñado para profesionales y publico en general que desean adquirir nuevas capacidades en el ámbito de Ciencia de Datos, y les proporciona las competencias necesarias para realizar análisis estadísticos rigurosos utilizando Python, integrando herramientas de Inteligencia Artificial en cada etapa del proceso.
 
 
 # Objetivos
