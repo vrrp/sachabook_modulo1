@@ -411,6 +411,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia">Metodología</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quien-esta-dirigido">¿A quién está dirigido?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plagio-e-integridad-academica">Plagio e Integridad Académica</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas">Herramientas</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#donaciones">Donaciones</a></li>
@@ -452,8 +453,7 @@ table tr:last-child td:last-child {
 <section class="tex2jax_ignore mathjax_ignore" id="descripcion-del-curso">
 <h1>Descripción del Curso<a class="headerlink" href="#descripcion-del-curso" title="Link to this heading">#</a></h1>
 <p>(Última actualización: 26 Agosto, 2025)</p>
-<p>Este curso está dividido en cuatro módulos interrelacionados. El primer módulo está diseñado para consolidar y profundizar en los fundamentos de programación, una habilidad indispensable para abordar los desafíos de la ciencia de datos de manera eficiente. Los módulos dos y tres se centran en el preprocesamiento y análisis avanzado de datos, proporcionando herramientas y técnicas esenciales para extraer valor de grandes volúmenes de información.
-Finalmente, el cuarto módulo aborda los principios teóricos y prácticos del análisis de diseños experimentales, destacando su aplicación en la investigación científica y la toma de decisiones basada en evidencia.</p>
+<p>Este curso de 8 módulos está diseñado para profesionales y publico en general que desean adquirir nuevas capacidades en el ámbito de Ciencia de Datos, y les proporciona las competencias necesarias para realizar análisis estadísticos rigurosos utilizando Python, integrando herramientas de Inteligencia Artificial en cada etapa del proceso.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="objetivos">
 <h1>Objetivos<a class="headerlink" href="#objetivos" title="Link to this heading">#</a></h1>
@@ -475,7 +475,76 @@ Finalmente, el cuarto módulo aborda los principios teóricos y prácticos del a
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="metodologia">
 <h1>Metodología<a class="headerlink" href="#metodologia" title="Link to this heading">#</a></h1>
-<p>En este curso se utilizará una combinación de clases magistrales, debates en clase, presentaciones, videos, aprendizaje cooperativo y aprendizaje basado en problemas. Las calificaciones se determinarán según la entrega satisfactoria y puntual de las tareas. La calificación de cada tarea se basa en los prerrequisitos establecidos para cada una. A continuación, se presenta un resumen de los temas por cada sesión. Tenga en cuenta que las fechas y los plazos están sujetos a cambios.</p>
+<p>En este curso se utilizará una combinación de clases magistrales, debates en clase, presentaciones, videos, aprendizaje cooperativo y aprendizaje basado en problemas. Este curso esta diseñado para ser desarrollado en 8 sesiones, cada sesión con una duración de 5 horas. A lo largo del desarrollo de cada sesión, aprenderás de manera práctica los siguientes temas:</p>
+<p><strong>MODULO 1 : Introducción a la Programación Básica usando Python</strong>
+Este módulo establece las bases del pensamiento computacional y la programación en Python, el lenguaje estándar en
+ciencia de datos. Los estudiantes aprenderán a instalar y configurar el entorno de trabajo (Google Colab), dominarán la
+sintaxis básica (variables, tipos de datos, estructuras de control), funciones y manejo de estructuras de datos fundamentales
+(Listas, Arrays y Data Frames). Se introducirán las librerías esenciales como NumPy para cálculo numérico y Pandas para
+manipulación de datos, preparando el terreno para análisis estadísticos posteriores. No se requiere experiencia previa en
+programación.</p>
+<p><strong>MODULO 2: Procesamiento de Datos</strong>
+Enfocado en la preparación de datos para el análisis estadístico, este módulo aborda el ciclo completo de limpieza y
+transformación de datos. Los estudiantes aprenderán a importar datos desde múltiples fuentes (CSV y Excel), identificar y
+tratar valores faltantes, detectar y corregir outliers, realizar transformaciones de variables (normalización, estandarización,
+codificación de variables categóricas) y crear pipelines de preprocesamiento reutilizables. Se explorarán técnicas de
+ingeniería de características básicas y la importancia de la calidad de datos en la investigación científica, utilizando
+Numpy, Pandas y Scikit-learn.</p>
+<p><strong>MODULO 3: Visualización de Gráficos</strong>
+Este módulo desarrolla la capacidad de comunicar hallazgos estadísticos de manera efectiva a través de visualizaciones. Se
+cubrirán las principales librerías de Python: Matplotlib para gráficos personalizables, Seaborn para visualizaciones
+estadísticas elegantes. Los estudiantes aprenderán a seleccionar el tipo de gráfico apropiado según la naturaleza de los
+datos y la pregunta de investigación (histogramas, boxplots, scatter plots, heatmaps de correlación, gráficos de
+distribución), aplicar principios de percepción visual y diseño narrativos que sustenten la toma de decisiones basada en
+evidencia.</p>
+<p><strong>MODULO 4: Estadística Descriptiva</strong>
+Aquí se fundamentan los conceptos estadísticos esenciales para caracterizar conjuntos de datos. Se estudiarán las medidas
+de tendencia central (media, mediana, moda), medidas de dispersión (varianza, desviación estándar, rango intercuartílico),
+medidas de forma (asimetría, curtosis) y medidas de posición (percentiles y cuartiles). Los estudiantes aprenderán a
+calcular e interpretar tablas de frecuencias, distribuciones de probabilidad empíricas, y a generar resúmenes estadísticos
+completos usando Python. Se enfatizará la diferenciación entre estadísticos muestrales y poblacionales, y su relevancia en
+el diseño de investigación.</p>
+<p><strong>MODULO 5: Estadística Inferencial</strong>
+Este módulo introduce el razonamiento inferencial para generalizar conclusiones desde muestras hacia poblaciones. Se
+cubrirán los conceptos de muestreo, distribuciones muestrales, teorema central del límite, intervalos de confianza, y
+pruebas de hipótesis (paramétricas y no paramétricas). Los estudiantes implementarán en Python pruebas t para una y dos
+muestras, ANOVA de un factor, pruebas de chi-cuadrado, y pruebas de normalidad. Se discutirán los errores Tipo I y Tipo
+II, el valor p, el tamaño del efecto y el poder estadístico, con aplicaciones a problemas de investigación reales en diversas
+disciplinas profesionales.</p>
+<p><strong>MODULO 6: Implementar Modelos de Regresión Lineal Simple</strong>
+Este módulo inicia el estudio del modelado predictivo con el modelo de regresión lineal simple (una variable
+independiente). Se abordarán los supuestos del modelo, estimación de coeficientes por mínimos cuadrados ordinarios,
+interpretación de parámetros (pendiente e intercepto), coeficiente de determinación (R²), y análisis de residuos para validar
+supuestos. Los estudiantes implementarán el modelo usando Statsmodels (enfoque estadístico con inferencia) y Scikit-
+learn (enfoque predictivo).</p>
+<p><strong>MODULO 7: Implementar Modelos de Regresión Lineal Multivariado</strong>
+Se extienden los conceptos del módulo anterior a escenarios con múltiples variables predictoras. Se estudiarán la matriz de
+correlaciones, multicolinealidad y sus diagnósticos (VIF), selección de variables (métodos stepwise, regularización Ridge
+y Lasso), interacciones entre variables, y transformaciones polinómicas. Los estudiantes aprenderán a construir, entrenar e
+interpretar modelos multivariados complejos, evaluar la significancia individual y conjunta de predictores, y utilizar
+técnicas de validación cruzada. Se integrarán herramientas de IA para la optimización de hiperparámetros y la generación
+automática de features.</p>
+<p><strong>MODULO 8: Evaluación de Modelos</strong>
+El módulo final consolida las competencias en validación y comparación de modelos estadísticos. Se cubrirán métricas de
+rendimiento para regresión (MAE, MSE, RMSE, MAPE, R² ajustado), técnicas de validación (hold-out, k-fold cross-
+validation, leave-one-out), análisis de sesgo-varianza, y métodos de comparación de modelos. Los estudiantes aprenderán a
+detectar sobreajuste (overfitting) y subajuste (underfitting), aplicar técnicas de ensemble básicas, y comunicar resultados
+de manera rigurosa.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-quien-esta-dirigido">
+<h1>¿A quién está dirigido?<a class="headerlink" href="#a-quien-esta-dirigido" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Científicos e ingenieros</strong>: Que buscan automatizar el análisis de sus experimentos o simulaciones</p></li>
+<li><p><strong>Docentes y educadores</strong>: Que deseen incorporar la programación y el análisis de datos como herramientas pedagógicas en sus aulas.</p></li>
+<li><p><strong>Estudiantes universitarios</strong>: De cualquier disciplina (ciencias, ingeniería, economía, ciencias sociales) que quieran adquirir una habilidad altamente demandada en el mercado laboral y en la investigación.</p></li>
+<li><p><strong>Profesionales en general</strong>: Con interés en iniciarse en el mundo de los datos desde una perspectiva práctica y estructurada.</p></li>
+</ul>
+<p><strong>Requisitos</strong></p>
+<ul class="simple">
+<li><p>No se requiere experiencia previa en programación.</p></li>
+<li><p>Se recomienda tener curiosidad por los datos y las ganas de aprender.</p></li>
+<li><p>Una computadora con acceso a internet para instalar las herramientas necesarias (se proporcionarán guías paso a paso).</p></li>
+</ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="plagio-e-integridad-academica">
 <h1>Plagio e Integridad Académica<a class="headerlink" href="#plagio-e-integridad-academica" title="Link to this heading">#</a></h1>
@@ -657,6 +726,7 @@ Google Colaboratory.</p>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia">Metodología</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quien-esta-dirigido">¿A quién está dirigido?</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plagio-e-integridad-academica">Plagio e Integridad Académica</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas">Herramientas</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#donaciones">Donaciones</a></li>
